@@ -1,0 +1,62 @@
+{
+  "_help": {
+    "problem": "n_tasks = number of missions, n_machines = number of machines, gamma = uncertainty budget (sum of u_i <= gamma)",
+    "random_instance": "benchmark rounds draw d0_i ~ U(d0_range) and d_bar_i ~ U(d_bar_range); same seed -> same instances",
+    "benchmark": "n_rounds random instances; reference instances (from scheduling.py / example.py) are checked first",
+    "milo": "free pip Gurobi license is limited to 2000 vars/constraints -> MILO works up to about n_tasks=4 with 2 machines",
+    "logging": "trace_tree=true writes every node of both trees to the per-round log files"
+  },
+  "problem": {
+    "n_tasks": 4,
+    "n_machines": 2,
+    "gamma": 1.5
+  },
+  "random_instance": {
+    "seed": 2026,
+    "d0_range": [0.0, 1.0],
+    "d_bar_range": [0.0, 1.0],
+    "decimals": 4
+  },
+  "benchmark": {
+    "n_rounds": 10,
+    "run_reference_checks": true,
+    "cross_check_relaxed_milo": true,
+    "tolerance": 0.0001
+  },
+  "minimax": {
+    "prune_infeasible_branches": true
+  },
+  "milo": {
+    "enforce_non_anticipativity": true,
+    "prune_infeasible_branches": true,
+    "solve_each_root_choice": true,
+    "time_limit_sec": 300,
+    "mip_gap": 0.0,
+    "threads": 0,
+    "write_gurobi_log": true
+  },
+  "logging": {
+    "log_dir": "logs",
+    "trace_tree": true,
+    "trace_max_depth": 1000,
+    "console_level": "INFO"
+  },
+  "reference_instances": [
+    {
+      "name": "scheduling.py example (3 tasks, 2 machines)",
+      "d0": [0.0580, 0.1945, 0.5866],
+      "d_bar": [0.95, 0.75, 0.48],
+      "gamma": 2.5,
+      "n_machines": 2,
+      "expected_makespan": 1.8296
+    },
+    {
+      "name": "example.py gap demo data (4 tasks, 2 machines)",
+      "d0": [10.0, 0.0, 10.0, 10.0],
+      "d_bar": [30.0, 0.0, 30.0, 30.0],
+      "gamma": 1.0,
+      "n_machines": 2,
+      "expected_makespan": null
+    }
+  ]
+}
