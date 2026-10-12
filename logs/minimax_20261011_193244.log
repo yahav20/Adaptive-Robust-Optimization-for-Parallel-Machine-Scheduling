@@ -1,0 +1,185 @@
+==============================================================================
+OUR IDEA - Hybrid Minimax tree + independent LP at every leaf
+==============================================================================
+Instance 'scheduling.py example (3 tasks, 2 machines)': n_tasks=3, n_machines=2, Gamma=2.5
+  task |    d0    |  d_bar   | max d = d0+d_bar
+    T1 |   0.0580 |   0.9500 |   1.0080
+    T2 |   0.1945 |   0.7500 |   0.9445
+    T3 |   0.5866 |   0.4800 |   1.0666
+  expected optimal AR makespan (reference) = 1.8296
+prune_infeasible_branches=True
+Reading the trace: [SCHEDULER] = min node, [ADVERSARY] = max node, [LEAF] = LP.
+Completion times C(Ti) are written as sums of durations d_i.
+------------------------------------------------------------------------------
+[SCHEDULER] ROOT
+   running={} pending={T1,T2,T3} finished={}; must start 2 task(s) at time 0
+|  option: start {T1,T2} -> C(T1) = d1, C(T2) = d2
+|  [ADVERSARY] S{T1,T2}
+|     running={T1: C=d1, T2: C=d2}; who finishes first?
+|  |  option: T1 finishes first  [adds d1 <= d2]
+|  |  [SCHEDULER] S{T1,T2} > F:T1
+|  |     running={T2: C=d2} pending={T3} finished={T1}; must start 1 task(s) at time d1
+|  |  |  option: start {T3} -> C(T3) = d1 + d3
+|  |  |  [ADVERSARY] S{T1,T2} > F:T1 > S{T3}
+|  |  |     running={T2: C=d2, T3: C=d1 + d3}; who finishes first?
+|  |  |  |  option: T2 finishes first  [adds d2 <= d1 + d3]
+|  |  |  |  [ADVERSARY] S{T1,T2} > F:T1 > S{T3} > F:T2
+|  |  |  |     running={T3: C=d1 + d3}; who finishes first?
+|  |  |  |  |  option: T3 finishes first  [adds (only task left)]
+|  |  |  |  |  [LEAF] S{T1,T2} > F:T1 > S{T3} > F:T2 > F:T3
+|  |  |  |  |     makespan = C(last) = d1 + d3; sequence constraints: d1 <= d2; d2 <= d1 + d3
+|  |  |  |  |     LP -> makespan 1.8296 with d = [T1=0.7630, T2=0.7630, T3=1.0666] (sum u = 2.5000)
+|  |  |  |  [ADVERSARY] S{T1,T2} > F:T1 > S{T3} > F:T2 -> MAX of T3 first:1.8296 => T3 finishes first (value 1.8296)
+|  |  |  |  option: T3 finishes first  [adds d1 + d3 <= d2]
+|  |  |  |  [ADVERSARY] S{T1,T2} > F:T1 > S{T3} > F:T3
+|  |  |  |     running={T2: C=d2}; who finishes first?
+|  |  |  |  |  option: T2 finishes first  [adds (only task left)]
+|  |  |  |  |  [LEAF] S{T1,T2} > F:T1 > S{T3} > F:T3 > F:T2
+|  |  |  |  |     makespan = C(last) = d2; sequence constraints: d1 <= d2; d1 + d3 <= d2
+|  |  |  |  |     LP -> makespan 0.9445 with d = [T1=0.0580, T2=0.9445, T3=0.5866] (sum u = 1.0000)
+|  |  |  |  [ADVERSARY] S{T1,T2} > F:T1 > S{T3} > F:T3 -> MAX of T2 first:0.9445 => T2 finishes first (value 0.9445)
+|  |  |  [ADVERSARY] S{T1,T2} > F:T1 > S{T3} -> MAX of T2 first:1.8296, T3 first:0.9445 => T2 finishes first (value 1.8296)
+|  |  [SCHEDULER] S{T1,T2} > F:T1 -> MIN of {T3}:1.8296 => start {T3} (value 1.8296)
+|  |  option: T2 finishes first  [adds d2 <= d1]
+|  |  [SCHEDULER] S{T1,T2} > F:T2
+|  |     running={T1: C=d1} pending={T3} finished={T2}; must start 1 task(s) at time d2
+|  |  |  option: start {T3} -> C(T3) = d2 + d3
+|  |  |  [ADVERSARY] S{T1,T2} > F:T2 > S{T3}
+|  |  |     running={T1: C=d1, T3: C=d2 + d3}; who finishes first?
+|  |  |  |  option: T1 finishes first  [adds d1 <= d2 + d3]
+|  |  |  |  [ADVERSARY] S{T1,T2} > F:T2 > S{T3} > F:T1
+|  |  |  |     running={T3: C=d2 + d3}; who finishes first?
+|  |  |  |  |  option: T3 finishes first  [adds (only task left)]
+|  |  |  |  |  [LEAF] S{T1,T2} > F:T2 > S{T3} > F:T1 > F:T3
+|  |  |  |  |     makespan = C(last) = d2 + d3; sequence constraints: d2 <= d1; d1 <= d2 + d3
+|  |  |  |  |     LP -> makespan 1.8296 with d = [T1=0.7630, T2=0.7630, T3=1.0666] (sum u = 2.5000)
+|  |  |  |  [ADVERSARY] S{T1,T2} > F:T2 > S{T3} > F:T1 -> MAX of T3 first:1.8296 => T3 finishes first (value 1.8296)
+|  |  |  |  option: T3 finishes first  [adds d2 + d3 <= d1]
+|  |  |  |  [ADVERSARY] S{T1,T2} > F:T2 > S{T3} > F:T3
+|  |  |  |     running={T1: C=d1}; who finishes first?
+|  |  |  |  |  option: T1 finishes first  [adds (only task left)]
+|  |  |  |  |  [LEAF] S{T1,T2} > F:T2 > S{T3} > F:T3 > F:T1
+|  |  |  |  |     makespan = C(last) = d1; sequence constraints: d2 <= d1; d2 + d3 <= d1
+|  |  |  |  |     LP -> makespan 1.0080 with d = [T1=1.0080, T2=0.1945, T3=0.5866] (sum u = 1.0000)
+|  |  |  |  [ADVERSARY] S{T1,T2} > F:T2 > S{T3} > F:T3 -> MAX of T1 first:1.0080 => T1 finishes first (value 1.0080)
+|  |  |  [ADVERSARY] S{T1,T2} > F:T2 > S{T3} -> MAX of T1 first:1.8296, T3 first:1.0080 => T1 finishes first (value 1.8296)
+|  |  [SCHEDULER] S{T1,T2} > F:T2 -> MIN of {T3}:1.8296 => start {T3} (value 1.8296)
+|  [ADVERSARY] S{T1,T2} -> MAX of T1 first:1.8296, T2 first:1.8296 => T1 finishes first (value 1.8296)
+|  option: start {T1,T3} -> C(T1) = d1, C(T3) = d3
+|  [ADVERSARY] S{T1,T3}
+|     running={T1: C=d1, T3: C=d3}; who finishes first?
+|  |  option: T1 finishes first  [adds d1 <= d3]
+|  |  [SCHEDULER] S{T1,T3} > F:T1
+|  |     running={T3: C=d3} pending={T2} finished={T1}; must start 1 task(s) at time d1
+|  |  |  option: start {T2} -> C(T2) = d1 + d2
+|  |  |  [ADVERSARY] S{T1,T3} > F:T1 > S{T2}
+|  |  |     running={T2: C=d1 + d2, T3: C=d3}; who finishes first?
+|  |  |  |  option: T2 finishes first  [adds d1 + d2 <= d3]
+|  |  |  |  [ADVERSARY] S{T1,T3} > F:T1 > S{T2} > F:T2
+|  |  |  |     running={T3: C=d3}; who finishes first?
+|  |  |  |  |  option: T3 finishes first  [adds (only task left)]
+|  |  |  |  |  [LEAF] S{T1,T3} > F:T1 > S{T2} > F:T2 > F:T3
+|  |  |  |  |     makespan = C(last) = d3; sequence constraints: d1 <= d3; d1 + d2 <= d3
+|  |  |  |  |     LP -> makespan 1.0666 with d = [T1=0.0580, T2=0.1945, T3=1.0666] (sum u = 1.0000)
+|  |  |  |  [ADVERSARY] S{T1,T3} > F:T1 > S{T2} > F:T2 -> MAX of T3 first:1.0666 => T3 finishes first (value 1.0666)
+|  |  |  |  option: T3 finishes first  [adds d3 <= d1 + d2]
+|  |  |  |  [ADVERSARY] S{T1,T3} > F:T1 > S{T2} > F:T3
+|  |  |  |     running={T2: C=d1 + d2}; who finishes first?
+|  |  |  |  |  option: T2 finishes first  [adds (only task left)]
+|  |  |  |  |  [LEAF] S{T1,T3} > F:T1 > S{T2} > F:T3 > F:T2
+|  |  |  |  |     makespan = C(last) = d1 + d2; sequence constraints: d1 <= d3; d3 <= d1 + d2
+|  |  |  |  |     LP -> makespan 1.8320 with d = [T1=0.8875, T2=0.9445, T3=0.8875] (sum u = 2.5000)
+|  |  |  |  [ADVERSARY] S{T1,T3} > F:T1 > S{T2} > F:T3 -> MAX of T2 first:1.8320 => T2 finishes first (value 1.8320)
+|  |  |  [ADVERSARY] S{T1,T3} > F:T1 > S{T2} -> MAX of T2 first:1.0666, T3 first:1.8320 => T3 finishes first (value 1.8320)
+|  |  [SCHEDULER] S{T1,T3} > F:T1 -> MIN of {T2}:1.8320 => start {T2} (value 1.8320)
+|  |  option: T3 finishes first  [adds d3 <= d1]
+|  |  [SCHEDULER] S{T1,T3} > F:T3
+|  |     running={T1: C=d1} pending={T2} finished={T3}; must start 1 task(s) at time d3
+|  |  |  option: start {T2} -> C(T2) = d2 + d3
+|  |  |  [ADVERSARY] S{T1,T3} > F:T3 > S{T2}
+|  |  |     running={T1: C=d1, T2: C=d2 + d3}; who finishes first?
+|  |  |  |  option: T1 finishes first  [adds d1 <= d2 + d3]
+|  |  |  |  [ADVERSARY] S{T1,T3} > F:T3 > S{T2} > F:T1
+|  |  |  |     running={T2: C=d2 + d3}; who finishes first?
+|  |  |  |  |  option: T2 finishes first  [adds (only task left)]
+|  |  |  |  |  [LEAF] S{T1,T3} > F:T3 > S{T2} > F:T1 > F:T2
+|  |  |  |  |     makespan = C(last) = d2 + d3; sequence constraints: d3 <= d1; d1 <= d2 + d3
+|  |  |  |  |     LP -> makespan 1.8320 with d = [T1=0.8875, T2=0.9445, T3=0.8875] (sum u = 2.5000)
+|  |  |  |  [ADVERSARY] S{T1,T3} > F:T3 > S{T2} > F:T1 -> MAX of T2 first:1.8320 => T2 finishes first (value 1.8320)
+|  |  |  |  option: T2 finishes first  [adds d2 + d3 <= d1]
+|  |  |  |  [ADVERSARY] S{T1,T3} > F:T3 > S{T2} > F:T2
+|  |  |  |     running={T1: C=d1}; who finishes first?
+|  |  |  |  |  option: T1 finishes first  [adds (only task left)]
+|  |  |  |  |  [LEAF] S{T1,T3} > F:T3 > S{T2} > F:T2 > F:T1
+|  |  |  |  |     makespan = C(last) = d1; sequence constraints: d3 <= d1; d2 + d3 <= d1
+|  |  |  |  |     LP -> makespan 1.0080 with d = [T1=1.0080, T2=0.1945, T3=0.5866] (sum u = 1.0000)
+|  |  |  |  [ADVERSARY] S{T1,T3} > F:T3 > S{T2} > F:T2 -> MAX of T1 first:1.0080 => T1 finishes first (value 1.0080)
+|  |  |  [ADVERSARY] S{T1,T3} > F:T3 > S{T2} -> MAX of T1 first:1.8320, T2 first:1.0080 => T1 finishes first (value 1.8320)
+|  |  [SCHEDULER] S{T1,T3} > F:T3 -> MIN of {T2}:1.8320 => start {T2} (value 1.8320)
+|  [ADVERSARY] S{T1,T3} -> MAX of T1 first:1.8320, T3 first:1.8320 => T1 finishes first (value 1.8320)
+|  option: start {T2,T3} -> C(T2) = d2, C(T3) = d3
+|  [ADVERSARY] S{T2,T3}
+|     running={T2: C=d2, T3: C=d3}; who finishes first?
+|  |  option: T2 finishes first  [adds d2 <= d3]
+|  |  [SCHEDULER] S{T2,T3} > F:T2
+|  |     running={T3: C=d3} pending={T1} finished={T2}; must start 1 task(s) at time d2
+|  |  |  option: start {T1} -> C(T1) = d1 + d2
+|  |  |  [ADVERSARY] S{T2,T3} > F:T2 > S{T1}
+|  |  |     running={T1: C=d1 + d2, T3: C=d3}; who finishes first?
+|  |  |  |  option: T1 finishes first  [adds d1 + d2 <= d3]
+|  |  |  |  [ADVERSARY] S{T2,T3} > F:T2 > S{T1} > F:T1
+|  |  |  |     running={T3: C=d3}; who finishes first?
+|  |  |  |  |  option: T3 finishes first  [adds (only task left)]
+|  |  |  |  |  [LEAF] S{T2,T3} > F:T2 > S{T1} > F:T1 > F:T3
+|  |  |  |  |     makespan = C(last) = d3; sequence constraints: d2 <= d3; d1 + d2 <= d3
+|  |  |  |  |     LP -> makespan 1.0666 with d = [T1=0.0580, T2=0.1945, T3=1.0666] (sum u = 1.0000)
+|  |  |  |  [ADVERSARY] S{T2,T3} > F:T2 > S{T1} > F:T1 -> MAX of T3 first:1.0666 => T3 finishes first (value 1.0666)
+|  |  |  |  option: T3 finishes first  [adds d3 <= d1 + d2]
+|  |  |  |  [ADVERSARY] S{T2,T3} > F:T2 > S{T1} > F:T3
+|  |  |  |     running={T1: C=d1 + d2}; who finishes first?
+|  |  |  |  |  option: T1 finishes first  [adds (only task left)]
+|  |  |  |  |  [LEAF] S{T2,T3} > F:T2 > S{T1} > F:T3 > F:T1
+|  |  |  |  |     makespan = C(last) = d1 + d2; sequence constraints: d2 <= d3; d3 <= d1 + d2
+|  |  |  |  |     LP -> makespan 1.8806 with d = [T1=1.0080, T2=0.8726, T3=0.8726] (sum u = 2.5000)
+|  |  |  |  [ADVERSARY] S{T2,T3} > F:T2 > S{T1} > F:T3 -> MAX of T1 first:1.8806 => T1 finishes first (value 1.8806)
+|  |  |  [ADVERSARY] S{T2,T3} > F:T2 > S{T1} -> MAX of T1 first:1.0666, T3 first:1.8806 => T3 finishes first (value 1.8806)
+|  |  [SCHEDULER] S{T2,T3} > F:T2 -> MIN of {T1}:1.8806 => start {T1} (value 1.8806)
+|  |  option: T3 finishes first  [adds d3 <= d2]
+|  |  [SCHEDULER] S{T2,T3} > F:T3
+|  |     running={T2: C=d2} pending={T1} finished={T3}; must start 1 task(s) at time d3
+|  |  |  option: start {T1} -> C(T1) = d1 + d3
+|  |  |  [ADVERSARY] S{T2,T3} > F:T3 > S{T1}
+|  |  |     running={T1: C=d1 + d3, T2: C=d2}; who finishes first?
+|  |  |  |  option: T1 finishes first  [adds d1 + d3 <= d2]
+|  |  |  |  [ADVERSARY] S{T2,T3} > F:T3 > S{T1} > F:T1
+|  |  |  |     running={T2: C=d2}; who finishes first?
+|  |  |  |  |  option: T2 finishes first  [adds (only task left)]
+|  |  |  |  |  [LEAF] S{T2,T3} > F:T3 > S{T1} > F:T1 > F:T2
+|  |  |  |  |     makespan = C(last) = d2; sequence constraints: d3 <= d2; d1 + d3 <= d2
+|  |  |  |  |     LP -> makespan 0.9445 with d = [T1=0.0580, T2=0.9445, T3=0.5866] (sum u = 1.0000)
+|  |  |  |  [ADVERSARY] S{T2,T3} > F:T3 > S{T1} > F:T1 -> MAX of T2 first:0.9445 => T2 finishes first (value 0.9445)
+|  |  |  |  option: T2 finishes first  [adds d2 <= d1 + d3]
+|  |  |  |  [ADVERSARY] S{T2,T3} > F:T3 > S{T1} > F:T2
+|  |  |  |     running={T1: C=d1 + d3}; who finishes first?
+|  |  |  |  |  option: T1 finishes first  [adds (only task left)]
+|  |  |  |  |  [LEAF] S{T2,T3} > F:T3 > S{T1} > F:T2 > F:T1
+|  |  |  |  |     makespan = C(last) = d1 + d3; sequence constraints: d3 <= d2; d2 <= d1 + d3
+|  |  |  |  |     LP -> makespan 1.8806 with d = [T1=1.0080, T2=0.8726, T3=0.8726] (sum u = 2.5000)
+|  |  |  |  [ADVERSARY] S{T2,T3} > F:T3 > S{T1} > F:T2 -> MAX of T1 first:1.8806 => T1 finishes first (value 1.8806)
+|  |  |  [ADVERSARY] S{T2,T3} > F:T3 > S{T1} -> MAX of T1 first:0.9445, T2 first:1.8806 => T2 finishes first (value 1.8806)
+|  |  [SCHEDULER] S{T2,T3} > F:T3 -> MIN of {T1}:1.8806 => start {T1} (value 1.8806)
+|  [ADVERSARY] S{T2,T3} -> MAX of T2 first:1.8806, T3 first:1.8806 => T2 finishes first (value 1.8806)
+[SCHEDULER] ROOT -> MIN of {T1,T2}:1.8296, {T1,T3}:1.8320, {T2,T3}:1.8806 => start {T1,T2} (value 1.8296)
+------------------------------------------------------------------------------
+MINIMAX RESULT
+  first decision start {T1,T2} -> worst-case makespan 1.8296  <== chosen
+  first decision start {T1,T3} -> worst-case makespan 1.8320
+  first decision start {T2,T3} -> worst-case makespan 1.8806
+  Guaranteed worst-case makespan (upper bound on true AR) = 1.8296
+  Worst-case scenario under optimal play: S{T1,T2} > F:T1 > S{T3} > F:T2 > F:T3
+    durations chosen by adversary at that leaf: [T1=0.7630, T2=0.7630, T3=1.0666]
+    budget used sum(u) = 2.5000 / Gamma = 2.5
+  Stats: {'scheduler_nodes': 7, 'adversary_nodes': 21, 'leaves': 12, 'leaf_lps': 12, 'infeasible_leaves': 0, 'pruned_branches': 0, 'feasibility_lps': 18}, time = 0.009s
+  Anticipation cases detected (adversary used different durations for an already-finished task in different futures): 0
+Reference check: expected 1.8296, got 1.8296 -> PASS
+Full trace written to logs/minimax_20261011_193244.log

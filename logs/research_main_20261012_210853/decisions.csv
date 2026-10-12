@@ -1,0 +1,1567 @@
+family,n,m,gamma,name,depth,is_root,n_options,n_optimal,margin,LPT (largest d0+d_bar),lpt_loss,largest nominal d0,largest deviation d_bar,SPT (smallest d0+d_bar)
+"n=3, m=2",3,2,0.5,F0-n3m2G0.5s2000,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,0.5,F0-n3m2G0.5s2001,0,True,3,2,0.0,True,0.0,True,True,True
+"n=3, m=2",3,2,0.5,F0-n3m2G0.5s2002,0,True,3,1,0.05859059625212959,True,0.0,False,True,False
+"n=3, m=2",3,2,0.5,F0-n3m2G0.5s2003,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,0.5,F0-n3m2G0.5s2004,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,0.5,F0-n3m2G0.5s2005,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,0.5,F0-n3m2G0.5s2006,0,True,3,2,0.0,True,0.0,True,False,False
+"n=3, m=2",3,2,0.5,F0-n3m2G0.5s2007,0,True,3,2,0.0,True,0.0,True,False,True
+"n=3, m=2",3,2,1.0,F0-n3m2G1.0s4000,0,True,3,1,0.17376063841031608,True,0.0,False,True,False
+"n=3, m=2",3,2,1.0,F0-n3m2G1.0s4001,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,1.0,F0-n3m2G1.0s4002,0,True,3,1,0.35023127440312374,True,0.0,True,True,False
+"n=3, m=2",3,2,1.0,F0-n3m2G1.0s4003,0,True,3,2,0.0,True,0.0,True,False,False
+"n=3, m=2",3,2,1.0,F0-n3m2G1.0s4004,0,True,3,1,0.05439999999999978,True,0.0,True,True,False
+"n=3, m=2",3,2,1.0,F0-n3m2G1.0s4005,0,True,3,1,0.30271585628435815,True,0.0,False,True,False
+"n=3, m=2",3,2,1.0,F0-n3m2G1.0s4006,0,True,3,1,0.047282890016862256,True,0.0,False,False,False
+"n=3, m=2",3,2,1.0,F0-n3m2G1.0s4007,0,True,3,1,0.10939964349376119,True,0.0,False,True,False
+"n=3, m=2",3,2,1.5,F0-n3m2G1.5s6000,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,1.5,F0-n3m2G1.5s6001,0,True,3,1,0.14138937553741027,True,0.0,False,True,False
+"n=3, m=2",3,2,1.5,F0-n3m2G1.5s6002,0,True,3,1,0.12234999999999996,True,0.0,True,True,False
+"n=3, m=2",3,2,1.5,F0-n3m2G1.5s6003,0,True,3,1,0.09767181767724908,True,0.0,False,True,False
+"n=3, m=2",3,2,1.5,F0-n3m2G1.5s6004,0,True,3,1,0.01006567260886193,False,0.01006567260886193,False,True,True
+"n=3, m=2",3,2,1.5,F0-n3m2G1.5s6005,0,True,3,1,0.033660696685670066,True,0.0,True,False,False
+"n=3, m=2",3,2,1.5,F0-n3m2G1.5s6006,0,True,3,1,0.10626222431674748,False,0.10626222431674748,False,True,False
+"n=3, m=2",3,2,1.5,F0-n3m2G1.5s6007,0,True,3,2,0.0,True,0.0,True,False,False
+"n=3, m=2",3,2,2.0,F0-n3m2G2.0s8000,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,2.0,F0-n3m2G2.0s8001,0,True,3,1,0.194389608472457,True,0.0,True,True,False
+"n=3, m=2",3,2,2.0,F0-n3m2G2.0s8002,0,True,3,1,0.08461819773511103,True,0.0,False,True,False
+"n=3, m=2",3,2,2.0,F0-n3m2G2.0s8003,0,True,3,1,0.023737499999999967,True,0.0,False,True,False
+"n=3, m=2",3,2,2.0,F0-n3m2G2.0s8004,0,True,3,1,0.043574571961349395,True,0.0,True,True,False
+"n=3, m=2",3,2,2.0,F0-n3m2G2.0s8005,0,True,3,1,0.0014792509402157261,True,0.0,True,False,False
+"n=3, m=2",3,2,2.0,F0-n3m2G2.0s8006,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,2.0,F0-n3m2G2.0s8007,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,3.0,F0-n3m2G3.0s12000,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,3.0,F0-n3m2G3.0s12001,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,3.0,F0-n3m2G3.0s12002,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,3.0,F0-n3m2G3.0s12003,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,3.0,F0-n3m2G3.0s12004,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,3.0,F0-n3m2G3.0s12005,0,True,3,2,0.0,True,0.0,True,True,False
+"n=3, m=2",3,2,3.0,F0-n3m2G3.0s12006,0,True,3,2,0.0,True,0.0,False,True,False
+"n=3, m=2",3,2,3.0,F0-n3m2G3.0s12007,0,True,3,2,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12000,0,True,6,2,0.0,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12000,2,False,2,1,0.10661502666020362,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12000,2,False,2,1,0.054749999999999965,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12000,2,False,2,1,0.04629212312166753,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12000,2,False,2,1,0.09481970431410569,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12000,2,False,2,1,0.04661502666020356,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12000,2,False,2,1,0.06000000000000005,True,0.0,False,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12000,2,False,2,1,0.08456970431410571,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12001,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12001,2,False,2,1,0.004346054605460559,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12001,2,False,2,1,0.014100000000000001,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12001,2,False,2,1,0.1259999999999999,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12001,2,False,2,1,0.1400999999999999,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12002,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12002,2,False,2,1,0.2410000000000001,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12002,2,False,2,1,0.1770909498878086,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12002,2,False,2,1,0.06009999999999982,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12002,2,False,2,1,0.07664101761484066,True,0.0,False,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12002,2,False,2,1,0.06009999999999982,False,0.06009999999999982,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12002,2,False,2,1,0.3010999999999999,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12002,2,False,2,1,0.25373196750264926,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12003,0,True,6,1,0.0011639043496187718,True,0.0,False,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12003,2,False,2,1,0.05234559884559875,False,0.05234559884559875,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12003,2,False,2,1,0.052999999999999936,False,0.052999999999999936,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12003,2,False,2,1,0.05940000000000012,True,0.0,False,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12003,2,False,2,1,0.011971145374449321,False,0.011971145374449321,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12003,2,False,2,1,0.11240000000000006,True,0.0,False,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12003,2,False,2,1,0.10430026798598213,False,0.10430026798598213,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12003,2,False,2,1,0.1668455988455988,False,0.1668455988455988,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12003,2,False,2,1,0.053936095650381155,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12003,2,False,2,1,0.11333609565038127,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12003,2,False,2,1,0.052999999999999936,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12004,0,True,6,1,0.008825927400095468,False,0.008825927400095468,False,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12004,2,False,2,1,0.001268144345932587,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12004,2,False,2,1,0.07669999999999999,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12004,2,False,2,1,0.19232893944828833,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12004,2,False,2,1,0.008825927400095468,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12004,2,False,2,1,0.1322000000000001,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12004,2,False,2,1,0.10909991394148033,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12004,2,False,2,1,0.0011255794058173674,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12004,2,False,2,1,0.20890000000000009,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12004,2,False,2,1,0.0004867475501633134,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12004,2,False,2,1,0.07440309810671253,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12005,0,True,6,1,0.004056437192668794,False,0.04808531979514741,False,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12005,2,False,2,1,0.04339076226599792,False,0.04339076226599792,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12005,2,False,2,1,0.049874566991753744,False,0.049874566991753744,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12005,2,False,2,1,0.06619907714548601,False,0.06619907714548601,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12005,2,False,2,1,0.0649824096084074,False,0.0649824096084074,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12005,2,False,2,1,0.03299899418864549,True,0.0,False,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12005,2,False,2,1,0.022170194543007393,False,0.022170194543007393,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12005,2,False,2,1,0.018329805456992587,False,0.018329805456992587,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12005,2,False,2,1,0.04050000000000009,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12005,2,False,2,1,0.030525368797496677,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12005,2,False,2,1,0.007015534197586049,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12006,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12006,2,False,2,1,0.1351,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12006,2,False,2,1,0.1351,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12006,2,False,2,1,0.4060999999999999,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12006,2,False,2,1,0.1351,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12006,2,False,2,1,0.2709999999999999,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12007,0,True,6,2,0.0,True,0.0,False,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12007,2,False,2,1,0.040011604524507804,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12007,2,False,2,1,0.0822116045245076,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12007,2,False,2,1,0.06807042883778758,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12007,2,False,2,1,0.05584441267868234,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12007,2,False,2,1,0.03560723430702284,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12007,2,False,2,1,0.10579941372927681,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12007,2,False,2,1,0.051373397570171786,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12007,2,False,2,1,0.07275376631448083,True,0.0,False,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12007,2,False,2,1,0.03714653200745799,True,0.0,False,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12008,0,True,6,2,0.0,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12008,2,False,2,1,0.17288295675670162,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12008,2,False,2,1,0.03266299033541786,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12008,2,False,2,1,0.21713990903922697,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12008,2,False,2,1,0.01463990903922685,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12008,2,False,2,1,0.019200594084979983,True,0.0,False,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12008,2,False,2,1,0.0901212449954798,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12008,2,False,2,1,0.027841211416763434,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12008,2,False,2,1,0.008936051917861176,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12008,2,False,2,1,0.02813664600284116,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12009,0,True,6,1,0.00408631834096429,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12009,2,False,2,1,0.3047202666307567,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12009,2,False,2,1,0.1883863183409642,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12009,2,False,2,1,0.00408631834096429,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12009,2,False,2,1,0.05440618798235963,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12009,2,False,2,1,0.1748264546131164,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12009,2,False,2,1,0.1524000000000001,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12009,2,False,2,1,0.1842999999999999,False,0.1842999999999999,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12009,2,False,2,1,0.02954229144667364,False,0.02954229144667364,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12009,2,False,2,1,0.3367,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12010,0,True,6,1,0.021997830415658504,False,0.021997830415658504,False,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12010,2,False,2,1,0.04457420924574218,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12010,2,False,2,1,0.16797554193681474,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12010,2,False,2,1,0.04592637883008366,True,0.0,False,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12010,2,False,2,1,0.10090000000000021,False,0.10090000000000021,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12010,2,False,2,1,0.07766173731535009,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12010,2,False,2,1,0.13685133269107252,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12010,2,False,2,1,0.17060000000000008,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12010,2,False,2,1,0.12596292645943885,False,0.12596292645943885,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12010,2,False,2,1,0.013449999999999962,False,0.013449999999999962,True,False,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12010,2,False,2,1,0.21652637883008374,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12011,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12011,2,False,2,1,0.0028999999999999027,True,0.0,False,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12011,2,False,2,1,0.036799999999999944,True,0.0,True,False,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12011,2,False,2,1,0.039699999999999847,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12011,2,False,2,1,0.039699999999999847,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12011,2,False,2,1,0.036800000000000166,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12011,2,False,2,1,0.036799999999999944,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12011,2,False,2,1,0.02082740337658695,True,0.0,True,True,False
+"n=4, m=2",4,2,0.5,F1-n4m2G0.5s12011,2,False,2,1,0.017927403376587048,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14000,0,True,6,3,0.0,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14000,2,False,2,1,0.06368033716029675,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14000,2,False,2,1,0.18819926918392205,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14000,2,False,2,1,0.1266213008653636,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14000,2,False,2,1,0.0021023688417383113,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14000,2,False,2,1,0.021885602923264358,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14001,0,True,6,1,0.07500000000000018,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14001,2,False,2,1,0.22099999999999986,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14001,2,False,2,1,0.2670999999999999,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14001,2,False,2,1,0.02720232906121911,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14001,2,False,2,1,0.04610000000000003,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14001,2,False,2,1,0.22100000000000009,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14001,2,False,2,1,0.2671000000000001,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14002,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14002,2,False,2,1,0.19680000000000009,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14002,2,False,2,1,0.1907000000000001,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14002,2,False,2,1,0.006099999999999994,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14002,2,False,2,1,0.0013803669562135745,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14003,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14003,2,False,2,1,0.06010000000000004,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14003,2,False,2,1,0.1262000000000001,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14003,2,False,2,1,0.06610000000000005,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14003,2,False,2,1,0.01094321137717258,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14004,0,True,6,1,0.07416079065841297,True,0.0,False,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14004,2,False,2,1,0.029069169329073663,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14004,2,False,2,1,0.04009998771196832,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14004,2,False,2,1,0.01795727020218596,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14004,2,False,2,1,0.021500000000000075,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14004,2,False,2,1,0.11330442369132454,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14004,2,False,2,1,0.04050400589825487,False,0.04050400589825487,True,False,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14004,2,False,2,1,0.08868700056274603,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14004,2,False,2,1,0.1412925373650893,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14004,2,False,2,1,0.021500000000000075,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14004,2,False,2,1,0.09457973500310413,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14004,2,False,2,1,0.14489052101897304,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14005,0,True,6,2,0.0,False,0.267972949283267,False,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14005,2,False,2,1,0.3062487676056338,False,0.3062487676056338,True,False,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14005,2,False,2,1,0.3091590909090911,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14005,2,False,2,1,0.31752105796856456,False,0.31752105796856456,True,False,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14005,2,False,2,1,0.2125590909090911,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14005,2,False,2,1,0.02959999999999985,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14005,2,False,2,1,0.014207199594388875,False,0.014207199594388875,True,False,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14005,2,False,2,1,0.02959999999999985,False,0.02959999999999985,True,False,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14005,2,False,2,1,0.3247,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14005,2,False,2,1,0.2791189084507042,False,0.2791189084507042,True,False,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14005,2,False,2,1,0.22809999999999997,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14005,2,False,2,1,0.3033138583741757,False,0.3033138583741757,True,False,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14006,0,True,6,1,0.08138673403569108,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14006,2,False,2,1,0.2165663728230489,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14006,2,False,2,1,0.11791680283809947,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14006,2,False,2,1,0.21609999999999974,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14006,2,False,2,1,0.1885699311975919,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14006,2,False,2,1,0.03193006880240823,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14006,2,False,2,1,0.0326502365082777,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14006,2,False,2,1,0.028516609331326492,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14006,2,False,2,1,0.22049999999999992,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14007,0,True,6,1,0.01937047619047627,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14007,2,False,2,1,0.044584988662131675,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14007,2,False,2,1,0.01651501133786848,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14007,2,False,2,1,0.5183,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14007,2,False,2,1,0.06109999999999993,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14007,2,False,2,1,0.1380966124506564,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14007,2,False,2,1,0.02263244251087637,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14007,2,False,2,1,0.03846755748912356,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14007,2,False,2,1,0.3097239900559354,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14008,0,True,6,4,0.0,True,0.0,True,False,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14008,2,False,2,1,0.05924337644180344,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14008,2,False,2,1,0.1028433764418033,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14008,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14008,2,False,2,1,0.04359999999999986,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14008,2,False,2,1,0.04359999999999986,False,0.04359999999999986,True,False,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14008,2,False,2,1,0.010437578497864974,False,0.010437578497864974,True,False,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14008,2,False,2,1,0.11288553499255483,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14008,2,False,2,1,0.06928553499255496,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14009,0,True,6,1,0.1603659361239056,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14009,2,False,2,1,0.08865182973123464,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14009,2,False,2,1,0.04498427672955985,False,0.04498427672955985,True,False,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14009,2,False,2,1,0.1758986345381528,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14009,2,False,2,1,0.01135763052208838,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14009,2,False,2,1,0.0015738152610440537,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14009,2,False,2,1,0.1319999999999999,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14009,2,False,2,1,0.16303406387609476,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14009,2,False,2,1,0.1603659361239056,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14009,2,False,2,1,0.005292590361445804,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14009,2,False,2,1,0.31810740963855433,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14010,0,True,6,1,0.058311288937192174,True,0.0,False,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14010,2,False,2,1,0.08376795069337417,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14010,2,False,2,1,0.20731735884769265,True,0.0,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14010,2,False,2,1,0.058311288937192174,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14010,2,False,2,1,0.06695174900125478,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14010,2,False,2,1,0.12080000000000002,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14010,2,False,2,1,0.003969476520400583,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14010,2,False,2,1,0.02222911855273324,True,0.0,True,False,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14010,2,False,2,1,0.23473022618604844,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14011,0,True,6,1,0.03224641638225245,False,0.060638088737201334,False,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14011,2,False,2,1,0.03224641638225245,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14011,2,False,2,1,0.09825358361774739,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14011,2,False,2,1,0.09288450511945401,False,0.09288450511945401,False,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14011,2,False,2,1,0.13050000000000006,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14011,2,False,2,1,0.2868867849829351,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14011,2,False,2,1,0.1226789078498296,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14011,2,False,2,1,0.007821092150170461,True,0.0,True,True,False
+"n=4, m=2",4,2,1.0,F1-n4m2G1.0s14011,2,False,2,1,0.37335292832764533,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16000,0,True,6,1,0.011626353973342551,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16000,2,False,2,1,0.037800000000000056,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16000,2,False,2,1,0.037800000000000056,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16000,2,False,2,1,0.04545000000000021,False,0.04545000000000021,True,False,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16000,2,False,2,1,0.026173646026657726,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16000,2,False,2,1,0.011626353973342551,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16000,2,False,2,1,0.05781744558798696,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16000,2,False,2,1,0.088720153534672,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16001,0,True,6,1,0.0077351627701902625,True,0.0,False,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16001,2,False,2,1,0.02835440180586901,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16001,2,False,2,1,0.0077351627701902625,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16001,2,False,2,1,0.16174232505643338,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16001,2,False,2,1,0.09775,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16001,2,False,2,1,0.06970455916862228,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16001,2,False,2,1,0.1019954408313779,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16001,2,False,2,1,0.030861072902338194,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16001,2,False,2,1,0.05247773651793897,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16001,2,False,2,1,0.07068437860618682,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16001,2,False,2,1,0.060010160559031966,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16002,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16002,2,False,2,1,0.04939396551724129,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16002,2,False,2,1,0.1279939655172413,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16002,2,False,2,1,0.0786,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16003,0,True,6,1,0.03996809277334368,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16003,2,False,2,1,0.009199999999999875,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16003,2,False,2,1,0.03704360311009003,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16003,2,False,2,1,0.015550000000000175,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16003,2,False,2,1,0.0383,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16003,2,False,2,1,0.14364993556107875,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16003,2,False,2,1,0.12809993556107857,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16003,2,False,2,1,0.234156826874504,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16003,2,False,2,1,0.20940682687450396,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16003,2,False,2,1,0.2585749196478475,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16003,2,False,2,1,0.23708131653775766,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16004,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16004,2,False,2,1,0.04779847193515985,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16004,2,False,2,1,0.07287391280530597,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16004,2,False,2,1,0.03490040232035918,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16004,2,False,2,1,0.02619959767964075,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16004,2,False,2,1,0.01523246519246535,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16004,2,False,2,1,0.09440205385315248,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16004,2,False,2,1,0.060625808342287923,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16005,0,True,6,2,0.0,True,0.0,False,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16005,2,False,2,1,0.033815747075700564,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16005,2,False,2,1,0.033815747075700564,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16005,2,False,2,1,0.19210004614341902,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16005,2,False,2,1,0.030301060406493496,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16005,2,False,2,1,0.19976815765587919,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16005,2,False,2,1,0.011408114104596079,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16005,2,False,2,1,0.09056692187067616,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16005,2,False,2,1,0.06400586405631858,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16006,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16006,2,False,2,1,0.22694999999999999,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16006,2,False,2,1,0.3235999999999999,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16006,2,False,2,1,0.04779019070904633,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16006,2,False,2,1,0.037933844933305316,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16006,2,False,2,1,0.0966499999999999,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16006,2,False,2,1,0.21406892420537904,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16006,2,False,2,1,0.1662787334963327,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16007,0,True,6,1,0.05889544973544991,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16007,2,False,2,1,0.08996199532927962,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16007,2,False,2,1,0.05889544973544991,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16007,2,False,2,1,0.12028773945507565,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16007,2,False,2,1,0.15135428504890536,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16007,2,False,2,1,0.25516656084656075,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16007,2,False,2,1,0.23027949461474684,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16007,2,False,2,1,0.09081607290803628,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16007,2,False,2,1,0.1157031391398502,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16008,0,True,6,2,0.0,True,0.0,False,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16008,2,False,2,1,0.1035798447790448,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16008,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16008,2,False,2,1,0.11187938774509876,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16008,2,False,2,1,0.0837265625492396,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16008,2,False,2,1,0.018482084861183523,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16008,2,False,2,1,0.19189614450817105,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16008,2,False,2,1,0.04941744233103984,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16008,2,False,2,1,0.005239633820699918,False,0.005239633820699918,False,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16008,2,False,2,1,0.008834154007333561,False,0.008834154007333561,True,False,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16008,2,False,2,1,0.10881947859974472,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16008,2,False,2,1,0.09058876005050154,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16008,2,False,2,1,0.2921556448933482,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16009,0,True,6,1,0.03954840894568701,False,0.06673539228925529,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16009,2,False,2,1,0.04752599938142721,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16009,2,False,2,1,0.04498578829351274,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16009,2,False,2,1,0.0826827890560562,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16009,2,False,2,1,0.04496492773784677,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16009,2,False,2,1,0.24623796728753966,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16009,2,False,2,1,0.059222497508330196,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16009,2,False,2,1,0.03954840894568701,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16009,2,False,2,1,0.3209300894568692,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16009,2,False,2,1,0.09019568383698129,False,0.09019568383698129,False,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16010,0,True,6,1,0.10193270249810782,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16010,2,False,2,1,0.15520000000000023,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16010,2,False,2,1,0.23695738643513264,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16010,2,False,2,1,0.09194417407422373,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16010,2,False,2,1,0.09808598978631888,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16010,2,False,2,1,0.04423598978631915,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16010,2,False,2,1,0.22271922275670564,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16010,2,False,2,1,0.039167297501892406,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16010,2,False,2,1,0.23270775118058973,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16010,2,False,2,1,0.1426464998510686,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16011,0,True,6,1,0.02267892371420599,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16011,2,False,2,1,0.20188039878892905,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16011,2,False,2,1,0.0566048148572742,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16011,2,False,2,1,0.03206714011322287,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16011,2,False,2,1,0.23075,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16011,2,False,2,1,0.23221513556238804,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16011,2,False,2,1,0.10409735627360472,True,0.0,True,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16011,2,False,2,1,0.37602558393165486,True,0.0,True,False,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16011,2,False,2,1,0.2613869710467709,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16011,2,False,2,1,0.030636971046770878,True,0.0,False,True,False
+"n=4, m=2",4,2,1.5,F1-n4m2G1.5s16011,2,False,2,1,0.051850759198588836,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18000,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18000,2,False,2,1,0.14179183199448797,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18000,2,False,2,1,0.003981741573033659,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18000,2,False,2,1,0.3425226975832789,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18000,2,False,2,1,0.08284051880152843,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18000,2,False,2,1,0.13014051880152833,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18000,2,False,2,1,0.06258393024344544,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18000,2,False,2,1,0.07852613202796865,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18000,2,False,2,1,0.06326569996651932,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18000,2,False,2,1,0.3898226975832788,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18001,0,True,6,1,0.036458706143527975,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18001,2,False,2,1,0.07062107170580845,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18001,2,False,2,1,0.017277803203661346,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18001,2,False,2,1,0.16707240646953103,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18001,2,False,2,1,0.03851958830256508,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18001,2,False,2,1,0.29011617634445486,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18001,2,False,2,1,0.12177874603310745,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18001,2,False,2,1,0.17862725990643802,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18001,2,False,2,1,0.004419115398188511,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18001,2,False,2,1,0.11973865536817985,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18001,2,False,2,1,0.004744493558979546,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18001,2,False,2,1,0.005295587820693504,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18001,2,False,2,1,0.04801355958043496,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18002,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18002,2,False,2,1,0.20510000000000028,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18002,2,False,2,1,0.24597659259259275,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18002,2,False,2,1,0.07437659259259255,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18002,2,False,2,1,0.033500000000000085,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18003,0,True,6,1,0.1186324401022163,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18003,2,False,2,1,0.2804513927193404,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18003,2,False,2,1,0.005435294117646983,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18003,2,False,2,1,0.16484574517412742,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18003,2,False,2,1,0.09694701148385887,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18003,2,False,2,1,0.11563658391972353,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18003,2,False,2,1,0.18436132436974795,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18003,2,False,2,1,0.1783386756302523,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18003,2,False,2,1,0.19593142012950304,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18003,2,False,2,1,0.16676857987049765,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18003,2,False,2,1,0.19293556394701028,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18003,2,False,2,1,0.16976443605298996,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18004,0,True,6,1,0.025070038157070318,False,0.03543280430609985,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18004,2,False,2,1,0.021073873873873827,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18004,2,False,2,1,0.033326126126125954,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18004,2,False,2,1,0.04368889227515549,False,0.04368889227515549,False,True,True
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18004,2,False,2,1,0.029329961842929464,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18004,2,False,2,1,0.025070038157070318,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18004,2,False,2,1,0.08981219904078497,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18004,2,False,2,1,0.035313000548546025,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18004,2,False,2,1,0.019086999451453313,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18004,2,False,2,1,0.1332149164749219,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18004,2,False,2,1,0.01144292826848603,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18005,0,True,6,1,0.03664674278153024,False,0.03664674278153024,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18005,2,False,2,1,0.0031634166929936924,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18005,2,False,2,1,0.08101018748394839,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18005,2,False,2,1,0.07560533174350414,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18005,2,False,2,1,0.07099999999999973,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18005,2,False,2,1,0.07285346570278772,False,0.07285346570278772,False,True,True
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18005,2,False,2,1,0.017400000000000304,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18005,2,False,2,1,0.2739009475951182,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18005,2,False,2,1,0.20189905240488137,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18005,2,False,2,1,0.2539451605269387,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18005,2,False,2,1,0.22185483947306173,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18005,2,False,2,1,0.21773843760568123,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18005,2,False,2,1,0.2580615623943183,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18006,0,True,6,2,0.0,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18006,2,False,2,1,0.16839410256283438,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18006,2,False,2,1,0.05453672332942561,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18006,2,False,2,1,0.24283672332942552,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18006,2,False,2,1,0.04770927792635282,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18006,2,False,2,1,0.025530262104308088,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18006,2,False,2,1,0.1428638404585263,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18006,2,False,2,1,0.23600927792635273,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18007,0,True,6,1,0.03352157317859472,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18007,2,False,2,1,0.028314976582071605,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18007,2,False,2,1,0.1568332821431273,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18007,2,False,2,1,0.051304722185077534,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18007,2,False,2,1,0.03352157317859472,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18007,2,False,2,1,0.14877842682140585,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18007,2,False,2,1,0.3512902951748176,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18007,2,False,2,1,0.1140287431693987,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18007,2,False,2,1,0.011653333333333293,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18007,2,False,2,1,0.49170897527771595,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18008,0,True,6,1,0.06390000000000029,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18008,2,False,2,1,0.367755816435432,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18008,2,False,2,1,0.3873654834761322,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18008,2,False,2,1,0.011963404491267093,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18008,2,False,2,1,0.04620000000000002,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18008,2,False,2,1,0.11010000000000031,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18008,2,False,2,1,0.10135031332120481,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18008,2,False,2,1,0.413955816435432,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18008,2,False,2,1,0.3411654834761322,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18009,0,True,6,1,0.01658197276871709,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18009,2,False,2,1,0.023713206564209166,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18009,2,False,2,1,0.11020890856994026,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18009,2,False,2,1,0.01658197276871709,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18009,2,False,2,1,0.025142467532467627,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18009,2,False,2,1,0.010668055062166726,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18009,2,False,2,1,0.12196375706789775,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18009,2,False,2,1,0.18087717311663276,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18009,2,False,2,1,0.27880688825903954,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18009,2,False,2,1,0.3036068882590395,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18009,2,False,2,1,0.1880823981098554,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18010,0,True,6,1,0.027272740088105873,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18010,2,False,2,1,0.11158636363636365,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18010,2,False,2,1,0.11209186037723429,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18010,2,False,2,1,0.027272740088105873,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18010,2,False,2,1,0.049654046145887865,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18010,2,False,2,1,0.021704221006871416,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18010,2,False,2,1,0.11744013136137554,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18010,2,False,2,1,0.16041105682333034,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18010,2,False,2,1,0.15367664148750726,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18010,2,False,2,1,0.031765647546037945,True,0.0,True,False,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18010,2,False,2,1,0.019091254471444552,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18010,2,False,2,1,0.1089994076682248,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18011,0,True,6,1,0.057351218242755575,False,0.057351218242755575,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18011,2,False,2,1,0.10617239762163955,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18011,2,False,2,1,0.07522760237836001,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18011,2,False,2,1,0.018741592952206343,True,0.0,False,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18011,2,False,2,1,0.11121539182748652,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18011,2,False,2,1,0.07018460817251349,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18011,2,False,2,1,0.09176760420363728,False,0.09176760420363728,False,True,True
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18011,2,False,2,1,0.09594538959288235,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18011,2,False,2,1,0.08545461040711766,True,0.0,True,True,False
+"n=4, m=2",4,2,2.0,F1-n4m2G2.0s18011,2,False,2,1,0.07262122047735975,False,0.07262122047735975,False,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20000,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20000,2,False,2,1,0.27355603817955476,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20000,2,False,2,1,0.0031560381795543435,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20000,2,False,2,1,0.008259924705882327,False,0.008259924705882327,False,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20000,2,False,2,1,0.32420000000000027,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20000,2,False,2,1,0.03875243204796863,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20000,2,False,2,1,0.055431335189799036,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20000,2,False,2,1,0.001631335189799188,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20000,2,False,2,1,0.04701235675385096,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20001,0,True,6,1,0.006088434106876539,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20001,2,False,2,1,0.1482000000000001,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20001,2,False,2,1,0.03536393458210507,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20001,2,False,2,1,0.0979665563778842,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20001,2,False,2,1,0.006381407344312029,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20001,2,False,2,1,0.06590000000000007,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20001,2,False,2,1,0.03146745193448841,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20001,2,False,2,1,0.11043344362211571,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20001,2,False,2,1,0.11075046582498915,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20001,2,False,2,1,0.07902163723916522,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20001,2,False,2,1,0.16132163723916526,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20001,2,False,2,1,0.05411156589312327,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20001,2,False,2,1,0.20231156589312338,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20002,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20002,2,False,2,1,0.18444964703318867,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20002,2,False,2,1,0.10711440890823809,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20002,2,False,2,1,0.029814408908238388,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20002,2,False,2,1,0.3532808825971441,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20002,2,False,2,1,0.19789246518889092,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20002,2,False,2,1,0.013442818155702252,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20002,2,False,2,1,0.2791544284386056,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20002,2,False,2,1,0.003173545841461234,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20003,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20003,2,False,2,1,0.20534001289716208,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20003,2,False,2,1,0.02433752130681821,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20003,2,False,2,1,0.2296775342039803,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20003,2,False,2,1,0.2306175476748078,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20003,2,False,2,1,0.0002548877146630879,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20003,2,False,2,1,0.032388558637898246,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20003,2,False,2,1,0.0025631482101036163,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20003,2,False,2,1,0.0035984147952445866,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20003,2,False,2,1,0.20182740383215414,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20004,0,True,6,1,0.004958924412449495,False,0.004958924412449495,False,False,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20004,2,False,2,1,0.10047464431884645,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20004,2,False,2,1,0.38677464431884623,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20004,2,False,2,1,0.250904311493521,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20004,2,False,2,1,0.045526529640504965,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20004,2,False,2,1,0.2940999999999998,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20004,2,False,2,1,0.2499000260764208,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20004,2,False,2,1,0.0010042854171001814,False,0.0010042854171001814,False,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20005,0,True,6,1,0.019674886746101627,False,0.047908302939283054,True,False,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20005,2,False,2,1,0.2341000000000002,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20005,2,False,2,1,0.006094331748034865,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20005,2,False,2,1,0.2840334161931817,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20005,2,False,2,1,0.028233416193181426,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20005,2,False,2,1,0.0696083029392831,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20005,2,False,2,1,0.047908302939283054,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20005,2,False,2,1,0.021700000000000053,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20005,2,False,2,1,0.021700000000000053,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20005,2,False,2,1,0.012026409439970465,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20005,2,False,2,1,0.25580000000000025,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20005,2,False,2,1,0.03729869025510668,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20005,2,False,2,1,0.2713986902551069,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20006,0,True,6,1,0.00016244357816974642,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20006,2,False,2,1,0.15238635342185924,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20006,2,False,2,1,0.047800000000000065,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20006,2,False,2,1,0.13798230932930577,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20006,2,False,2,1,0.2932784842705525,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20006,2,False,2,1,0.00016244357816974642,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20006,2,False,2,1,0.0019282630782657684,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20006,2,False,2,1,0.3284402596780951,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20007,0,True,6,1,0.01228179884646785,True,0.0,False,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20007,2,False,2,1,0.03730000000000011,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20007,2,False,2,1,0.1609162616384614,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20007,2,False,2,1,0.24821626163846133,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20007,2,False,2,1,0.17857463133916784,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20007,2,False,2,1,0.22857463133916767,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20007,2,False,2,1,0.04999999999999982,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20007,2,False,2,1,0.08729999999999993,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20007,2,False,2,1,0.2535928324926999,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20007,2,False,2,1,0.21629283249269982,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20008,0,True,6,1,0.055597571063318085,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20008,2,False,2,1,0.2126999999999999,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20008,2,False,2,1,0.5790175398025434,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20008,2,False,2,1,0.2703460466491947,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20008,2,False,2,1,0.36631753980254356,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20008,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20008,2,False,2,1,0.43709683134757604,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20008,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20008,2,False,2,1,0.22234835576169942,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20008,2,False,2,1,0.055597571063318085,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20009,0,True,6,1,0.06544211836115332,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20009,2,False,2,1,0.10073742442956535,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20009,2,False,2,1,0.1973899564709627,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20009,2,False,2,1,0.18969999999999976,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20009,2,False,2,1,0.06544211836115332,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20009,2,False,2,1,0.08785788163884689,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20009,2,False,2,1,0.29539483262379873,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20009,2,False,2,1,0.22476312794288988,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20010,0,True,6,2,0.0,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20010,2,False,2,1,0.035177632506677714,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20010,2,False,2,1,0.04607476475342831,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20010,2,False,2,1,0.010897132246750596,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20010,2,False,2,1,0.13419999999999987,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20010,2,False,2,1,0.3556999999999997,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20010,2,False,2,1,0.2214999999999998,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20011,0,True,6,2,0.0,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20011,2,False,2,1,0.2832538447534354,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20011,2,False,2,1,0.34380095996253823,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20011,2,False,2,1,0.08552915008194795,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20011,2,False,2,1,0.04278225080656317,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20011,2,False,2,1,0.07299123590487877,True,0.0,True,False,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20011,2,False,2,1,0.04679228802473512,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20011,2,False,2,1,0.0900137724652339,True,0.0,False,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20011,2,False,2,1,0.1932400722882015,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20011,2,False,2,1,0.005342024512829724,True,0.0,True,True,False
+"n=4, m=2",4,2,2.5,F1-n4m2G2.5s20011,2,False,2,1,0.2938228194917356,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22000,0,True,6,4,0.0,True,0.0,False,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22000,2,False,2,1,0.5365999999999997,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22000,2,False,2,1,0.3183,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22000,2,False,2,1,0.012907413727720751,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22000,2,False,2,1,0.21829999999999972,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22000,2,False,2,1,0.3183,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22000,2,False,2,2,2.220446049250313e-16,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22000,2,False,2,1,0.3312074137277208,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22001,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22001,2,False,2,1,0.3791377687391053,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22001,2,False,2,1,0.05727142403576613,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22001,2,False,2,1,0.19740000000000002,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22001,2,False,2,1,0.018492056535553747,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22001,2,False,2,1,0.5765377687391053,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22001,2,False,2,1,0.03877936750021238,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22002,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22002,2,False,2,1,0.0925680895366996,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22002,2,False,2,1,0.0007999999999999119,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22002,2,False,2,1,0.1049,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22002,2,False,2,1,0.1049,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22002,2,False,2,1,0.0123319104633004,False,0.0123319104633004,False,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22002,2,False,2,1,0.1056999999999999,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22003,0,True,6,4,0.0,True,0.0,True,False,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22003,2,False,2,1,0.1068,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22003,2,False,2,1,0.19687461991932986,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22003,2,False,2,1,0.3498986135181976,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22003,2,False,2,1,0.30367461991932987,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22003,2,False,2,1,0.24309861351819761,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22003,2,False,2,1,0.1068,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22004,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22004,2,False,2,1,0.1649177579835115,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22004,2,False,2,1,0.1380344262295079,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22004,2,False,2,1,0.026883331754003592,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22004,2,False,2,1,0.11029909066595334,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22004,2,False,2,1,0.6715,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22004,2,False,2,1,0.7817990906659533,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22005,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22005,2,False,2,1,0.08620418577981637,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22005,2,False,2,1,0.44589999999999996,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22005,2,False,2,1,0.6031,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22005,2,False,2,1,0.4488485941596605,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22005,2,False,2,1,0.36264440837984413,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22005,2,False,2,1,0.1572,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22006,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22006,2,False,2,1,0.10550000000000015,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22006,2,False,2,1,0.08400907881609587,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22006,2,False,2,1,0.09050481264216481,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22006,2,False,2,1,0.18950907881609602,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22006,2,False,2,1,0.011725392074704022,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22006,2,False,2,1,0.07877942056746079,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22007,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22007,2,False,2,1,0.5225,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22007,2,False,2,1,9.85994397764145e-05,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22007,2,False,2,1,0.5281000000000002,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22007,2,False,2,1,0.10704637855142085,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22007,2,False,2,1,0.005600000000000271,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22007,2,False,2,1,0.10694777911164444,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22008,0,True,6,2,0.0,True,0.0,False,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22008,2,False,2,1,0.3077319161509091,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22008,2,False,2,1,0.21120229384679767,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22008,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22008,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22008,2,False,2,1,0.08719999999999994,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22008,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22008,2,False,2,1,0.12727184202192499,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22008,2,False,2,1,0.18046007412898413,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22008,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22008,2,False,2,1,0.2984022938467976,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22009,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22009,2,False,2,1,0.55915625,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22009,2,False,2,1,0.5317000000000001,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22009,2,False,2,1,0.02745624999999996,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22010,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22010,2,False,2,1,0.05159999999999987,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22010,2,False,2,1,0.13369999999999993,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22010,2,False,2,1,0.08210000000000006,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22011,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22011,2,False,2,1,0.03739999999999988,True,0.0,True,False,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22011,2,False,2,1,0.0815999999999999,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22011,2,False,2,1,0.04420000000000002,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22011,2,False,2,1,0.04420000000000002,True,0.0,False,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22011,2,False,2,1,0.0815999999999999,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22011,2,False,2,1,0.03739999999999988,True,0.0,True,True,False
+"n=4, m=2",4,2,3.0,F1-n4m2G3.0s22011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26000,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26000,2,False,2,1,0.2770999999999999,True,0.0,False,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26000,2,False,2,1,0.18520000000000003,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26000,2,False,2,1,0.18520000000000003,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26000,2,False,2,1,0.46229999999999993,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26000,2,False,2,1,0.18520000000000003,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26001,0,True,6,4,0.0,True,0.0,True,False,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26001,2,False,2,1,0.30900000000000016,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26001,2,False,2,1,0.5402,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26001,2,False,2,1,0.23119999999999985,True,0.0,True,False,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26001,2,False,2,1,0.23119999999999985,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26001,2,False,2,1,0.31299999999999994,True,0.0,True,False,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26001,2,False,2,1,0.0818000000000001,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26002,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26002,2,False,2,1,0.3805999999999998,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26002,2,False,2,1,0.47250000000000014,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26002,2,False,2,1,0.09190000000000031,True,0.0,False,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26002,2,False,2,1,0.09190000000000031,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26002,2,False,2,1,0.38450000000000006,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26002,2,False,2,1,0.29259999999999975,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26003,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26003,2,False,2,1,0.15139999999999976,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26003,2,False,2,2,4.440892098500626e-16,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26003,2,False,2,1,0.21260000000000012,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26003,2,False,2,2,4.440892098500626e-16,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26003,2,False,2,1,0.061200000000000365,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26004,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26004,2,False,2,1,0.5549,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26004,2,False,2,1,0.054199999999999804,True,0.0,True,False,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26004,2,False,2,1,0.5007000000000001,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26004,2,False,2,1,0.5007000000000001,True,0.0,False,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26004,2,False,2,1,0.054199999999999804,True,0.0,True,False,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26004,2,False,2,1,0.5549,True,0.0,False,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26005,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26005,2,False,2,1,0.3023000000000007,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26005,2,False,2,1,0.31000000000000005,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26005,2,False,2,1,0.6402000000000005,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26005,2,False,2,1,0.31000000000000005,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26005,2,False,2,1,0.33789999999999987,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26006,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26006,2,False,2,2,4.440892098500626e-16,True,4.440892098500626e-16,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26006,2,False,2,2,4.440892098500626e-16,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26006,2,False,2,1,0.12749999999999995,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26006,2,False,2,1,0.3365,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26006,2,False,2,1,0.46399999999999997,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26007,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26007,2,False,2,1,0.23440000000000039,True,0.0,False,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26007,2,False,2,1,0.01739999999999986,True,0.0,True,False,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26007,2,False,2,1,0.21700000000000053,True,0.0,True,False,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26007,2,False,2,1,0.21700000000000053,True,0.0,True,False,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26007,2,False,2,1,0.01739999999999986,True,0.0,False,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26007,2,False,2,1,0.23440000000000039,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26008,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26008,2,False,2,1,0.23900000000000032,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26008,2,False,2,1,0.23129999999999962,True,0.0,False,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26008,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26008,2,False,2,1,0.47029999999999994,True,0.0,False,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26008,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26008,2,False,2,1,0.47029999999999994,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26008,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26008,2,False,2,1,0.23129999999999962,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26008,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26008,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26008,2,False,2,1,0.23900000000000032,True,0.0,True,False,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26009,0,True,6,4,0.0,True,0.0,False,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26009,2,False,2,1,0.1882999999999999,True,0.0,False,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26009,2,False,2,1,0.33499999999999996,True,0.0,False,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26009,2,False,2,1,0.14670000000000005,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26009,2,False,2,1,0.14670000000000005,True,0.0,False,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26009,2,False,2,1,0.33499999999999996,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26009,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26009,2,False,2,1,0.1882999999999999,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26010,0,True,6,4,0.0,True,0.0,False,False,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26010,2,False,2,1,0.046699999999999964,True,0.0,True,False,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26010,2,False,2,1,0.020399999999999974,True,0.0,True,False,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26010,2,False,2,1,0.02629999999999999,True,0.0,True,False,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26010,2,False,2,1,0.02629999999999999,True,0.0,False,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26010,2,False,2,1,0.020399999999999974,True,0.0,True,False,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26010,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26010,2,False,2,1,0.046699999999999964,True,0.0,False,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26011,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26011,2,False,2,1,0.5223000000000004,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26011,2,False,2,1,0.18610000000000015,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26011,2,False,2,1,0.21840000000000037,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26011,2,False,2,1,0.30390000000000006,True,0.0,True,True,False
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26011,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2",4,2,4.0,F1-n4m2G4.0s26011,2,False,2,1,0.18610000000000015,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22000,0,True,6,2,0.0,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22000,2,False,2,1,0.5154000000000001,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22000,2,False,2,1,0.15799999999999992,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22000,2,False,2,1,0.04551491033435351,False,0.04551491033435351,True,False,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22000,2,False,2,1,0.002811233701103255,False,0.002811233701103255,True,False,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22000,2,False,2,1,0.35740000000000016,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22000,2,False,2,1,0.05026763657665256,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22000,2,False,2,1,0.07817154129053838,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22000,2,False,2,1,0.09578254691100607,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22000,2,False,2,1,0.06414218149895756,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22001,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22001,2,False,2,1,0.3416999999999999,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22001,2,False,2,1,0.006652287863838424,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22001,2,False,2,1,0.24019999999999975,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22001,2,False,2,1,0.05430717308079802,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22001,2,False,2,1,0.10150000000000015,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22002,0,True,6,1,0.0917050679036282,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22002,2,False,2,1,0.14113986746403784,False,0.14113986746403784,True,False,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22002,2,False,2,1,0.1699737708097624,False,0.1699737708097624,True,False,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22002,2,False,2,1,0.2975499969057491,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22002,2,False,2,1,0.025346583947026602,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22002,2,False,2,1,0.22092218577882283,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22002,2,False,2,1,0.038635757232907686,False,0.038635757232907686,True,False,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22002,2,False,2,1,0.048899999999999944,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22002,2,False,2,1,0.018740948485733933,False,0.018740948485733933,True,False,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22002,2,False,2,1,0.024088215613383035,False,0.024088215613383035,True,False,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22002,2,False,2,1,0.09975341295872253,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22003,0,True,6,4,0.0,True,0.0,True,False,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22003,2,False,2,1,0.13070000000000004,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22003,2,False,2,1,0.018164834515366657,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22003,2,False,2,1,0.021712605135015384,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22003,2,False,2,1,0.21308658698539173,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22003,2,False,2,1,0.15241260513501542,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22003,2,False,2,1,0.09266311420982731,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22003,2,False,2,1,0.010276527224435617,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22003,2,False,2,1,0.13070000000000004,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22004,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22004,2,False,2,1,0.07284999999999986,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22004,2,False,2,1,0.03367910088583681,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22004,2,False,2,1,0.07284999999999986,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22004,2,False,2,1,0.08329999999999993,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22004,2,False,2,1,0.5851999999999999,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22004,2,False,2,1,0.5019,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22005,0,True,6,1,0.03216153925639276,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22005,2,False,2,1,0.03216153925639276,False,0.03216153925639276,True,False,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22005,2,False,2,1,0.08753572810791521,False,0.08753572810791521,True,False,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22005,2,False,2,1,0.17216786861968458,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22005,2,False,2,1,0.0019321313803155604,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22005,2,False,2,1,0.41299917793886864,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22005,2,False,2,1,0.17410000000000014,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22005,2,False,2,1,0.10273730535510817,False,0.10273730535510817,True,False,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22005,2,False,2,1,0.5565884607436073,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22005,2,False,2,1,0.34268491517823785,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22006,0,True,6,1,0.023280900438920504,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22006,2,False,2,1,0.22246564785299072,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22006,2,False,2,1,0.07640000000000002,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22006,2,False,2,1,0.03385935548658536,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22006,2,False,2,1,2.865179073685553e-05,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22006,2,False,2,1,0.33475436095780253,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22006,2,False,2,1,0.09955761592281931,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22006,2,False,2,1,0.023280900438920504,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22006,2,False,2,1,0.05311909956107952,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22007,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22007,2,False,2,1,0.44860000000000033,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22007,2,False,2,1,0.055847254045723105,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22007,2,False,2,1,0.3974000000000002,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22007,2,False,2,1,0.08135000000000003,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22007,2,False,2,1,0.051200000000000134,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22007,2,False,2,1,0.008710403287952806,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,0.5,F2-n4m2G0.5s22007,2,False,2,1,0.02550274595427693,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24000,0,True,6,2,0.0,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24000,2,False,2,1,0.0039080063245653385,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24000,2,False,2,1,0.010846562308164387,False,0.010846562308164387,True,False,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24000,2,False,2,1,0.05755038639876342,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24000,2,False,2,1,0.007640297878319657,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24000,2,False,2,1,0.0003597021216805718,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24000,2,False,2,1,0.09530000000000016,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24000,2,False,2,1,0.008000000000000007,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24000,2,False,2,1,0.04646901784459767,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24001,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24001,2,False,2,1,0.2909999999999999,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24001,2,False,2,1,0.45740000000000025,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24001,2,False,2,1,0.09853018986978701,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24001,2,False,2,1,0.16640000000000033,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24002,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24002,2,False,2,1,0.04679999999999929,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24002,2,False,2,1,0.06590000000000007,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24002,2,False,2,1,0.046800000000000175,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24002,2,False,2,1,0.539699999999999,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24002,2,False,2,1,0.5587999999999997,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24003,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24003,2,False,2,1,0.33859999999999957,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24003,2,False,2,1,0.051300000000000345,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24003,2,False,2,1,0.17228127742564592,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24003,2,False,2,1,0.5593000000000004,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24003,2,False,2,1,0.5893812774256464,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24003,2,False,2,1,0.06181472010274236,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24004,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24004,2,False,2,1,0.005561536837660919,False,0.005561536837660919,True,False,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24004,2,False,2,1,0.11946520809096706,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24004,2,False,2,1,0.05180000000000007,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24004,2,False,2,1,0.19010000000000016,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24004,2,False,2,1,0.1383000000000001,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24005,0,True,6,1,0.11110341755156838,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24005,2,False,2,1,0.12880000000000003,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24005,2,False,2,1,0.1724524073182474,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24005,2,False,2,1,0.03860000000000019,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24005,2,False,2,1,0.30125240731824743,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24005,2,False,2,1,0.09019999999999984,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24005,2,False,2,1,0.06530394238984494,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24005,2,False,2,1,0.06349605761015464,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24006,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24006,2,False,2,1,0.0686,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24006,2,False,2,1,0.056774947368420925,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24006,2,False,2,1,0.14159999999999995,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24006,2,False,2,1,0.008230956455599792,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24006,2,False,2,1,0.07299999999999995,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24006,2,False,2,1,0.04278000452386377,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24007,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24007,2,False,2,1,0.34620000000000006,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24007,2,False,2,1,0.3298000000000001,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.0,F2-n4m2G1.0s24007,2,False,2,1,0.01639999999999997,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26000,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26000,2,False,2,1,0.024279445676274936,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26000,2,False,2,1,0.5174294456762749,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26000,2,False,2,1,0.05149999999999988,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26000,2,False,2,1,0.005184576862074408,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26000,2,False,2,1,0.5446499999999999,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26000,2,False,2,1,0.017537820787652425,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26001,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26001,2,False,2,1,0.2510932147870846,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26001,2,False,2,1,0.3648932147870849,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26001,2,False,2,1,0.15281184268629522,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26001,2,False,2,1,0.050221143059993034,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26001,2,False,2,1,0.11380000000000035,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26001,2,False,2,1,0.06742185836960068,False,0.06742185836960068,False,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26001,2,False,2,1,0.08538998431669453,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26001,2,False,2,1,0.04822776146603225,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26002,0,True,6,1,0.2314057629173476,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26002,2,False,2,1,0.21068845382710233,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26002,2,False,2,1,0.22071154617289768,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26002,2,False,2,1,0.06608929940211627,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26002,2,False,2,1,0.28476326493802073,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26002,2,False,2,1,0.23784424218604538,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26002,2,False,2,1,0.19355575781395462,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26002,2,False,2,1,0.19073148391990635,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26002,2,False,2,1,0.39938235711001546,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26002,2,False,2,1,0.24279116939059975,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26002,2,False,2,1,0.15295502871742883,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26002,2,False,2,1,0.23635269012190196,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26002,2,False,2,1,0.027604682260897295,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26003,0,True,6,2,0.0,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26003,2,False,2,1,0.2738125485403935,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26003,2,False,2,1,0.07558599864222648,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26003,2,False,2,1,0.26824537634408596,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26003,2,False,2,1,0.13805462365591392,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26003,2,False,2,1,0.057435390569659184,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26003,2,False,2,1,0.16153092146654924,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26003,2,False,2,1,0.10232082040536694,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26003,2,False,2,1,0.2948265498981675,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26003,2,False,2,1,0.15923654195423254,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26003,2,False,2,1,0.39352282553929463,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26004,0,True,6,1,0.6903056551753619,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26004,2,False,2,1,0.37859125847240804,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26004,2,False,2,1,0.02155370452528782,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26004,2,False,2,1,0.09498577443416156,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26004,2,False,2,1,0.09919161368938134,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26004,2,False,2,1,0.36650028206177465,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26004,2,False,2,1,0.020219653368215074,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26004,2,False,2,1,0.22435636477509124,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26004,2,False,2,1,0.3971019885029188,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26004,2,False,2,1,0.13142056945040803,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26004,2,False,2,1,0.11822538643194491,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26004,2,False,2,1,0.4087914296095234,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26004,2,False,2,1,0.2510085703904763,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26005,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26005,2,False,2,1,0.07737745953898933,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26005,2,False,2,1,0.22859022069641988,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26005,2,False,2,1,0.06393826529349145,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26005,2,False,2,1,0.5019627611574311,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26005,2,False,2,1,0.03819792085056095,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26005,2,False,2,1,0.35075000000000056,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26006,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26006,2,False,2,1,0.11748632586732066,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26006,2,False,2,1,0.0813570654697422,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26006,2,False,2,1,0.2688570654697422,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26006,2,False,2,1,0.25412618825722255,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26006,2,False,2,1,0.07255023299161234,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26006,2,False,2,1,0.3690759552656102,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26007,0,True,6,1,0.10158627363353512,False,0.10158627363353512,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26007,2,False,2,1,0.35150145363217744,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26007,2,False,2,1,0.40909854636782184,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26007,2,False,2,1,0.006064027956776297,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26007,2,False,2,1,0.13929794712357513,False,0.13929794712357513,False,True,True
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26007,2,False,2,1,0.3137897801421392,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26007,2,False,2,1,0.44681021985786185,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26007,2,False,2,1,0.24438319951605791,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26007,2,False,2,1,0.3658911309392874,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26007,2,False,2,1,0.3420821847673414,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26007,2,False,2,1,0.315098904671288,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26007,2,False,2,1,0.20872216428745993,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,1.5,F2-n4m2G1.5s26007,2,False,2,1,0.060230952768177026,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28000,0,True,6,1,0.09409035363148899,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28000,2,False,2,1,0.27012399753238725,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28000,2,False,2,1,0.27797600246761256,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28000,2,False,2,1,0.27484402668283714,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28000,2,False,2,1,0.2732559733171609,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28000,2,False,2,1,0.00679958824790905,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28000,2,False,2,1,0.2823730766856638,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28000,2,False,2,1,0.27876983324220905,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28000,2,False,2,1,0.26933016675779076,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28000,2,False,2,1,0.011984203102961555,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28000,2,False,2,1,0.18435652467831964,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28000,2,False,2,1,0.0980161601908609,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28001,0,True,6,1,0.21143584425581086,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28001,2,False,2,1,0.03263660100010046,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28001,2,False,2,1,0.4477929554127744,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28001,2,False,2,1,0.21143584425581086,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28001,2,False,2,1,0.22786415574419028,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28001,2,False,2,1,0.20660471417965898,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28001,2,False,2,1,0.23269528582034216,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28001,2,False,2,1,0.3917920416776344,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28001,2,False,2,1,0.00687116371933838,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28001,2,False,2,1,0.05602242165929727,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28001,2,False,2,1,0.11845104132774953,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28001,2,False,2,1,0.21480811596176963,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28001,2,False,2,1,0.22449188403823062,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28002,0,True,6,1,0.07704254248752429,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28002,2,False,2,1,0.059073807140474166,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28002,2,False,2,1,0.07902619285952639,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28002,2,False,2,1,0.07927262872628704,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28002,2,False,2,1,0.07796337094120265,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28002,2,False,2,1,0.05999463559415252,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28002,2,False,2,1,0.07810536440584803,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28002,2,False,2,1,0.1449797700242632,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28002,2,False,2,1,0.3410270178519239,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28002,2,False,2,1,0.06998861246473398,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28002,2,False,2,1,0.06811138753526524,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28002,2,False,2,1,0.29162239832149783,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28002,2,False,2,1,0.0936979255643684,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28003,0,True,6,1,0.2550134123250505,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28003,2,False,2,1,0.839989394526425,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28003,2,False,2,1,0.07503967522337263,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28003,2,False,2,1,0.5014851432752749,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28003,2,False,2,1,0.07818795114335542,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28003,2,False,2,1,0.3351417699655741,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28003,2,False,2,1,0.019650948882767416,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28003,2,False,2,1,0.3036865876749495,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28003,2,False,2,1,0.2550134123250505,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28003,2,False,2,1,0.21638572214652552,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28003,2,False,2,1,0.34231427785347446,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28003,2,False,2,1,0.19373037511436397,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28003,2,False,2,1,0.364969624885636,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28004,0,True,6,1,0.0383668724119719,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28004,2,False,2,1,0.07396747895870082,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28004,2,False,2,1,0.03874916371289672,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28004,2,False,2,1,0.23394483403897004,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28004,2,False,2,1,0.3331551659610299,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28004,2,False,2,1,0.23356254273804522,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28004,2,False,2,1,0.3335374572619547,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28004,2,False,2,1,0.3054278385715481,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28004,2,False,2,1,0.10396828478964393,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28004,2,False,2,1,0.26665434396647747,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28004,2,False,2,1,0.1243796030441926,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28004,2,False,2,1,0.2831555432529882,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28004,2,False,2,1,0.28394445674701174,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28005,0,True,6,1,0.13986072186836562,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28005,2,False,2,1,0.16163927813163514,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28005,2,False,2,1,0.13986072186836562,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28005,2,False,2,1,0.5304984344748913,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28005,2,False,2,1,0.13685516120969687,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28005,2,False,2,1,0.16464483879030212,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28005,2,False,2,1,0.16165389986831968,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28005,2,False,2,1,0.12612980215505054,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28005,2,False,2,1,0.17537019784494845,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28005,2,False,2,1,0.36851669645259477,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28006,0,True,6,1,0.1585425714285713,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28006,2,False,2,1,0.07447627413559843,False,0.07447627413559843,False,True,True
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28006,2,False,2,1,0.04190840413998975,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28006,2,False,2,1,0.6772398863789499,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28006,2,False,2,1,0.020134883720930308,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28006,2,False,2,1,0.7519981531642452,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28006,2,False,2,1,0.24527446138818032,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28006,2,False,2,1,0.12902553861181953,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28006,2,False,2,1,0.22793496675695613,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28006,2,False,2,1,0.14636503324304329,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28006,2,False,2,1,0.1367802415701469,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28006,2,False,2,1,0.2057482815131788,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28007,0,True,6,1,0.010112259090006237,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28007,2,False,2,1,0.0026850665352391445,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28007,2,False,2,1,0.3557243179631162,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28007,2,False,2,1,0.0055850528618299755,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28007,2,False,2,1,0.010614947138170017,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28007,2,False,2,1,0.010112259090006237,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28007,2,False,2,1,0.006087740909994199,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28007,2,False,2,1,0.2805355257357567,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28007,2,False,2,1,0.019887502247796895,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28007,2,False,2,1,0.27690803617480864,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28007,2,False,2,1,0.04364339319608712,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28007,2,False,2,1,0.011775083040485246,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,2.0,F2-n4m2G2.0s28007,2,False,2,1,0.004424916959514746,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32000,0,True,6,4,0.0,True,0.0,False,False,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32000,2,False,2,1,0.14179999999999993,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32000,2,False,2,1,0.007699999999999818,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32000,2,False,2,1,0.1341000000000001,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32000,2,False,2,1,0.1341000000000001,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32000,2,False,2,1,0.007699999999999818,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32000,2,False,2,1,0.14179999999999993,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32001,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32001,2,False,2,1,0.021800000000000708,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32001,2,False,2,1,0.5541729127456145,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32001,2,False,2,1,0.6850649530127146,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32001,2,False,2,1,0.6164598013117208,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32001,2,False,2,1,0.6632649530127139,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32001,2,False,2,1,0.06228688856610631,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32002,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32002,2,False,2,1,0.08380910687349452,False,0.08380910687349452,False,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32002,2,False,2,1,0.815074686876283,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32002,2,False,2,1,0.8723746868762836,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32002,2,False,2,1,0.4493330371219715,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32002,2,False,2,1,0.533142143995466,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32002,2,False,2,1,0.05730000000000057,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32003,0,True,6,2,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32003,2,False,2,1,0.06462507959083785,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32003,2,False,2,1,0.051582789638266124,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32003,2,False,2,1,0.11620786922910398,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32003,2,False,2,1,0.8879790149892934,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32003,2,False,2,1,0.3362790149892936,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32003,2,False,2,1,0.5516999999999999,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32004,0,True,6,2,0.0,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32004,2,False,2,1,0.14584917798427455,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32004,2,False,2,1,0.36536928651755574,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32004,2,False,2,1,0.5112184645018303,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32004,2,False,2,1,0.8910062926793447,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32004,2,False,2,1,0.7620062926793443,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32004,2,False,2,1,0.12900000000000045,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32005,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32005,2,False,2,1,0.529954724007613,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32005,2,False,2,1,0.27598457079532857,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32005,2,False,2,1,0.1548999999999996,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32005,2,False,2,1,0.15018756286761636,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32005,2,False,2,1,0.3750547240076134,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32005,2,False,2,1,0.42617213366294493,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32006,0,True,6,4,0.0,True,0.0,False,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32006,2,False,2,1,0.2638999999999996,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32006,2,False,2,1,0.1294000000000004,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32006,2,False,2,1,0.13449999999999918,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32006,2,False,2,1,0.13449999999999918,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32006,2,False,2,1,0.1294000000000004,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32006,2,False,2,1,0.2638999999999996,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32007,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32007,2,False,2,1,0.07540000000000013,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32007,2,False,2,1,0.6898000000000009,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32007,2,False,2,1,0.6144000000000007,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32007,2,False,2,1,0.6144000000000007,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32007,2,False,2,1,0.6898000000000009,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32007,2,False,2,1,0.07540000000000013,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,3.0,F2-n4m2G3.0s32007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36000,0,True,6,3,0.0,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36000,2,False,2,1,0.5136000000000003,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36000,2,False,2,1,0.18380000000000019,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36000,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36000,2,False,2,1,0.3298000000000001,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36001,0,True,6,4,0.0,True,0.0,False,False,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36001,2,False,2,1,0.04520000000000124,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36001,2,False,2,2,4.440892098500626e-16,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36001,2,False,2,1,0.03820000000000068,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36001,2,False,2,1,0.006999999999999673,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36001,2,False,2,2,4.440892098500626e-16,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36001,2,False,2,1,0.007000000000000561,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36001,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36001,2,False,2,1,0.03820000000000068,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36001,2,False,2,2,8.881784197001252e-16,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36001,2,False,2,1,0.04520000000000124,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36002,0,True,6,4,0.0,True,0.0,False,False,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36002,2,False,2,1,0.48930000000000007,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36002,2,False,2,1,0.17720000000000002,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36002,2,False,2,1,0.11120000000000019,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36002,2,False,2,1,0.11120000000000019,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36002,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36002,2,False,2,1,0.31210000000000004,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36003,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36003,2,False,2,1,0.15410000000000057,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36003,2,False,2,1,0.3157999999999994,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36003,2,False,2,1,0.4699,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36003,2,False,2,1,0.4699,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36003,2,False,2,1,0.3157999999999994,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36003,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36003,2,False,2,1,0.15410000000000057,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36004,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36004,2,False,2,1,0.2721999999999998,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36004,2,False,2,1,0.3674999999999997,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36004,2,False,2,1,0.09529999999999994,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36004,2,False,2,1,0.09529999999999994,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36004,2,False,2,1,0.3674999999999997,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36004,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36004,2,False,2,1,0.2721999999999998,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36005,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36005,2,False,2,1,0.0844999999999998,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36005,2,False,2,1,0.0844999999999998,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36005,2,False,2,1,0.23029999999999973,True,0.0,True,False,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36005,2,False,2,1,0.08450000000000024,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36005,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36005,2,False,2,1,0.31479999999999997,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36006,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36006,2,False,2,1,0.5726000000000004,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36006,2,False,2,1,0.5726000000000004,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36006,2,False,2,1,0.5726000000000004,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36006,2,False,2,2,8.881784197001252e-16,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36006,2,False,2,1,1.0567000000000002,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36006,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36006,2,False,2,1,1.6292999999999997,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36007,0,True,6,4,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36007,2,False,2,1,1.1570999999999998,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36007,2,False,2,1,0.7994000000000003,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36007,2,False,2,1,0.35769999999999946,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36007,2,False,2,1,0.03109999999999946,True,0.0,True,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36007,2,False,2,1,0.7994000000000003,True,0.0,False,True,False
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36007,2,False,2,2,0.0,True,0.0,True,True,True
+"n=4, m=2, wide d̄",4,2,4.0,F2-n4m2G4.0s36007,2,False,2,1,0.8304999999999998,True,0.0,False,True,False
+"n=4, m=3",4,3,0.5,F3-n4m3G0.5s32000,0,True,4,2,0.0,True,0.0,True,False,False
+"n=4, m=3",4,3,0.5,F3-n4m3G0.5s32001,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,0.5,F3-n4m3G0.5s32002,0,True,4,2,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,0.5,F3-n4m3G0.5s32003,0,True,4,2,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,0.5,F3-n4m3G0.5s32004,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,0.5,F3-n4m3G0.5s32005,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,0.5,F3-n4m3G0.5s32006,0,True,4,1,0.07395811403508779,True,0.0,False,True,False
+"n=4, m=3",4,3,0.5,F3-n4m3G0.5s32007,0,True,4,1,0.0059343100809094995,False,0.12969569391101876,False,False,False
+"n=4, m=3",4,3,1.0,F3-n4m3G1.0s34000,0,True,4,1,0.06024164985885738,True,0.0,False,True,False
+"n=4, m=3",4,3,1.0,F3-n4m3G1.0s34001,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,1.0,F3-n4m3G1.0s34002,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,1.0,F3-n4m3G1.0s34003,0,True,4,1,0.009639151438773474,True,0.0,False,False,False
+"n=4, m=3",4,3,1.0,F3-n4m3G1.0s34004,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,1.0,F3-n4m3G1.0s34005,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,1.0,F3-n4m3G1.0s34006,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,1.0,F3-n4m3G1.0s34007,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,1.5,F3-n4m3G1.5s36000,0,True,4,2,0.0,True,0.0,True,False,False
+"n=4, m=3",4,3,1.5,F3-n4m3G1.5s36001,0,True,4,1,0.030779102171145212,True,0.0,False,True,False
+"n=4, m=3",4,3,1.5,F3-n4m3G1.5s36002,0,True,4,1,0.09546188870151773,True,0.0,True,False,False
+"n=4, m=3",4,3,1.5,F3-n4m3G1.5s36003,0,True,4,1,0.17457565325195512,True,0.0,True,True,False
+"n=4, m=3",4,3,1.5,F3-n4m3G1.5s36004,0,True,4,1,0.11415351506272553,True,0.0,False,True,False
+"n=4, m=3",4,3,1.5,F3-n4m3G1.5s36005,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,1.5,F3-n4m3G1.5s36006,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,1.5,F3-n4m3G1.5s36007,0,True,4,1,0.07563566876038652,True,0.0,True,False,False
+"n=4, m=3",4,3,2.0,F3-n4m3G2.0s38000,0,True,4,1,0.42191936413596975,True,0.0,True,True,False
+"n=4, m=3",4,3,2.0,F3-n4m3G2.0s38001,0,True,4,1,0.051508538759264866,True,0.0,True,False,False
+"n=4, m=3",4,3,2.0,F3-n4m3G2.0s38002,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,2.0,F3-n4m3G2.0s38003,0,True,4,2,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,2.0,F3-n4m3G2.0s38004,0,True,4,1,0.118849040738775,True,0.0,False,True,False
+"n=4, m=3",4,3,2.0,F3-n4m3G2.0s38005,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,2.0,F3-n4m3G2.0s38006,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,2.0,F3-n4m3G2.0s38007,0,True,4,2,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,3.0,F3-n4m3G3.0s42000,0,True,4,2,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,3.0,F3-n4m3G3.0s42001,0,True,4,2,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,3.0,F3-n4m3G3.0s42002,0,True,4,1,0.024535676483214086,True,0.0,True,False,False
+"n=4, m=3",4,3,3.0,F3-n4m3G3.0s42003,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,3.0,F3-n4m3G3.0s42004,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,3.0,F3-n4m3G3.0s42005,0,True,4,1,0.012205622795482096,True,0.0,False,True,False
+"n=4, m=3",4,3,3.0,F3-n4m3G3.0s42006,0,True,4,3,0.0,True,0.0,True,True,False
+"n=4, m=3",4,3,3.0,F3-n4m3G3.0s42007,0,True,4,1,0.011981337350246202,True,0.0,False,True,False
