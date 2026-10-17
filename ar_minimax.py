@@ -15,12 +15,12 @@ Game tree (built recursively, never stored):
           max  C_last(d)   s.t.  E d <= 0,  d = d0 + d_bar*u,  u in [0,1],  sum u <= Gamma
       Infeasible LP -> -inf (the adversary cannot make that sequence happen).
 
-Backward induction: adversary = max over children, scheduler = min over children.
+Backward induction with Alpha-Beta Pruning: adversary = max over children, scheduler = min over children.
 
-Known relaxation (see AGENTS.md section 4): each leaf LP picks its own durations, so
-the adversary may give an already-finished task a different duration in different
-futures ("anticipation"). The result is therefore an UPPER BOUND on the true AR
-makespan computed by ar_milo.py. This file detects and logs such anticipation cases.
+Known relaxation: by forcing the adversary to choose a discrete completion order
+and ignoring cross-branch non-anticipativity, we restrict the adversary's full 
+continuous strategy space. The result is therefore a LOWER BOUND on the true AR
+makespan computed by ar_milo.py (as discussed).
 
 Run standalone:
     python3 ar_minimax.py                  # random instance from config.json
@@ -108,9 +108,12 @@ class MinimaxSolver:
 
         t0 = time.perf_counter()
         zero = [0] * self.n
+        
+        # Initiate Minimax with alpha = -infinity, beta = infinity
         value, leaf = self.scheduler_turn(running={}, pending=tuple(range(self.n)), finished=(),
                                           E_matrix=[], start_expr=zero, n_slots=min(self.m, self.n),
-                                          path=[], depth=0)
+                                          path=[], depth=0, alpha=NEG_INF, beta=float("inf"))
+        
         elapsed = time.perf_counter() - t0
         root_choice = min(self.root_choices, key=lambda c: self.root_choices[c])
 
@@ -119,7 +122,7 @@ class MinimaxSolver:
         for combo, val in self.root_choices.items():
             mark = "  <== chosen" if combo == root_choice else ""
             self.log.info(f"  first decision start {tasks_str(combo)} -> worst-case makespan {fmt_val(val)}{mark}")
-        self.log.info(f"  Guaranteed worst-case makespan (upper bound on true AR) = {fmt_val(value)}")
+        self.log.info(f"  Guaranteed worst-case makespan (lower bound on true AR) = {fmt_val(value)}")
         self.log.info(f"  Worst-case scenario under optimal play: {path_str(leaf['path'])}")
         self.log.info(f"    durations chosen by adversary at that leaf: {fmt_d(leaf['d'])}")
         self.log.info(f"    budget used sum(u) = {sum(leaf['u']):.4f} / Gamma = {inst.gamma}")
@@ -134,7 +137,7 @@ class MinimaxSolver:
                     root_choices=dict(self.root_choices), worst_leaf=leaf, stats=dict(self.stats),
                     anticipation=list(self.anticipation), time=elapsed, status="OPTIMAL")
 
-    def scheduler_turn(self, running, pending, finished, E_matrix, start_expr, n_slots, path, depth):
+    def scheduler_turn(self, running, pending, finished, E_matrix, start_expr, n_slots, path, depth, alpha, beta):
         """Scheduler (min): start k = min(idle machines, pending) tasks at time start_expr."""
         self.stats["scheduler_nodes"] += 1
         k = min(n_slots, len(pending))
@@ -144,6 +147,10 @@ class MinimaxSolver:
                        f"finished={tasks_str(finished)}; must start {k} task(s) at time {fmt_expr(start_expr)}")
 
         results = []
+        best_val = float('inf')
+        best_combo = None
+        best_leaf = None
+
         for combo in itertools.combinations(pending, k):
             new_running = dict(running)
             for j in combo:
@@ -153,20 +160,31 @@ class MinimaxSolver:
             rest = tuple(t for t in pending if t not in combo)
             self._t(depth + 1, f"option: start {tasks_str(combo)} -> "
                                + ", ".join(f"C({task_name(j)}) = {fmt_expr(new_running[j])}" for j in combo))
-            val, leaf = self.adversary_turn(new_running, rest, finished, E_matrix, path + [("S", combo)], depth + 1)
+            
+            val, leaf = self.adversary_turn(new_running, rest, finished, E_matrix, path + [("S", combo)], depth + 1, alpha, beta)
             results.append((combo, val, leaf))
 
-        best_combo, best_val, best_leaf = min(results, key=lambda r: r[1])
+            if val < best_val:
+                best_val = val
+                best_combo = combo
+                best_leaf = leaf
+            
+            # Alpha-Beta Pruning: Minimizer updates beta
+            beta = min(beta, best_val)
+            if best_val <= alpha:
+                self.stats["pruned_branches"] += 1
+                self._t(depth + 1, f"   Alpha pruning! best_val {best_val:.4f} <= alpha {alpha:.4f} (pruned remaining combinations)")
+                break
+
         if depth == 0:
             self.root_choices = {c: v for c, v, _ in results}
         if len(results) > 1:
             self._check_anticipation(node, finished, results)
-        self._t(depth, f"[SCHEDULER] {node} -> MIN of "
-                       + ", ".join(f"{tasks_str(c)}:{fmt_val(v)}" for c, v, _ in results)
-                       + f" => start {tasks_str(best_combo)} (value {fmt_val(best_val)})")
+        
+        self._t(depth, f"[SCHEDULER] {node} -> MIN of explored options => start {tasks_str(best_combo)} (value {fmt_val(best_val)})")
         return best_val, best_leaf
 
-    def adversary_turn(self, running, pending, finished, E_matrix, path, depth):
+    def adversary_turn(self, running, pending, finished, E_matrix, path, depth, alpha, beta):
         """Adversary (max): decide which running task finishes first."""
         self.stats["adversary_nodes"] += 1
         node = path_str(path)
@@ -174,6 +192,10 @@ class MinimaxSolver:
         self._t(depth, f"   running={self._fmt_running(running)}; who finishes first?")
 
         results = []
+        best_val = NEG_INF
+        best_f = None
+        best_leaf = None
+
         order = sorted(running)
         for f in order:
             new_rows = [sub_expr(running[f], running[r]) for r in order if r != f]
@@ -181,28 +203,38 @@ class MinimaxSolver:
             child_path = path + [("F", f)]
             cons = "; ".join(fmt_row(r) for r in new_rows) if new_rows else "(only task left)"
             self._t(depth + 1, f"option: {task_name(f)} finishes first  [adds {cons}]")
+            
             if self.prune and new_rows and not self._feasible(E2):
                 self.stats["pruned_branches"] += 1
-                self._t(depth + 1, "   impossible under the budget Gamma -> -inf (pruned)")
-                results.append((f, NEG_INF, None))
-                continue
-
-            rest_running = {r: e for r, e in running.items() if r != f}
-            new_finished = finished + (f,)
-            if not rest_running and not pending:
-                val, leaf = self.leaf(E2, running[f], child_path, depth + 1)
-            elif pending:
-                # the machine that ran f is idle at time C_f -> scheduler decides
-                val, leaf = self.scheduler_turn(rest_running, pending, new_finished, E2, running[f], 1,
-                                                child_path, depth + 1)
+                self._t(depth + 1, "   impossible sequence under the budget Gamma -> -inf (pruned)")
+                val, leaf = NEG_INF, None
             else:
-                val, leaf = self.adversary_turn(rest_running, pending, new_finished, E2, child_path, depth + 1)
+                rest_running = {r: e for r, e in running.items() if r != f}
+                new_finished = finished + (f,)
+                if not rest_running and not pending:
+                    val, leaf = self.leaf(E2, running[f], child_path, depth + 1)
+                elif pending:
+                    # the machine that ran f is idle at time C_f -> scheduler decides
+                    val, leaf = self.scheduler_turn(rest_running, pending, new_finished, E2, running[f], 1,
+                                                    child_path, depth + 1, alpha, beta)
+                else:
+                    val, leaf = self.adversary_turn(rest_running, pending, new_finished, E2, child_path, depth + 1, alpha, beta)
+            
             results.append((f, val, leaf))
+            
+            if val > best_val:
+                best_val = val
+                best_f = f
+                best_leaf = leaf
+            
+            # Alpha-Beta Pruning: Maximizer updates alpha
+            alpha = max(alpha, best_val)
+            if best_val >= beta:
+                self.stats["pruned_branches"] += 1
+                self._t(depth + 1, f"   Beta pruning! best_val {best_val:.4f} >= beta {beta:.4f} (pruned remaining permutations)")
+                break
 
-        best_f, best_val, best_leaf = max(results, key=lambda r: r[1])
-        self._t(depth, f"[ADVERSARY] {node} -> MAX of "
-                       + ", ".join(f"{task_name(f)} first:{fmt_val(v)}" for f, v, _ in results)
-                       + f" => {task_name(best_f)} finishes first (value {fmt_val(best_val)})")
+        self._t(depth, f"[ADVERSARY] {node} -> MAX of explored options => {task_name(best_f)} finishes first (value {fmt_val(best_val)})")
         return best_val, best_leaf
 
     def leaf(self, E_matrix, e_vector, path, depth):
