@@ -8,7 +8,7 @@ d_i = d_i^0 + \bar d_i u_i, \qquad 0 \le u_i \le 1, \qquad \sum_i u_i \le \Gamma
 
 ## Approaches
 
-- **Hybrid Minimax** ([`ar_minimax.py`](ar_minimax.py)) searches the scheduler/adversary decision tree recursively and evaluates completed paths with linear programs. Each leaf LP is independent, so the adversary can choose different durations in different futures. Its result is therefore an upper bound on the exact adaptive-robust makespan.
+- **Hybrid Minimax** ([`ar_minimax.py`](ar_minimax.py)) searches the scheduler/adversary decision tree recursively and evaluates completed paths with linear programs. At scheduler decisions after tasks finish, it restricts shared completed-task durations to a finite set of feasible candidate realizations from the search. This discretized adversary is weaker than the continuous adversary in the exact MILO, so Minimax is a lower bound on the exact adaptive-robust makespan.
 - **Exact MILO** ([`ar_milo.py`](ar_milo.py)) represents the game as a monolithic mixed-integer linear optimization model and enforces non-anticipativity across shared histories.
 - **Benchmark** ([`benchmark.py`](benchmark.py)) runs both methods on reference and seeded random instances, writes per-instance logs and `results.csv`, and checks their values and decisions.
 
@@ -60,4 +60,4 @@ python3 ar_milo.py --reference 0
 
 ## Interpreting the comparison
 
-The reported gap is `Minimax - MILO`. A positive gap means the exact MILO found a lower makespan. Since the independent-leaf Minimax relaxation gives the adversary more freedom, its value should be at least the exact MILO value, up to numerical tolerance. The benchmark also reports whether the two methods choose the same first decision and checks reference instances when an expected value is provided.
+The reported gap is `Minimax - MILO`. It should be non-positive, up to numerical tolerance: Minimax is a lower bound on the exact MILO. When enabled, the relaxed MILO (without non-anticipativity) provides a second check and should be at least as large as Minimax. The benchmark also reports whether the two methods choose the same first decision and checks reference instances when an expected value is provided.

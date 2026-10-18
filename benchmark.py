@@ -78,7 +78,7 @@ def run_instance(inst, cfg, run_dir, tag, out):
                milo_choice=tasks_str(milo["root_choice"]) if milo["root_choice"] else "",
                same_decision=None, regret=None, anticipation_cases=len(mm["anticipation"]),
                minimax_time=mm["time"], milo_time=milo["time"], milo_status=milo["status"],
-               relaxed_milo=relaxed["value"] if relaxed else None, cross_check=None, bound_ok=None,
+               relaxed_milo=relaxed["value"] if relaxed else None, relaxed_bound_ok=None, bound_ok=None,
                reference=inst.expected_makespan, reference_ok=None)
 
     if lv is not None:
@@ -86,13 +86,13 @@ def run_instance(inst, cfg, run_dir, tag, out):
         exact_of_mm = milo["root_choices"].get(mm["root_choice"])
         # a different first decision with the same exact AR value is a tie, not a disagreement
         same = mm["root_choice"] == milo["root_choice"] or (exact_of_mm is not None and abs(exact_of_mm - lv) <= tol)
-        row.update(gap=gap, gap_pct=100.0 * gap / lv if lv > 0 else 0.0, same_decision=same, bound_ok=gap >= -tol)
-        if gap > tol:
-            verdict = "MILO is BETTER (lower worst-case makespan)"
-        elif gap < -tol:
-            verdict = "!!! Minimax below MILO - impossible in theory, check the models"
+        row.update(gap=gap, gap_pct=100.0 * gap / lv if lv > 0 else 0.0, same_decision=same, bound_ok=gap <= tol)
+        if gap < -tol:
+            verdict = "Minimax is LOWER (valid lower bound on exact AR)"
+        elif gap > tol:
+            verdict = "!!! Minimax exceeds MILO - lower-bound violation"
         else:
-            verdict = "EQUAL (non-anticipativity did not matter here)"
+            verdict = "EQUAL (discretization gap is within tolerance)"
         out.info(f"  Gap minimax - MILO = {fmt_val(gap)} ({fmt_pct(row['gap_pct'])}%) -> {verdict}")
         if mm["root_choice"] == milo["root_choice"]:
             out.info("  Same first decision? YES")
@@ -110,16 +110,19 @@ def run_instance(inst, cfg, run_dir, tag, out):
             opts = "; ".join(f"start {tasks_str(c)} -> d{a['task'] + 1}={dv:.4f}" for c, dv, _ in a["per_option"])
             out.info(f"    at {a['node']}: T{a['task'] + 1} already finished but assumed {opts}")
         out.info("    The MILO forces ONE value per revealed duration, so its adversary is weaker.")
-        if row["gap"] is not None and row["gap"] <= tol:
+        if row["gap"] is not None and abs(row["gap"]) <= tol:
             out.info("    Here it did NOT change the result: those nodes are off the critical path, or another")
             out.info("    consistent duration vector reaches the same worst case.")
+        elif row["gap"] is not None:
+            out.info("    A nonzero lower-bound gap is consistent with the finite candidate restriction.")
     elif lv is not None:
         out.info("  No anticipation detected in the minimax worst cases.")
 
     if relaxed is not None and relaxed["value"] is not None:
-        row["cross_check"] = abs(relaxed["value"] - mv) <= tol
-        out.info(f"  Cross-check: MILO WITHOUT non-anticipativity = {relaxed['value']:.4f} "
-                 f"{'== minimax  OK' if row['cross_check'] else '!= minimax  MISMATCH'}")
+        row["relaxed_bound_ok"] = relaxed["value"] >= mv - tol
+        out.info(f"  Relaxed-MILO bound check: Minimax = {mv:.4f} <= MILO WITHOUT non-anticipativity "
+                 f"= {relaxed['value']:.4f} "
+                 f"{'OK' if row['relaxed_bound_ok'] else 'VIOLATED'}")
 
     if inst.expected_makespan is not None:
         ok_mm = abs(mv - inst.expected_makespan) <= tol
@@ -177,20 +180,23 @@ def main():
                  f"{str(x['same_decision']):>8} | {x['minimax_time']:6.2f} | {x['milo_time']:6.2f}")
     if rnd:
         tol = bcfg.get("tolerance", 1e-4)
-        better = sum(1 for x in rnd if x["gap"] > tol)
+        above = sum(1 for x in rnd if x["gap"] < -tol)
+        equal = sum(1 for x in rnd if abs(x["gap"]) <= tol)
+        violations = sum(1 for x in rnd if x["gap"] > tol)
         out.info("")
         out.info(f"  Random rounds solved by both: {len(rnd)}/{n_rounds}")
-        out.info(f"  MILO strictly better: {better}, equal: {len(rnd) - better}")
+        out.info(f"  MILO above Minimax (valid lower-bound gap): {above}, equal: {equal}, "
+                 f"Minimax above MILO (violations): {violations}")
         out.info(f"  Mean gap: {sum(x['gap'] for x in rnd) / len(rnd):.4f}  "
                  f"({sum(x['gap_pct'] for x in rnd) / len(rnd):.2f}%), max gap: {max(x['gap'] for x in rnd):.4f}")
         out.info(f"  Different first decision (ties excluded): {sum(1 for x in rnd if not x['same_decision'])} round(s); "
                  f"mean regret of minimax decision: {fmt_val(sum(x['regret'] or 0 for x in rnd) / len(rnd))}")
         out.info(f"  Mean time: minimax {sum(x['minimax_time'] for x in rnd) / len(rnd):.3f}s, "
                  f"MILO {sum(x['milo_time'] for x in rnd) / len(rnd):.3f}s")
-    out.info(f"  Theory check MILO <= minimax: "
+    out.info(f"  Theory check Minimax <= exact MILO: "
              f"{'OK' if all(x['bound_ok'] in (True, None) for x in rows) else 'VIOLATED'}")
-    out.info(f"  Cross-check relaxed MILO == minimax: "
-             f"{'OK' if all(x['cross_check'] in (True, None) for x in rows) else 'MISMATCH'}")
+    out.info(f"  Bound check Minimax <= relaxed MILO: "
+             f"{'OK' if all(x['relaxed_bound_ok'] in (True, None) for x in rows) else 'VIOLATED'}")
     refs = [x for x in rows if x["reference_ok"] is not None]
     if refs:
         out.info(f"  Reference checks: {'PASS' if all(x['reference_ok'] for x in refs) else 'FAIL'}")

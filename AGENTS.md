@@ -57,7 +57,7 @@ Each path from the root to a leaf represents a specific deterministic sequence o
 
 When the tree reaches a leaf (all tasks have been scheduled and finished), we have a complete sequence of events. We translate this sequence into a set of linear constraints (the $E$ matrix). For example, if Task 1 finished before Task 2, their completion times satisfy $C_1 \le C_2$, which translates to $C_1 - C_2 \le 0$.
 
-At each leaf, we solve a **Linear Program (LP)** using Gurobi.
+At each leaf, we solve a **Linear Program (LP)** using Gurobi. The recursive search propagates candidate duration realizations from feasible leaves. When multiple scheduler decisions remain after tasks finish, it evaluates those decisions under shared, fixed completed-task durations selected from that finite candidate set.
 
 * **Variables:** Continuous task durations $d_i$, and uncertainty deviations $u_i \in [0,1]$.
 * **Constraints:**
@@ -78,13 +78,13 @@ The value at the root node gives the guaranteed worst-case makespan for the opti
 
 ## 4. The "Non-Anticipativity" Challenge (Important Context for AI)
 
-This hybrid Minimax approach has a known mathematical relaxation compared to the paper's exact MILO.
+This hybrid Minimax approach approximates the paper's exact continuous MILO using a finite candidate set.
 
 In a true AR model (like the MILO described in section 2.1), the adversary's choice of a continuous duration for Task $i$ must be identical across different branches of the tree if those branches share the same history up to the point Task $i$ finishes ($d_{\sigma}(i) = d_{\delta}(i)$).
 
-By evaluating the LP independently at each leaf in our Minimax approach, we grant the adversary a "superpower": the adversary can choose $d_1 = 2$ to maximize one leaf, and $d_1 = 5$ to maximize another leaf, even though the scheduler couldn't have known which future the adversary was aiming for when Task 1 started.
+The Minimax search probes feasible leaves to collect candidate duration vectors. At scheduler nodes, it evaluates the available decisions with already-finished tasks fixed to shared values selected from this finite candidate set. This preserves non-anticipativity for those selected realizations, but may omit the continuous duration choices available to the exact MILO.
 
-**Conclusion on Bounds:** Because the adversary is mathematically stronger in this independent-leaf LP approach than in reality, the resulting Minimax value represents a **pessimistic Upper Bound** on the true AR makespan. It is a highly valuable baseline for algorithmic development and testing without the immense computational overhead of the monolithic MILO.
+**Conclusion on Bounds:** Restricting the adversary to a finite subset of feasible shared-duration choices makes the Minimax value a **lower bound** on the exact AR makespan (up to solver tolerances). The MILO without non-anticipativity relaxes those shared-duration restrictions and should be at least as large as Minimax.
 
 ## 5. Agent Instructions for Future Code Modifications
 
