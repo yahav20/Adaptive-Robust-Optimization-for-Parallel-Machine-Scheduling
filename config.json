@@ -54,7 +54,7 @@
       "name": "example.py gap demo data (4 tasks, 2 machines)",
       "d0": [10.0, 0.0, 10.0, 10.0],
       "d_bar": [30.0, 0.0, 30.0, 30.0],
-      "gamma": 1.0,
+      "gamma": 2.0,
       "n_machines": 2,
       "expected_makespan": null
     }

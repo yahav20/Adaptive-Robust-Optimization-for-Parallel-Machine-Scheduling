@@ -11,15 +11,16 @@ The scenario tree is the same as in ar_minimax.py (same node names in the logs):
                                  d_sigma  = d0 + d_bar*u_sigma,  u in [0,1],  sum u <= Gamma
     objective                 :  max t_root
 
-Non-anticipativity (the part the minimax relaxes):
+Non-anticipativity:
     d_sigma(i) = d_delta(i) for every i in F at A(sigma, delta) (lowest common ancestor).
     Equivalent compact form used here: when task i finishes on the edge into node A, ONE
     variable u[i]@A is created and every leaf below A uses it. Leaves that split before
     i finished get different variables. This removes the equality constraints entirely
     (important for the size-limited Gurobi license) and is mathematically identical.
 
-    Setting milo.enforce_non_anticipativity=false gives every leaf its own durations;
-    that relaxed MILO must equal the minimax value (used as a cross-check in benchmark.py).
+    Bounds hierarchy:
+        Minimax (discretized NA) <= MILO (enforce_non_anticipativity=true, exact AR)
+                                 <= MILO (enforce_non_anticipativity=false, relaxed UB)
 
 Run standalone:
     python3 ar_milo.py                  # random instance from config.json
@@ -76,7 +77,8 @@ class MiloSolver:
         self.enforce_na = cfg.get("enforce_non_anticipativity", True)
         self.env = make_env()
         self.D_max = inst.max_total_duration
-        self.M_z = self.D_max + 1.0                 # disables impossible leaves (t <= -1 < any real makespan)
+        # Safe Big-M constants to avoid numerical trickling in Gurobi when z=1 or w=1
+        self.M_z = 2.0 * self.D_max + 1.0           # ensures E_sigma d <= M_z is always slack & t_sigma <= -D_max - 1
         self.M_w = self.D_max + self.M_z + 1.0      # >= t_sigma - t_delta for any pair
         self.stats = dict(scheduler_nodes=0, adversary_nodes=0, leaves=0, pruned_branches=0)
 
@@ -97,8 +99,10 @@ class MiloSolver:
                 expr[j] += 1
                 new_running[j] = expr
             rest = tuple(t for t in pending if t not in combo)
-            node.children.append(self._adversary(new_running, rest, finished, E_matrix, path + [("S", combo)]))
-        return node
+            child = self._adversary(new_running, rest, finished, E_matrix, path + [("S", combo)])
+            if child is not None:
+                node.children.append(child)
+        return node if node.children else None
 
     def _adversary(self, running, pending, finished, E_matrix, path):
         node = Node("ADVERSARY", path, running, pending, finished, E_matrix)
@@ -121,9 +125,10 @@ class MiloSolver:
                 child = self.build_tree(rest_running, pending, new_finished, E2, running[f], 1, child_path)
             else:
                 child = self._adversary(rest_running, pending, new_finished, E2, child_path)
-            child.finished_task = f
-            node.children.append(child)
-        return node
+            if child is not None:
+                child.finished_task = f
+                node.children.append(child)
+        return node if node.children else None
 
     # ------------------------------------------------------------------ model
     def build_model(self, root):
@@ -284,7 +289,8 @@ class MiloSolver:
                 nxt = min(node.children, key=lambda c: self._v(c.val))
             else:
                 active = [c for c, w in zip(node.children, node.w) if w.X < 0.5] or node.children
-                nxt = min(active, key=lambda c: self._v(c.val))
+                # Adversary is a maximizer; among active branches (w=0), pick the binding max child
+                nxt = max(active, key=lambda c: self._v(c.val))
             if len(node.children) > 1:
                 opts = ", ".join(f"{self._edge(c)}:{self._v(c.val):.4f}" for c in node.children)
                 revealed = self._revealed(node)
