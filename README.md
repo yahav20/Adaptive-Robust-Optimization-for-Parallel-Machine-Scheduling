@@ -60,4 +60,4 @@ python3 ar_milo.py --reference 0
 
 ## Interpreting the comparison
 
-The reported gap is `Minimax - MILO`. It should be non-positive, up to numerical tolerance: Minimax is a lower bound on the exact MILO. When enabled, the relaxed MILO (without non-anticipativity) provides a second check and should be at least as large as Minimax. The benchmark also reports whether the two methods choose the same first decision and checks reference instances when an expected value is provided.
+The reported gap is `Minimax - MILO`. It should be non-positive, up to numerical tolerance: Minimax is a lower bound on the exact MILO. The benchmark also reports whether the two methods choose the same first decision and checks reference instances when an expected value is provided.

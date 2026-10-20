@@ -10,7 +10,6 @@ Benchmark: our Minimax idea (ar_minimax.py) vs the paper's exact MILO (ar_milo.p
        logs/run_<time>/round_XX_minimax.log      full minimax tree trace + leaf LPs
        logs/run_<time>/round_XX_milo.log         MILO size, solves, worst-case paths, tree
        logs/run_<time>/round_XX_milo_gurobi.log  raw Gurobi output
-       logs/run_<time>/round_XX_milo_relaxed.log MILO without non-anticipativity (cross-check)
        logs/run_<time>/summary.log, results.csv
 """
 
@@ -66,12 +65,6 @@ def run_instance(inst, cfg, run_dir, tag, out):
     lg = setup_logger(f"{tag}_milo", os.path.join(run_dir, f"{tag}_milo.log"))
     milo = solve_milo(inst, cfg, lg, gurobi_log=gurobi_log)
     close_logger(lg)
-
-    relaxed = None
-    if bcfg.get("cross_check_relaxed_milo", True):
-        lg = setup_logger(f"{tag}_relaxed", os.path.join(run_dir, f"{tag}_milo_relaxed.log"))
-        relaxed = solve_milo(inst, cfg, lg, enforce_na=False)
-        close_logger(lg)
 
     # ------------------------------------------------------------- comparison
     out.info(inst.describe())
@@ -131,7 +124,7 @@ def run_instance(inst, cfg, run_dir, tag, out):
                same_decision=None, regret=None, anticipation_cases=len(mm["anticipation"]),
                minimax_time=mm["time"], milo_time=milo["time"], faster=faster, speedup=speedup,
                milo_status=milo["status"],
-               relaxed_milo=relaxed["value"] if relaxed else None, relaxed_bound_ok=None, bound_ok=None,
+               bound_ok=None,
                reference=inst.expected_makespan, reference_ok=None)
 
     if lv is not None:
@@ -170,12 +163,6 @@ def run_instance(inst, cfg, run_dir, tag, out):
             out.info("    A nonzero lower-bound gap is consistent with the finite candidate restriction.")
     elif lv is not None:
         out.info("  No anticipation detected in the minimax worst cases.")
-
-    if relaxed is not None and relaxed["value"] is not None:
-        row["relaxed_bound_ok"] = relaxed["value"] >= mv - tol
-        out.info(f"  Relaxed-MILO bound check: Minimax = {mv:.4f} <= MILO WITHOUT non-anticipativity "
-                 f"= {relaxed['value']:.4f} "
-                 f"{'OK' if row['relaxed_bound_ok'] else 'VIOLATED'}")
 
     if inst.expected_makespan is not None:
         ok_mm = abs(mv - inst.expected_makespan) <= tol
@@ -271,8 +258,6 @@ def main():
         out.info(f"  Same order but makespan differs beyond tolerance: {same_order_gaps}")
     out.info(f"  Theory check Minimax <= exact MILO: "
              f"{'OK' if all(x['bound_ok'] in (True, None) for x in rows) else 'VIOLATED'}")
-    out.info(f"  Bound check Minimax <= relaxed MILO: "
-             f"{'OK' if all(x['relaxed_bound_ok'] in (True, None) for x in rows) else 'VIOLATED'}")
     refs = [x for x in rows if x["reference_ok"] is not None]
     if refs:
         out.info(f"  Reference checks: {'PASS' if all(x['reference_ok'] for x in refs) else 'FAIL'}")

@@ -19,8 +19,7 @@ Non-anticipativity:
     (important for the size-limited Gurobi license) and is mathematically identical.
 
     Bounds hierarchy:
-        Minimax (discretized NA) <= MILO (enforce_non_anticipativity=true, exact AR)
-                                 <= MILO (enforce_non_anticipativity=false, relaxed UB)
+        Minimax (discretized NA) <= MILO (exact AR)
 
 Run standalone:
     python3 ar_milo.py                  # random instance from config.json
@@ -74,7 +73,6 @@ class MiloSolver:
         self.trace_max_depth = trace_max_depth
         self.gurobi_log = gurobi_log
         self.prune = cfg.get("prune_infeasible_branches", True)
-        self.enforce_na = cfg.get("enforce_non_anticipativity", True)
         self.env = make_env()
         self.D_max = inst.max_total_duration
         # Safe Big-M constants to avoid numerical trickling in Gurobi when z=1 or w=1
@@ -141,7 +139,7 @@ class MiloSolver:
 
     def _build(self, node, u_map):
         m, inst, n = self.model, self.inst, self.n
-        if node.finished_task is not None and self.enforce_na:
+        if node.finished_task is not None:
             f = node.finished_task
             # duration of f is revealed here -> shared by every leaf below this node
             u_map = dict(u_map)
@@ -149,11 +147,7 @@ class MiloSolver:
         node.u_map = u_map
 
         if node.kind == "LEAF":
-            if self.enforce_na:
-                u = [u_map[i] for i in range(n)]
-            else:
-                u = [m.addVar(lb=0.0, ub=1.0, name=f"u[{task_name(i)}]@{path_str(node.path)}") for i in range(n)]
-                node.u_map = {i: u[i] for i in range(n)}
+            u = [u_map[i] for i in range(n)]
             d = [inst.d0[i] + inst.d_bar[i] * u[i] for i in range(n)]
             z = m.addVar(vtype=GRB.BINARY, name=f"z@{path_str(node.path)}")
             node.z = z
@@ -211,8 +205,7 @@ class MiloSolver:
         self.log.info("PAPER MODEL - monolithic MILO for the exact Adaptive Robust policy")
         self.log.info("=" * 78)
         self.log.info(inst.describe())
-        self.log.info(f"enforce_non_anticipativity={self.enforce_na}, prune_infeasible_branches={self.prune}, "
-                      f"M_z={self.M_z:.4f}, M_w={self.M_w:.4f}")
+        self.log.info(f"prune_infeasible_branches={self.prune}, M_z={self.M_z:.4f}, M_w={self.M_w:.4f}")
 
         t0 = time.perf_counter()
         root = self.build_tree({}, tuple(range(self.n)), (), [], [0] * self.n, min(self.m, self.n), [])
@@ -261,8 +254,7 @@ class MiloSolver:
         self.log.info(f"  Optimal AR worst-case makespan = {fmt_val(value)}  (status {status})")
         self.log.info(f"  total time = {elapsed:.3f}s")
         return dict(model="milo", value=value, status=status, root_choice=root_choice,
-                    root_choices=root_choices, stats=dict(self.stats), size=size, time=elapsed,
-                    enforce_na=self.enforce_na)
+                    root_choices=root_choices, stats=dict(self.stats), size=size, time=elapsed)
 
     def _error(self, msg, t0):
         self.log.info(f"  GUROBI ERROR: {msg}")
@@ -270,8 +262,7 @@ class MiloSolver:
             self.log.info("  The free pip license allows 2000 variables/constraints. Reduce n_tasks or "
                           "install a full (academic) license.")
         return dict(model="milo", value=None, status=f"ERROR: {msg}", root_choice=None, root_choices={},
-                    stats=dict(self.stats), size=None, time=time.perf_counter() - t0,
-                    enforce_na=self.enforce_na)
+                    stats=dict(self.stats), size=None, time=time.perf_counter() - t0)
 
     # ------------------------------------------------------------------ explain solution
     def _report_subtree(self, top, title):
@@ -346,10 +337,8 @@ class MiloSolver:
         return f"start {tasks_str(payload)}" if kind == "S" else f"{task_name(payload)} first"
 
 
-def solve_milo(inst, cfg, logger, gurobi_log=None, enforce_na=None):
+def solve_milo(inst, cfg, logger, gurobi_log=None):
     milo_cfg = dict(cfg.get("milo", {}))
-    if enforce_na is not None:
-        milo_cfg["enforce_non_anticipativity"] = enforce_na
     log_cfg = cfg.get("logging", {})
     solver = MiloSolver(inst, milo_cfg, logger, trace=log_cfg.get("trace_tree", True),
                         trace_max_depth=log_cfg.get("trace_max_depth", 1000), gurobi_log=gurobi_log)

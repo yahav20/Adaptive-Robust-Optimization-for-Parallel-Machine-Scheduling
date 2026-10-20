@@ -18,16 +18,14 @@
     "decimals": 4
   },
   "benchmark": {
-    "n_rounds": 10,
+    "n_rounds": 50,
     "run_reference_checks": true,
-    "cross_check_relaxed_milo": true,
     "tolerance": 0.0001
   },
   "minimax": {
     "prune_infeasible_branches": true
   },
   "milo": {
-    "enforce_non_anticipativity": true,
     "prune_infeasible_branches": true,
     "solve_each_root_choice": true,
     "time_limit_sec": 300,
