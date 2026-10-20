@@ -1,7 +1,7 @@
 """
 Benchmark: our Minimax idea (ar_minimax.py) vs the paper's exact MILO (ar_milo.py).
 
-    python3 benchmark.py [--config config.json]
+    python3 benchmark.py [--config config/config.json]
 
 1. Reference checks: runs both models on config.reference_instances (the scheduling.py
    example must give 1.8296) and reports PASS/FAIL.
@@ -172,7 +172,7 @@ def run_instance(inst, cfg, run_dir, tag, out):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--config", default="config.json")
+    ap.add_argument("--config", default="config/config.json")
     args = ap.parse_args()
     cfg = load_config(args.config)
     bcfg = cfg["benchmark"]

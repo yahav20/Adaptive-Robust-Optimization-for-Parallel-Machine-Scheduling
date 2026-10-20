@@ -80,7 +80,7 @@ def anticipation_export(root, ids_of):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--config", default="config.json")
+    ap.add_argument("--config", default="config/config.json")
     ap.add_argument("--reference", type=int, default=None)
     ap.add_argument("--round", type=int, default=None, help="benchmark round (1-based)")
     ap.add_argument("--seed", type=int, default=None)

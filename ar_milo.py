@@ -22,7 +22,7 @@ Non-anticipativity:
         Minimax (discretized NA) <= MILO (exact AR)
 
 Run standalone:
-    python3 ar_milo.py                  # random instance from config.json
+    python3 ar_milo.py                  # random instance from config/config.json
     python3 ar_milo.py --reference 0    # reference instance #0 (scheduling.py example)
 """
 
@@ -347,7 +347,7 @@ def solve_milo(inst, cfg, logger, gurobi_log=None):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--config", default="config.json")
+    ap.add_argument("--config", default="config/config.json")
     ap.add_argument("--reference", type=int, default=None, help="index into reference_instances")
     ap.add_argument("--seed", type=int, default=None, help="seed for a random instance")
     args = ap.parse_args()

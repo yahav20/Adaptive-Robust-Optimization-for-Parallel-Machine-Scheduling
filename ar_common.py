@@ -62,7 +62,7 @@ class Instance:
         return "\n".join(lines)
 
 
-def load_config(path="config.json"):
+def load_config(path="config/config.json"):
     with open(path) as f:
         return json.load(f)
 
