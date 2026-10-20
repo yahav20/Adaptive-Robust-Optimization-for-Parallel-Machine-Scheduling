@@ -35,7 +35,7 @@ Run the configured benchmark from the project directory:
 python3 benchmark.py --config config.json
 ```
 
-Each execution creates a timestamped directory under `logs/`, including `results.csv`, a readable `summary.log`, and solver trace logs. The random instances are reproducible using the seed in `config.json`.
+Each execution creates a timestamped directory under `logs/`, including `results.csv`, a readable `summary.log`, and solver trace logs. The summary compares per-instance runtimes and reports which solver was faster, then compares the complete event order (grouped task starts and task finishes) and identifies the first event where the paths differ. It also records both full event sequences in `results.csv`; identical event sequences can still have different makespans if the solvers select different feasible duration realizations. The random instances are reproducible using the seed in `config.json`; the configured benchmark runs 50 random rounds in addition to the reference checks.
 
 Aggregate all available run CSVs into a Markdown report:
 

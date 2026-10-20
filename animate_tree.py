@@ -297,7 +297,7 @@ function panel(s) {
     B.innerHTML = `<p>Instance <b>${esc(D.name)}</b>: ${D.n} tasks, ${D.m} machines, Γ = ${D.gamma}.</p>
       <pre>${D.d0.map((x, i) => `T${i + 1}: d = ${x.toFixed(4)} + ${D.dbar[i].toFixed(4)}·u${i + 1}`).join("\n")}\n0 ≤ u_i ≤ 1,  Σ u_i ≤ Γ</pre>
       <p>The tree shown has <b>${vis.length}</b> nodes and <b>${nl}</b> leaves. Each leaf is one full sequence of start/finish events.</p>
-      <p><b>Plan:</b> (1) solve one LP per leaf &rarr; its worst-case makespan. (2) go up: a <b>scheduler</b> node keeps the <b>MIN</b> of its options,
+      <p><b>Plan:</b> (1) solve one LP per leaf under the shared candidate durations fixed by the search. (2) go up: a <b>scheduler</b> node keeps the <b>MIN</b> of its options,
       an <b>adversary</b> node keeps the <b>MAX</b>. (3) the root value is the guaranteed worst-case makespan.</p><p>Press ▶ Play or →.</p>`;
   } else if (s.t === "leaf") {
     P.textContent = "phase 1 - solve the leaf LPs"; T.textContent = `Leaf ${n.lid}: makespan = ${fmt(n.mm)}`;
@@ -319,18 +319,18 @@ function panel(s) {
       <pre>${esc(p.join("\n  -> "))}</pre><p>It ends at leaf <b>${r.lock}</b> with durations <code>(${N[id].d.map(x => x.toFixed(4)).join(", ")})</code>.</p>
       ${viewRoot !== D.root ? `<p>Other first decisions (root MIN):</p>${bars(N[D.root], true)}` : ""}`;
   } else if (s.t === "anti") {
-    P.textContent = "phase 4 - where Minimax cheats"; T.textContent = "Anticipation conflict";
+    P.textContent = "phase 4 - checking shared history"; T.textContent = "Duration consistency";
     B.innerHTML = `<p><code>${esc(n.path)}</code></p>` + D.anticip[s.n].map(a => `<p>Task T${a.task} has <b>already finished</b>, so d${a.task} is one known number here.
       But the leaf LPs behind each option used different values:</p><pre>${a.vals.map(v => `${v[0].padEnd(12)} uses d${a.task} = ${v[1].toFixed(4)}  -> value ${fmt(v[2])}`).join("\n")}</pre>`).join("")
-      + `<div class="warn">A real adversary cannot do this: it would have to know the scheduler's next choice before T${D.anticip[s.n][0].task} finished.
-      This is why Minimax is only an <b>upper bound</b>. MILO forces one shared value${n.revealed ? ` (here MILO uses <b>${esc(n.revealed)}</b>)` : ""}.</div>`;
+      + `<div class="warn">These candidate outcomes disagree on a duration already revealed in the shared history. The exact MILO enforces one shared value${n.revealed ? ` (here MILO uses <b>${esc(n.revealed)}</b>)` : ""}; Minimax's finite candidate search can therefore understate the continuous exact value.</div>`;
   } else {
     const r = N[viewRoot], gap = r.mm - r.ml;
     P.textContent = s.t === "milo" ? "phase 5 - compare with the exact MILO" : "done"; T.textContent = `Minimax ${fmt(r.mm)}  vs  MILO ${fmt(r.ml)}`;
     B.innerHTML = `<p>The <b style="color:#c0392b">red values/path</b> are the exact adaptive-robust solution (MILO): every task duration is a single value shared by
       all futures that look identical when it finishes (non-anticipativity).</p>
-      <div class="${gap > 1e-4 ? "warn" : "verdict"}">gap = Minimax − MILO = ${(gap).toFixed(4)} ${gap > 1e-4 ? "&rarr; Minimax is pessimistic here because of the anticipation conflicts above."
-      : "&rarr; no gap: anticipation did not change the value here."}</div>
+      <div class="${gap > 1e-4 ? "warn" : "verdict"}">gap = Minimax − MILO = ${(gap).toFixed(4)} ${gap < -1e-4 ? "&rarr; Minimax is below the exact value, as expected from its restricted candidate set."
+      : gap > 1e-4 ? "&rarr; lower-bound violation: inspect the candidate search and solver results."
+      : "&rarr; no gap beyond tolerance: the candidate restriction did not change the value here."}</div>
       <p style="color:#777;font-size:12px">MILO values shown only on its worst-case path; elsewhere they are just bounds.</p>`;
   }
 }

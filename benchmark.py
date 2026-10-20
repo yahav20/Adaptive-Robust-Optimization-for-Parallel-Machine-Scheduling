@@ -29,6 +29,30 @@ def fmt_pct(p):
     return "n/a" if p is None else f"{0.0 if abs(p) < 5e-3 else p:.2f}"
 
 
+def fmt_event(event):
+    kind, payload = event
+    if kind == "S":
+        return f"start {tasks_str(payload)}"
+    return f"T{payload + 1} finishes"
+
+
+def compare_event_orders(minimax_path, milo_path):
+    if minimax_path is None or milo_path is None:
+        return None, "", "", ""
+    minimax_events = [fmt_event(event) for event in minimax_path]
+    milo_events = [fmt_event(event) for event in milo_path]
+    same = minimax_events == milo_events
+    difference = ""
+    if not same:
+        for index in range(max(len(minimax_events), len(milo_events))):
+            minimax_event = minimax_events[index] if index < len(minimax_events) else "<end>"
+            milo_event = milo_events[index] if index < len(milo_events) else "<end>"
+            if minimax_event != milo_event:
+                difference = f"event {index + 1}: Minimax [{minimax_event}] vs MILO [{milo_event}]"
+                break
+    return same, difference, " -> ".join(minimax_events), " -> ".join(milo_events)
+
+
 def run_instance(inst, cfg, run_dir, tag, out):
     """Run both models on one instance and log the comparison to `out`. Returns a result row."""
     bcfg = cfg["benchmark"]
@@ -63,6 +87,31 @@ def run_instance(inst, cfg, run_dir, tag, out):
     out.info("")
 
     mv, lv = mm["value"], milo["value"]
+    order_same, order_difference, minimax_order, milo_order = compare_event_orders(
+        mm["worst_leaf"]["path"] if mm.get("worst_leaf") else None,
+        milo.get("worst_path"),
+    )
+    if order_same is None:
+        out.info("  Whole event order comparison: unavailable (one solver has no complete path)")
+    elif order_same:
+        out.info(f"  Whole event order comparison: SAME ({len(mm['worst_leaf']['path'])} events)")
+        out.info(f"    Order: {minimax_order}")
+    else:
+        out.info(f"  Whole event order comparison: DIFFERENT; first divergence at {order_difference}")
+        out.info(f"    Minimax: {minimax_order}")
+        out.info(f"    MILO   : {milo_order}")
+    same_order_makespan_diff = order_same and lv is not None and abs(mv - lv) > tol
+    if same_order_makespan_diff:
+        out.info("  Makespans differ despite the same event order; the duration/uncertainty decisions differ.")
+
+    if abs(mm["time"] - milo["time"]) <= 1e-6:
+        faster, speedup = "tie", 1.0
+    elif mm["time"] < milo["time"]:
+        faster, speedup = "Minimax", milo["time"] / mm["time"] if mm["time"] else None
+    else:
+        faster, speedup = "MILO", mm["time"] / milo["time"] if milo["time"] else None
+    out.info(f"  Runtime comparison: Minimax {mm['time']:.3f}s, MILO {milo['time']:.3f}s; "
+             f"{faster} faster" + (f" ({speedup:.2f}x)" if speedup is not None else ""))
     out.info(f"  Minimax (ours) : {fmt_val(mv)}  start {tasks_str(mm['root_choice'])}  time {mm['time']:.3f}s  "
              f"leaves {mm['stats']['leaves']}  LPs {mm['stats']['leaf_lps'] + mm['stats']['feasibility_lps']}")
     if lv is None:
@@ -76,8 +125,12 @@ def run_instance(inst, cfg, run_dir, tag, out):
                d0=inst.d0, d_bar=inst.d_bar, minimax=mv, milo=lv, gap=None, gap_pct=None,
                minimax_choice=tasks_str(mm["root_choice"]),
                milo_choice=tasks_str(milo["root_choice"]) if milo["root_choice"] else "",
+               minimax_event_order=minimax_order, milo_event_order=milo_order,
+               event_order_same=order_same, first_event_difference=order_difference,
+               same_order_makespan_diff=same_order_makespan_diff,
                same_decision=None, regret=None, anticipation_cases=len(mm["anticipation"]),
-               minimax_time=mm["time"], milo_time=milo["time"], milo_status=milo["status"],
+               minimax_time=mm["time"], milo_time=milo["time"], faster=faster, speedup=speedup,
+               milo_status=milo["status"],
                relaxed_milo=relaxed["value"] if relaxed else None, relaxed_bound_ok=None, bound_ok=None,
                reference=inst.expected_makespan, reference_ok=None)
 
@@ -193,6 +246,29 @@ def main():
                  f"mean regret of minimax decision: {fmt_val(sum(x['regret'] or 0 for x in rnd) / len(rnd))}")
         out.info(f"  Mean time: minimax {sum(x['minimax_time'] for x in rnd) / len(rnd):.3f}s, "
                  f"MILO {sum(x['milo_time'] for x in rnd) / len(rnd):.3f}s")
+    out.info("")
+    out.info("PER-INSTANCE RUNTIME AND EVENT-ORDER COMPARISON")
+    out.info(f"  {'instance':<10} | {'Minimax (s)':>11} | {'MILO (s)':>8} | {'faster':>8} | "
+             f"{'speedup':>7} | {'same order':>10} | {'same-order gap':>14} | first event difference")
+    for x in rows:
+        speedup_text = f"{x['speedup']:.2f}x" if x["speedup"] is not None else "n/a"
+        difference = x["first_event_difference"] or ("same" if x["event_order_same"] else "unavailable")
+        out.info(f"  {x['tag']:<10} | {x['minimax_time']:11.3f} | {x['milo_time']:8.3f} | "
+                 f"{x['faster']:>8} | {speedup_text:>7} | {str(x['event_order_same']):>10} | "
+                 f"{str(x['same_order_makespan_diff']):>14} | {difference}")
+    if rows:
+        minimax_wins = sum(x["faster"] == "Minimax" for x in rows)
+        milo_wins = sum(x["faster"] == "MILO" for x in rows)
+        time_ties = sum(x["faster"] == "tie" for x in rows)
+        compared_orders = [x for x in rows if x["event_order_same"] is not None]
+        same_orders = sum(x["event_order_same"] for x in compared_orders)
+        same_order_gaps = sum(x["same_order_makespan_diff"] is True for x in rows)
+        out.info(f"  Faster counts: Minimax {minimax_wins}, MILO {milo_wins}, ties {time_ties}")
+        out.info(f"  Mean runtime (all instances): Minimax {sum(x['minimax_time'] for x in rows) / len(rows):.3f}s, "
+                 f"MILO {sum(x['milo_time'] for x in rows) / len(rows):.3f}s")
+        out.info(f"  Identical whole event orders: {same_orders}/{len(compared_orders)} "
+                 f"({len(rows) - len(compared_orders)} unavailable)")
+        out.info(f"  Same order but makespan differs beyond tolerance: {same_order_gaps}")
     out.info(f"  Theory check Minimax <= exact MILO: "
              f"{'OK' if all(x['bound_ok'] in (True, None) for x in rows) else 'VIOLATED'}")
     out.info(f"  Bound check Minimax <= relaxed MILO: "
