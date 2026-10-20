@@ -12,7 +12,14 @@ d_i = d_i^0 + \bar d_i u_i, \qquad 0 \le u_i \le 1, \qquad \sum_i u_i \le \Gamma
 - **Exact MILO** ([`ar_milo.py`](ar_milo.py)) represents the game as a monolithic mixed-integer linear optimization model and enforces non-anticipativity across shared histories.
 - **Benchmark** ([`benchmark.py`](benchmark.py)) runs both methods on reference and seeded random instances, writes per-instance logs and `results.csv`, and checks their values and decisions.
 
-Shared instance, uncertainty, and logging utilities are in [`ar_common.py`](ar_common.py). Benchmark parameters and reference instances are configured in [`config.json`](config.json).
+Shared instance, uncertainty, and logging utilities are in [`ar_common.py`](ar_common.py). Benchmark parameters and reference instances are configured in [`config/config.json`](config/config.json).
+
+## Additional documentation
+
+- [Paper formalism and MILO deep dive](docs/paper_formalism_and_milo_deep_dive.md)
+- [Bounding architecture](docs/bounding_architecture_lb_and_ub.md)
+- [Iterative bound-tightening roadmap](docs/iterative_bound_tightening_roadmap.md)
+- [Benchmarking and conclusions guide](docs/benchmarking_and_conclusions_guide.md)
 
 ## Requirements
 
@@ -25,17 +32,17 @@ Install the Python package with:
 python3 -m pip install gurobipy
 ```
 
-Gurobi licensing and setup are managed separately; see the [Gurobi installation documentation](https://www.gurobi.com/documentation/).
+Gurobi licensing and setup are managed separately; see the [Gurobi installation documentation](https://www.gurobi.com/documentation/). The repository license file is in `config/gurobi.lic`; if Gurobi does not find it automatically, set `GRB_LICENSE_FILE` to that path.
 
 ## Run
 
 Run the configured benchmark from the project directory:
 
 ```sh
-python3 benchmark.py --config config.json
+python3 benchmark.py --config config/config.json
 ```
 
-Each execution creates a timestamped directory under `logs/`, including `results.csv`, a readable `summary.log`, and solver trace logs. The summary compares per-instance runtimes and reports which solver was faster, then compares the complete event order (grouped task starts and task finishes) and identifies the first event where the paths differ. It also records both full event sequences in `results.csv`; identical event sequences can still have different makespans if the solvers select different feasible duration realizations. The random instances are reproducible using the seed in `config.json`; each generated task-duration instance is evaluated at every value in `benchmark.gamma_values`. The default configuration runs 50 random instances across Gamma values from 0 to 4 in 0.5 increments, in addition to the reference checks. Each random instance uses the same task durations across its Gamma sweep.
+Each execution creates a timestamped directory under `logs/`, including `results.csv`, a readable `summary.log`, and solver trace logs. The summary compares per-instance runtimes and reports which solver was faster, then compares the complete event order (grouped task starts and task finishes) and identifies the first event where the paths differ. It also records both full event sequences in `results.csv`; identical event sequences can still have different makespans if the solvers select different feasible duration realizations. The random instances are reproducible using the seed in `config/config.json`; each generated task-duration instance is evaluated at every value in `benchmark.gamma_values`. The default configuration runs 50 random instances across Gamma values from 0 to 4 in 0.5 increments, in addition to the reference checks. Each random instance uses the same task durations across its Gamma sweep.
 
 Aggregate all available run CSVs into a Markdown report:
 

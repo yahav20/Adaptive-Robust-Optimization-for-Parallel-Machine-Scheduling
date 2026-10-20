@@ -3,3 +3,4 @@ __pycache__/
 .DS_Store
 /logs/run_*/
 gurobi.lic
+/logs/scaling_*/
