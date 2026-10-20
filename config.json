@@ -2,7 +2,7 @@
   "_help": {
     "problem": "n_tasks = number of missions, n_machines = number of machines, gamma = uncertainty budget (sum of u_i <= gamma)",
     "random_instance": "benchmark rounds draw d0_i ~ U(d0_range) and d_bar_i ~ U(d_bar_range); same seed -> same instances",
-    "benchmark": "n_rounds random instances; reference instances (from scheduling.py / example.py) are checked first",
+    "benchmark": "n_rounds random instances evaluated at each gamma_values entry; reference instances are checked first",
     "milo": "free pip Gurobi license is limited to 2000 vars/constraints -> MILO works up to about n_tasks=4 with 2 machines",
     "logging": "trace_tree=true writes every node of both trees to the per-round log files"
   },
@@ -20,6 +20,7 @@
   "benchmark": {
     "n_rounds": 50,
     "run_reference_checks": true,
+    "gamma_values": [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
     "tolerance": 0.0001
   },
   "minimax": {

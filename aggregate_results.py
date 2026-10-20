@@ -23,8 +23,15 @@ def as_bool(value):
 
 
 def read_results(logs_dir):
+    logs_path = Path(logs_dir)
+    direct_results = logs_path / "results.csv"
+    if direct_results.is_file():
+        with direct_results.open(newline="", encoding="utf-8") as source:
+            rows = list(csv.DictReader(source))
+        return {logs_path.name: rows} if rows else {}
+
     runs = {}
-    for csv_path in sorted(Path(logs_dir).glob("run_*/results.csv")):
+    for csv_path in sorted(logs_path.glob("run_*/results.csv")):
         with csv_path.open(newline="", encoding="utf-8") as source:
             rows = list(csv.DictReader(source))
         if rows:
@@ -65,6 +72,18 @@ def summarize_rows(rows, tolerance):
 def render_report(runs, tolerance):
     all_rows = [row for run_rows in runs.values() for row in run_rows]
     total = summarize_rows(all_rows, tolerance)
+    gamma_values = sorted({
+        gamma for row in all_rows
+        if row.get("tag", "").startswith("round")
+        and (gamma := as_float(row.get("gamma"))) is not None
+    })
+    baselines = {}
+    for run_name, run_rows in runs.items():
+        for row in run_rows:
+            if row.get("tag", "").startswith("round") and as_float(row.get("gamma")) == 0:
+                key = (run_name, row["tag"].partition("_gamma_")[0])
+                baselines[key] = row
+
     lines = [
         "# Aggregated Benchmark Summary",
         "",
@@ -98,6 +117,37 @@ def render_report(runs, tolerance):
             f"| {summary['milo_better']} | {summary['approximately_equal']} "
             f"| {summary['minimax_below_milo']} | {fmt(summary['mean_minimax_time'], 3)} "
             f"| {fmt(summary['mean_milo_time'], 3)} |"
+        )
+
+    lines.extend([
+        "",
+        "## Results by Gamma",
+        "",
+        "| Gamma | Solved / comparisons | Mean Minimax | Mean MILO | Mean gap | Paired Δ Minimax vs Γ=0 | Paired Δ MILO vs Γ=0 |",
+        "|---:|---:|---:|---:|---:|---:|---:|",
+    ])
+    for gamma in gamma_values:
+        gamma_rows = [
+            (run_name, row) for run_name, run_rows in runs.items() for row in run_rows
+            if row.get("tag", "").startswith("round") and as_float(row.get("gamma")) == gamma
+        ]
+        solved = [row for _, row in gamma_rows if as_float(row.get("minimax")) is not None
+                  and as_float(row.get("milo")) is not None]
+        paired = []
+        if gamma != 0:
+            for run_name, row in gamma_rows:
+                baseline = baselines.get((run_name, row["tag"].partition("_gamma_")[0]))
+                current_mm, current_milo = as_float(row.get("minimax")), as_float(row.get("milo"))
+                base_mm = as_float(baseline.get("minimax")) if baseline else None
+                base_milo = as_float(baseline.get("milo")) if baseline else None
+                if current_mm is not None and current_milo is not None and base_mm is not None and base_milo is not None:
+                    paired.append((current_mm - base_mm, current_milo - base_milo))
+        delta_mm = mean([delta[0] for delta in paired]) if paired else (0.0 if gamma == 0 and solved else None)
+        delta_milo = mean([delta[1] for delta in paired]) if paired else (0.0 if gamma == 0 and solved else None)
+        lines.append(
+            f"| {gamma:g} | {len(solved)} / {len(gamma_rows)} "
+            f"| {fmt(mean_field(solved, 'minimax'))} | {fmt(mean_field(solved, 'milo'))} "
+            f"| {fmt(mean_field(solved, 'gap'))} | {fmt(delta_mm)} | {fmt(delta_milo)} |"
         )
 
     references = [row for row in all_rows if row.get("tag", "").startswith("ref")]

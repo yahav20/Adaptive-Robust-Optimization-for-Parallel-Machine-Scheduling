@@ -35,7 +35,7 @@ Run the configured benchmark from the project directory:
 python3 benchmark.py --config config.json
 ```
 
-Each execution creates a timestamped directory under `logs/`, including `results.csv`, a readable `summary.log`, and solver trace logs. The summary compares per-instance runtimes and reports which solver was faster, then compares the complete event order (grouped task starts and task finishes) and identifies the first event where the paths differ. It also records both full event sequences in `results.csv`; identical event sequences can still have different makespans if the solvers select different feasible duration realizations. The random instances are reproducible using the seed in `config.json`; the configured benchmark runs 50 random rounds in addition to the reference checks.
+Each execution creates a timestamped directory under `logs/`, including `results.csv`, a readable `summary.log`, and solver trace logs. The summary compares per-instance runtimes and reports which solver was faster, then compares the complete event order (grouped task starts and task finishes) and identifies the first event where the paths differ. It also records both full event sequences in `results.csv`; identical event sequences can still have different makespans if the solvers select different feasible duration realizations. The random instances are reproducible using the seed in `config.json`; each generated task-duration instance is evaluated at every value in `benchmark.gamma_values`. The default configuration runs 50 random instances across Gamma values from 0 to 4 in 0.5 increments, in addition to the reference checks. Each random instance uses the same task durations across its Gamma sweep.
 
 Aggregate all available run CSVs into a Markdown report:
 
@@ -43,7 +43,7 @@ Aggregate all available run CSVs into a Markdown report:
 python3 aggregate_results.py
 ```
 
-By default, the aggregator reads `logs/run_*/results.csv` and writes `logs/aggregate_summary.md`. Paths and the comparison tolerance can be overridden:
+By default, the aggregator reads `logs/run_*/results.csv` and writes `logs/aggregate_summary.md`. To summarize one specific benchmark run without mixing in earlier runs, point `--logs-dir` directly at that run folder. Paths and the comparison tolerance can be overridden:
 
 ```sh
 python3 aggregate_results.py --logs-dir logs --output logs/aggregate_summary.md --tolerance 0.0001

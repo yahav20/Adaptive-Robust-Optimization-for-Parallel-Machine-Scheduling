@@ -5,12 +5,8 @@ Benchmark: our Minimax idea (ar_minimax.py) vs the paper's exact MILO (ar_milo.p
 
 1. Reference checks: runs both models on config.reference_instances (the scheduling.py
    example must give 1.8296) and reports PASS/FAIL.
-2. n_rounds random instances (n_tasks, n_machines, gamma from config). Each round prints
-   a side-by-side comparison and writes full logs:
-       logs/run_<time>/round_XX_minimax.log      full minimax tree trace + leaf LPs
-       logs/run_<time>/round_XX_milo.log         MILO size, solves, worst-case paths, tree
-       logs/run_<time>/round_XX_milo_gurobi.log  raw Gurobi output
-       logs/run_<time>/summary.log, results.csv
+2. n_rounds random task-duration instances, each evaluated at every configured Gamma.
+   Each comparison writes full minimax and MILO logs, plus summary.log and results.csv.
 """
 
 import argparse
@@ -18,6 +14,7 @@ import csv
 import os
 import random
 import time
+from dataclasses import replace
 
 from ar_common import close_logger, fmt_val, load_config, random_instance, reference_instances, setup_logger, tasks_str
 from ar_milo import solve_milo
@@ -197,17 +194,30 @@ def main():
     prob = cfg["problem"]
     rng = random.Random(cfg["random_instance"]["seed"])
     n_rounds = bcfg["n_rounds"]
+    gamma_values = bcfg.get("gamma_values", [prob["gamma"]])
+    if (not gamma_values
+            or any(not isinstance(gamma, (int, float)) or not 0 <= gamma <= prob["n_tasks"]
+                   for gamma in gamma_values)):
+        raise ValueError(f"benchmark.gamma_values must contain values between 0 and {prob['n_tasks']}")
+    if len(set(gamma_values)) != len(gamma_values):
+        raise ValueError("benchmark.gamma_values must not contain duplicates")
+
     for r in range(1, n_rounds + 1):
-        inst = random_instance(cfg, rng, name=f"round {r}")
-        out.info("#" * 78)
-        out.info(f"ROUND {r}/{n_rounds}  (n_tasks={prob['n_tasks']}, n_machines={prob['n_machines']}, "
-                 f"Gamma={prob['gamma']})")
-        out.info("#" * 78)
-        rows.append(run_instance(inst, cfg, run_dir, f"round_{r:02d}", out))
-        out.info("")
+        base_inst = random_instance(cfg, rng, name=f"round {r}")
+        for gamma in gamma_values:
+            inst = replace(base_inst, name=f"round {r} Gamma={gamma:g}", gamma=gamma)
+            gamma_tag = str(gamma).replace(".", "p")
+            tag = f"round_{r:02d}_gamma_{gamma_tag}"
+            out.info("#" * 78)
+            out.info(f"ROUND {r}/{n_rounds}, Gamma={gamma:g} "
+                     f"(n_tasks={prob['n_tasks']}, n_machines={prob['n_machines']})")
+            out.info("#" * 78)
+            rows.append(run_instance(inst, cfg, run_dir, tag, out))
+            out.info("")
 
     # ------------------------------------------------------------- summary
-    rnd = [x for x in rows if x["tag"].startswith("round") and x["milo"] is not None]
+    rnd_rows = [x for x in rows if x["tag"].startswith("round")]
+    rnd = [x for x in rnd_rows if x["minimax"] is not None and x["milo"] is not None]
     out.info("=" * 78)
     out.info("BENCHMARK SUMMARY")
     out.info("=" * 78)
@@ -224,7 +234,7 @@ def main():
         equal = sum(1 for x in rnd if abs(x["gap"]) <= tol)
         violations = sum(1 for x in rnd if x["gap"] > tol)
         out.info("")
-        out.info(f"  Random rounds solved by both: {len(rnd)}/{n_rounds}")
+        out.info(f"  Random comparisons solved by both: {len(rnd)}/{len(rnd_rows)}")
         out.info(f"  MILO above Minimax (valid lower-bound gap): {above}, equal: {equal}, "
                  f"Minimax above MILO (violations): {violations}")
         out.info(f"  Mean gap: {sum(x['gap'] for x in rnd) / len(rnd):.4f}  "
@@ -233,6 +243,37 @@ def main():
                  f"mean regret of minimax decision: {fmt_val(sum(x['regret'] or 0 for x in rnd) / len(rnd))}")
         out.info(f"  Mean time: minimax {sum(x['minimax_time'] for x in rnd) / len(rnd):.3f}s, "
                  f"MILO {sum(x['milo_time'] for x in rnd) / len(rnd):.3f}s")
+        out.info("  Results by Gamma:")
+        baseline_by_round = {
+            x["tag"].partition("_gamma_")[0]: x
+            for x in rnd_rows if x["gamma"] == 0
+        }
+        for gamma in gamma_values:
+            gamma_rows = [x for x in rnd_rows if x["gamma"] == gamma]
+            gamma_solved = [x for x in gamma_rows if x["minimax"] is not None and x["milo"] is not None]
+            gaps = [x["gap"] for x in gamma_solved if x["gap"] is not None]
+            mean_gap = sum(gaps) / len(gaps) if gaps else None
+            paired = [
+                (x, baseline_by_round.get(x["tag"].partition("_gamma_")[0]))
+                for x in gamma_solved
+            ]
+            paired = [
+                (x, baseline) for x, baseline in paired
+                if baseline is not None and baseline["minimax"] is not None and baseline["milo"] is not None
+            ]
+            delta_mm = (
+                sum(x["minimax"] - baseline["minimax"] for x, baseline in paired) / len(paired)
+                if paired else None
+            )
+            delta_milo = (
+                sum(x["milo"] - baseline["milo"] for x, baseline in paired) / len(paired)
+                if paired else None
+            )
+            out.info(f"    Gamma={gamma:g}: solved {len(gamma_solved)}/{len(gamma_rows)}, "
+                     f"mean makespan Minimax/MILO={fmt_val(sum(x['minimax'] for x in gamma_solved) / len(gamma_solved) if gamma_solved else None)}/"
+                     f"{fmt_val(sum(x['milo'] for x in gamma_solved) / len(gamma_solved) if gamma_solved else None)}, "
+                     f"mean gap={fmt_val(mean_gap)}, paired delta vs Gamma=0 Minimax/MILO="
+                     f"{fmt_val(delta_mm)}/{fmt_val(delta_milo)}")
     out.info("")
     out.info("PER-INSTANCE RUNTIME AND EVENT-ORDER COMPARISON")
     out.info(f"  {'instance':<10} | {'Minimax (s)':>11} | {'MILO (s)':>8} | {'faster':>8} | "
