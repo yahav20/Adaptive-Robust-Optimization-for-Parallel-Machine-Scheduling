@@ -32,7 +32,7 @@ Install the Python package with:
 python3 -m pip install gurobipy
 ```
 
-Gurobi licensing and setup are managed separately; see the [Gurobi installation documentation](https://www.gurobi.com/documentation/). The repository license file is in `config/gurobi.lic`; if Gurobi does not find it automatically, set `GRB_LICENSE_FILE` to that path.
+Gurobi licensing and setup are managed separately; see the [Gurobi installation documentation](https://www.gurobi.com/documentation/). When `GRB_LICENSE_FILE` is unset, the solver automatically uses `config/gurobi.lic` if that local file exists. An existing `GRB_LICENSE_FILE` setting takes precedence; set it to your license path if your license is stored elsewhere.
 
 ## Run
 

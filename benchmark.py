@@ -103,13 +103,16 @@ def run_instance(inst, cfg, run_dir, tag, out):
     out.info(f"  Runtime comparison: Minimax {mm['time']:.3f}s, MILO {milo['time']:.3f}s; "
              f"{faster} faster" + (f" ({speedup:.2f}x)" if speedup is not None else ""))
     out.info(f"  Minimax (ours) : {fmt_val(mv)}  start {tasks_str(mm['root_choice'])}  time {mm['time']:.3f}s  "
-             f"leaves {mm['stats']['leaves']}  LPs {mm['stats']['leaf_lps'] + mm['stats']['feasibility_lps']}")
+             f"leaves {mm['stats']['leaves']}  Gurobi LPs {mm['stats']['gurobi_calls']} "
+             f"({mm['stats']['gurobi_time']:.3f}s in Gurobi)")
     if lv is None:
         out.info(f"  MILO (exact)   : not solved -> {milo['status']}")
     else:
         rc = tasks_str(milo["root_choice"]) if milo["root_choice"] else "?"
         out.info(f"  MILO (exact)   : {fmt_val(lv)}  start {rc}  time {milo['time']:.3f}s  "
-                 f"size {milo['size']}  status {milo['status']}")
+                 f"size {milo['size']}  tree-build LPs {milo['stats'].get('feasibility_lps')}  status {milo['status']}")
+        if not milo.get("optimal", True):
+            out.info("  WARNING: MILO did not prove optimality (time limit?) -> do not average this row")
 
     row = dict(tag=tag, name=inst.name, n_tasks=inst.n_tasks, n_machines=inst.n_machines, gamma=inst.gamma,
                d0=inst.d0, d_bar=inst.d_bar, minimax=mv, milo=lv, gap=None, gap_pct=None,
@@ -120,7 +123,10 @@ def run_instance(inst, cfg, run_dir, tag, out):
                same_order_makespan_diff=same_order_makespan_diff,
                same_decision=None, regret=None, anticipation_cases=len(mm["anticipation"]),
                minimax_time=mm["time"], milo_time=milo["time"], faster=faster, speedup=speedup,
+               minimax_gurobi_calls=mm["stats"]["gurobi_calls"],
+               milo_tree_lps=milo["stats"].get("feasibility_lps"),
                milo_status=milo["status"],
+               milo_optimal=milo.get("optimal"),
                bound_ok=None,
                reference=inst.expected_makespan, reference_ok=None)
 
@@ -185,6 +191,10 @@ def main():
 
     if bcfg.get("run_reference_checks", True):
         for k, inst in enumerate(reference_instances(cfg)):
+            if inst.is_discrete:
+                out.info(f"REFERENCE {k}: {inst.name} skipped (discrete U is MILO-only: "
+                         f"python ar_milo.py --reference {k})")
+                continue
             out.info("#" * 78)
             out.info(f"REFERENCE {k}: {inst.name}")
             out.info("#" * 78)

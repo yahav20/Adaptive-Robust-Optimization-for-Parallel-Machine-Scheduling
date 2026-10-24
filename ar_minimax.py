@@ -1,6 +1,7 @@
 """
 OUR IDEA: Hybrid Minimax Tree Search for Adaptive Robust parallel machine scheduling.
-(Optimized Version: Persistent LP, Fast-Path Feasibility, Memoization & Move Ordering)
+(Optimized Version: Persistent incremental LP, closed-form / witness fast paths, memoization,
+ tail collapse, probe upper-bound cutoff & move ordering)
 
 Generic version of scheduling.py (any number of tasks, machines and Gamma).
 
@@ -16,6 +17,17 @@ Game tree (built recursively, never stored):
           max  C_last(d)   s.t.  E d <= 0,  d_k = D_k (for k in F),
                                  d = d0 + d_bar*u,  u in [0,1],  sum u <= Gamma
       If no d in U satisfies E d <= 0, we fall back to the lowest value in U (d = d0).
+    * TAIL: once nothing is pending there is no scheduler decision left, so the max over all finish
+      orders of the running tasks is  max_r max{C_r(d) : E d <= 0, d in U_{S,F,D}}  -> one LP per
+      running task instead of one feasibility LP + one leaf LP per finish order.
+
+Speed-ups that avoid Gurobi calls (the dominant cost; see stats gurobi_calls / gurobi_time):
+    * closed-form greedy maximizer of e.d over U: if it already satisfies E it is the leaf LP optimum;
+    * feasibility certificates from recently seen feasible duration vectors (witnesses);
+    * at a scheduler node with revealed durations, the candidate loop stops as soon as it reaches the
+      probe value min_c probe(c), which no fixed D_F can exceed (minimax.max_candidates caps the loop);
+    * the persistent LP only adds / removes the E rows that differ from the previous call.
+    The tree trace is buffered and written after the timed search.
 
 Discretization & Lower Bound guarantee:
     At any scheduler node (S, F) with F != empty, the continuous durations of completed
@@ -34,6 +46,7 @@ import argparse
 import itertools
 import os
 import time
+from collections import deque
 
 import gurobipy as gp
 from gurobipy import GRB
@@ -60,7 +73,9 @@ class MinimaxSolver:
         self.trace = trace and logger.isEnabledFor(10)  # 10 = logging.DEBUG
         self.trace_max_depth = trace_max_depth
         self.prune = cfg.get("prune_infeasible_branches", True)
+        self.max_candidates = cfg.get("max_candidates")   # None = all candidate D_F at a scheduler node
         self.env = make_env()
+        self._trace_lines = []
 
         self.stats = dict(
             scheduler_nodes=0,
@@ -71,7 +86,11 @@ class MinimaxSolver:
             pruned_branches=0,
             feasibility_lps=0,
             fast_feas_hits=0,
+            greedy_hits=0,
+            witness_hits=0,
             cache_hits=0,
+            gurobi_calls=0,
+            gurobi_time=0.0,
         )
         self.anticipation = []   # detected inconsistent "revealed" durations
         self.root_choices = {}   # first decision -> worst-case makespan
@@ -79,6 +98,8 @@ class MinimaxSolver:
         # Caches for memoization across candidate checks
         self._feas_cache = {}
         self._leaf_cache = {}
+        # Recently seen feasible duration vectors: a cheap feasibility certificate before calling Gurobi
+        self._witnesses = deque(maxlen=32)
 
         # Precompute task bounds for fast arithmetic checks
         self.d0 = list(inst.d0)
@@ -109,6 +130,8 @@ class MinimaxSolver:
             )
         self.lp.update()
         self._active_E_constrs = []
+        self._synced_E = ()
+        self._bounds = [(self.d0[i], self.d_max[i]) for i in range(self.n)]
 
     def _dispose_lp(self):
         if getattr(self, "lp", None) is not None:
@@ -120,8 +143,9 @@ class MinimaxSolver:
         return self.trace and depth <= self.trace_max_depth
 
     def _t(self, depth, msg):
+        # buffered: written once after the timed search (one logger call per line costs more than the search)
         if self.trace and depth <= self.trace_max_depth:
-            self.log.debug("|  " * depth + msg)
+            self._trace_lines.append("|  " * depth + msg)
 
     # ------------------------------------------------------------------ Fast Math & LP
     def _lowest_in_U(self, e_vector, fixed_d=None):
@@ -205,34 +229,79 @@ class MinimaxSolver:
         return None
 
     def _sync_lp_state(self, E_matrix, fixed_d):
-        """Update variable bounds and E-matrix constraints on the persistent LP model."""
-        # Remove previous E constraints
-        if self._active_E_constrs:
-            self.lp.remove(self._active_E_constrs)
-            self._active_E_constrs.clear()
-
-        # Set variable bounds for fixed_d
-        for i in range(self.n):
-            if i in fixed_d:
-                val = fixed_d[i]
-                self.d_vars[i].LB = val
-                self.d_vars[i].UB = val
-            else:
-                self.d_vars[i].LB = self.d0[i]
-                self.d_vars[i].UB = self.d_max[i]
-
-        # Add current E constraints
-        for row in E_matrix:
+        """Update variable bounds and E-matrix constraints on the persistent LP model.
+        The search is depth-first, so consecutive E matrices share a prefix: only the rows after the
+        common prefix are removed / added, and only the bounds that changed are touched."""
+        prev = self._synced_E
+        k, lim = 0, min(len(prev), len(E_matrix))
+        while k < lim and prev[k] == E_matrix[k]:
+            k += 1
+        if k < len(self._active_E_constrs):
+            self.lp.remove(self._active_E_constrs[k:])
+            del self._active_E_constrs[k:]
+        for row in E_matrix[k:]:
             expr = gp.LinExpr(
                 [(row[i], self.d_vars[i]) for i in range(self.n) if row[i] != 0]
             )
             self._active_E_constrs.append(self.lp.addConstr(expr <= 0.0))
+        self._synced_E = E_matrix
+
+        for i in range(self.n):
+            b = (fixed_d[i], fixed_d[i]) if i in fixed_d else (self.d0[i], self.d_max[i])
+            if b != self._bounds[i]:
+                self.d_vars[i].LB, self.d_vars[i].UB = b
+                self._bounds[i] = b
+
+    def _optimize(self):
+        self.stats["gurobi_calls"] += 1
+        t0 = time.perf_counter()
+        self.lp.optimize()
+        self.stats["gurobi_time"] += time.perf_counter() - t0
 
     def _canonical_key(self, E_matrix, fixed_d):
         fixed_key = tuple(sorted((k, round(v, 7)) for k, v in fixed_d.items())) if fixed_d else ()
         return (E_matrix, fixed_key)
 
-    def _feasible(self, E_matrix, fixed_d=None):
+    def _greedy_max(self, e_vector, fixed_d):
+        """Closed-form max of e.d over U with d_k = fixed_d[k], ignoring E: spend the remaining budget on
+        the largest e_i * d_bar_i. It is an upper bound on the leaf LP, and its optimum whenever the
+        maximizer also satisfies E. Returns (val, d, u), or None if fixed_d alone leaves U."""
+        n = self.n
+        d_vals = list(self.d0)
+        u_vals = [0.0] * n
+        rem = self.gamma
+        for k, val_k in fixed_d.items():
+            d_vals[k] = val_k
+            if self.d_bar[k] > 0:
+                u_vals[k] = (val_k - self.d0[k]) / self.d_bar[k]
+                rem -= u_vals[k]
+        if rem < -TOL:
+            return None
+        gains = sorted((i for i in range(n) if i not in fixed_d and e_vector[i] > 0 and self.d_bar[i] > 0),
+                       key=lambda i: -e_vector[i] * self.d_bar[i])
+        for i in gains:
+            if rem <= 0.0:
+                break
+            a = min(1.0, rem)
+            u_vals[i] = a
+            d_vals[i] += a * self.d_bar[i]
+            rem -= a
+        val = sum(e_vector[i] * d_vals[i] for i in range(n) if e_vector[i] != 0)
+        return val, d_vals, u_vals
+
+    def _satisfies(self, E_matrix, d_vals, fixed_d):
+        """Is the full duration vector d_vals (assumed in U) a witness for E d <= 0 and d_k = fixed_d[k]?"""
+        for k, val_k in fixed_d.items():
+            if abs(d_vals[k] - val_k) > 1e-9:
+                return False
+        n = self.n
+        for row in E_matrix:
+            if sum(row[i] * d_vals[i] for i in range(n) if row[i] != 0) > TOL:
+                return False
+        return True
+
+    def _feasible(self, E_matrix, fixed_d=None, hint=None):
+        """Is {d in U : E d <= 0, d_k = fixed_d[k]} non-empty? `hint` is an optional known-good vector."""
         fixed_d = fixed_d or {}
         fast_res = self._fast_check_E(E_matrix, fixed_d)
         if fast_res is not None:
@@ -244,11 +313,19 @@ class MinimaxSolver:
             self.stats["cache_hits"] += 1
             return self._feas_cache[key]
 
+        if (hint is not None and self._satisfies(E_matrix, hint, fixed_d)) or \
+                any(self._satisfies(E_matrix, w, fixed_d) for w in self._witnesses):
+            self.stats["witness_hits"] += 1
+            self._feas_cache[key] = True
+            return True
+
         self.stats["feasibility_lps"] += 1
         self._sync_lp_state(E_matrix, fixed_d)
         self.lp.setObjective(0.0, GRB.MAXIMIZE)
-        self.lp.optimize()
+        self._optimize()
         ok = (self.lp.Status == GRB.OPTIMAL)
+        if ok:
+            self._witnesses.append([v.X for v in self.d_vars])
         self._feas_cache[key] = ok
         return ok
 
@@ -269,19 +346,30 @@ class MinimaxSolver:
             self.stats["cache_hits"] += 1
             return self._leaf_cache[key]
 
+        # Fast path: the relaxation maximizer (ignoring E) already respects E -> it is the LP optimum
+        greedy = self._greedy_max(e_vector, fixed_d)
+        if greedy is not None and self._satisfies(E_matrix, greedy[1], fixed_d):
+            self.stats["greedy_hits"] += 1
+            res = (*greedy, True)
+            self._witnesses.append(greedy[1])
+            self._leaf_cache[key] = res
+            self._feas_cache[key[0]] = True
+            return res
+
         self.stats["leaf_lps"] += 1
         self._sync_lp_state(E_matrix, fixed_d)
         obj_expr = gp.LinExpr(
             [(e_vector[i], self.d_vars[i]) for i in range(self.n) if e_vector[i] != 0]
         )
         self.lp.setObjective(obj_expr, GRB.MAXIMIZE)
-        self.lp.optimize()
+        self._optimize()
 
         if self.lp.Status == GRB.OPTIMAL:
             val = self.lp.ObjVal
             d_vals = [self.d_vars[i].X for i in range(self.n)]
             u_vals = [self.u_vars[i].X for i in range(self.n)]
             feasible = True
+            self._witnesses.append(d_vals)
         else:
             val, d_vals, u_vals = self._lowest_in_U(e_vector, fixed_d)
             feasible = False
@@ -325,7 +413,11 @@ class MinimaxSolver:
         finally:
             self._dispose_lp()
 
-        elapsed = time.perf_counter() - t0
+        elapsed = time.perf_counter() - t0      # search only; the buffered trace is written below
+        self.stats["gurobi_time"] = round(self.stats["gurobi_time"], 4)
+        if self._trace_lines:
+            self.log.debug("\n".join(self._trace_lines))
+            self._trace_lines = []
         root_choice = min(self.root_choices, key=lambda c: self.root_choices[c])
 
         self.log.info("-" * 78)
@@ -448,6 +540,7 @@ class MinimaxSolver:
 
         # Deduplicate discrete candidate realizations of D_F = {d_i : i in finished}
         candidate_D_list = []
+        candidate_vecs = []      # full d vector each candidate came from (feasibility witness)
         seen_D = set()
         # Prioritize the winning leaves of each branch first for better Alpha-Beta move ordering
         priority_d = [
@@ -459,12 +552,16 @@ class MinimaxSolver:
             if key not in seen_D:
                 seen_D.add(key)
                 candidate_D_list.append({i: d_vec[i] for i in finished})
+                candidate_vecs.append(d_vec)
 
         # Also include nominal durations d0 for finished tasks as a guaranteed feasible baseline in U
         nom_key = tuple(round(self.d0[i], 6) for i in finished)
         if nom_key not in seen_D:
             seen_D.add(nom_key)
             candidate_D_list.append({i: self.d0[i] for i in finished})
+            candidate_vecs.append(None)
+        if self.max_candidates is not None:
+            candidate_D_list = candidate_D_list[:self.max_candidates]
 
         # Check if the winning leaves of all branches already agree on the durations of finished tasks
         winning_keys = {tuple(round(d_vec[i], 6) for i in finished) for d_vec in priority_d}
@@ -476,6 +573,10 @@ class MinimaxSolver:
 
         # Order combos by their probe values ascending so the minimizer finds small values first in Step 2b
         ordered_combos = [c for c, _, _ in sorted(probe_results, key=lambda x: x[1])]
+        # In the probe the adversary also chose the durations of F freely in each branch, so
+        # min_c probe(c) bounds what any fixed D_F can reach: stop the candidate loop once it is reached.
+        # (Every candidate evaluated is itself a valid lower bound, so stopping early keeps the bound valid.)
+        probe_ub = min(v for _, v, _ in probe_results)
 
         # Step 2b: Discretized Non-Anticipative evaluation.
         # For each discrete candidate realization D_F of the completed tasks F,
@@ -485,17 +586,17 @@ class MinimaxSolver:
         best_adv_leaf = None
         best_adv_results = []
 
-        for cand_D in candidate_D_list:
+        for cand_D, cand_vec in zip(candidate_D_list, candidate_vecs):
             merged_fixed = dict(fixed_d)
             merged_fixed.update(cand_D)
-            if not self._feasible(E_matrix, merged_fixed):
+            if not self._feasible(E_matrix, merged_fixed, hint=cand_vec):
                 continue
 
             sched_best_val = float("inf")
             sched_best_combo = None
             sched_best_leaf = None
             cand_results = []
-            local_beta = beta
+            local_beta = min(beta, probe_ub)
 
             for combo in ordered_combos:
                 new_running = dict(running)
@@ -527,7 +628,7 @@ class MinimaxSolver:
                 best_adv_leaf = sched_best_leaf
                 best_adv_results = cand_results
 
-            if best_adv_val >= beta:
+            if best_adv_val >= min(beta, probe_ub - TOL):
                 self.stats["pruned_branches"] += 1
                 break
 
@@ -541,11 +642,73 @@ class MinimaxSolver:
             self._t(depth, f"[SCHEDULER] {node} -> MIN under discretized D_F => start {tasks_str(best_adv_combo)} (value {fmt_val(best_adv_val)})")
         return best_adv_val, best_adv_leaf
 
+    def tail_turn(self, running, E_matrix, path, depth, fixed_d, candidate_pool):
+        """Adversary node with nothing left to start. No scheduler decision (hence no non-anticipativity)
+        remains below, and the finish-order regions of the running tasks cover the whole polytope
+        P = {d in U : E d <= 0, d_k = D_k}, so the max over all finish orders equals
+            max_r  max_{d in P} C_r(d)        -> one LP per running task, no ordering rows.
+        The reported leaf path lists the remaining finishes in the order induced by the optimal d."""
+        self.stats["adversary_nodes"] += 1
+        do_t = self._do_trace(depth)
+        if do_t:
+            self._t(depth, f"[ADVERSARY/TAIL] {path_str(path)}")
+            self._t(depth, f"   running={self._fmt_running(running)}; nothing pending -> "
+                           f"worst case = max over r of LP max C(r)")
+            self._t(depth, "   sequence constraints: " + ("; ".join(fmt_row(r) for r in E_matrix) or "none"))
+
+        # Upper bound per task (relaxation without E), try the most promising task first
+        bounds = []
+        for r in sorted(running):
+            g = self._greedy_max(running[r], fixed_d)
+            bounds.append((g[0] if g is not None else float("inf"), r))
+        bounds.sort(key=lambda x: -x[0])
+
+        best_val, best_r, best = NEG_INF, None, None
+        infeasible = []
+        for ub, r in bounds:
+            if ub <= best_val + TOL:
+                self.stats["pruned_branches"] += 1
+                if do_t:
+                    self._t(depth + 1, f"skip {task_name(r)} last: bound {ub:.4f} <= current max {best_val:.4f}")
+                continue
+            self.stats["leaves"] += 1
+            val, d_vals, u_vals, feasible = self.solve_leaf_lp(E_matrix, running[r], fixed_d)
+            if not feasible:
+                self.stats["infeasible_leaves"] += 1
+                infeasible.append((val, r, d_vals, u_vals))
+                if do_t:
+                    self._t(depth + 1, f"{task_name(r)} last: LP infeasible -> lowest in U {val:.4f}")
+                continue
+            if candidate_pool is not None:
+                candidate_pool.append(d_vals)
+            if do_t:
+                self._t(depth + 1, f"{task_name(r)} last: max C({task_name(r)}) = {fmt_expr(running[r])} "
+                                   f"-> {val:.4f} with d = {fmt_d(d_vals)}")
+            if val > best_val:
+                best_val, best_r, best = val, r, (d_vals, u_vals)
+
+        if best is None:
+            # P is empty (only possible with prune_infeasible_branches=false): lowest value in U
+            val, r, d_vals, u_vals = min(infeasible, key=lambda x: x[0])
+            leaf_path = path + [("F", t) for t in sorted(running, key=lambda t: t == r)]
+            return val, dict(path=leaf_path, d=d_vals, u=u_vals, value=val, feasible=False)
+
+        d_vals, u_vals = best
+        C = {t: sum(e[i] * d_vals[i] for i in range(self.n)) for t, e in running.items()}
+        order = sorted(running, key=lambda t: (C[t], t == best_r))
+        leaf_path = path + [("F", t) for t in order]
+        if do_t:
+            self._t(depth, f"[ADVERSARY/TAIL] {path_str(path)} -> MAX => {path_str(leaf_path[len(path):])} "
+                           f"(value {fmt_val(best_val)})")
+        return best_val, dict(path=leaf_path, d=d_vals, u=u_vals, value=best_val, feasible=True)
+
     def adversary_turn(self, running, pending, finished, E_matrix, path, depth,
                        alpha, beta, fixed_d=None, candidate_pool=None):
         """Adversary (max): decide which running task finishes first."""
-        self.stats["adversary_nodes"] += 1
         fixed_d = fixed_d or {}
+        if not pending:
+            return self.tail_turn(running, E_matrix, path, depth, fixed_d, candidate_pool)
+        self.stats["adversary_nodes"] += 1
         do_t = self._do_trace(depth)
         do_t1 = self._do_trace(depth + 1)
 
@@ -584,18 +747,11 @@ class MinimaxSolver:
 
             rest_running = {r: e for r, e in running.items() if r != f}
             new_finished = finished + (f,)
-            if not rest_running and not pending:
-                val, leaf = self.leaf(E2, running[f], child_path, depth + 1, fixed_d, candidate_pool)
-            elif pending:
-                val, leaf = self.scheduler_turn(
-                    rest_running, pending, new_finished, E2, running[f], 1,
-                    child_path, depth + 1, alpha, beta, fixed_d, candidate_pool
-                )
-            else:
-                val, leaf = self.adversary_turn(
-                    rest_running, pending, new_finished, E2,
-                    child_path, depth + 1, alpha, beta, fixed_d, candidate_pool
-                )
+            # pending is non-empty here (empty pending is handled by tail_turn): a machine frees up
+            val, leaf = self.scheduler_turn(
+                rest_running, pending, new_finished, E2, running[f], 1,
+                child_path, depth + 1, alpha, beta, fixed_d, candidate_pool
+            )
 
             if leaf is not None and leaf.get("feasible", True):
                 feasible_results.append((f, val, leaf))
@@ -621,27 +777,6 @@ class MinimaxSolver:
         if do_t:
             self._t(depth, f"[ADVERSARY] {node} -> MAX of explored options => {task_name(best_f)} finishes first (value {fmt_val(best_val)})")
         return best_val, best_leaf
-
-    def leaf(self, E_matrix, e_vector, path, depth, fixed_d=None, candidate_pool=None):
-        self.stats["leaves"] += 1
-        val, d_vals, u_vals, feasible = self.solve_leaf_lp(E_matrix, e_vector, fixed_d)
-        do_t = self._do_trace(depth)
-
-        if do_t:
-            self._t(depth, f"[LEAF] {path_str(path)}")
-            self._t(depth, f"   makespan = C(last) = {fmt_expr(e_vector)}; sequence constraints: "
-                           + ("; ".join(fmt_row(r) for r in E_matrix) or "none"))
-
-        if not feasible:
-            self.stats["infeasible_leaves"] += 1
-            if do_t:
-                self._t(depth, f"   LP infeasible -> fallback to lowest in U: {val:.4f} with d = {fmt_d(d_vals)}")
-        else:
-            if candidate_pool is not None and d_vals is not None:
-                candidate_pool.append(d_vals)
-            if do_t:
-                self._t(depth, f"   LP -> makespan {val:.4f} with d = {fmt_d(d_vals)} (sum u = {sum(u_vals):.4f})")
-        return val, dict(path=path, d=d_vals, u=u_vals, value=val, feasible=feasible)
 
     # ------------------------------------------------------------------ analysis
     def _check_anticipation(self, node, finished, results):
@@ -675,6 +810,8 @@ class MinimaxSolver:
 
 
 def solve_minimax(inst, cfg, logger):
+    if inst.is_discrete:
+        raise NotImplementedError("Minimax supports only the budgeted uncertainty set (use ar_milo.py)")
     log_cfg = cfg.get("logging", {})
     solver = MinimaxSolver(
         inst,

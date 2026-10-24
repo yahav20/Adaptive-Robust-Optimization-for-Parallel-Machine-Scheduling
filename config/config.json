@@ -4,7 +4,11 @@
     "random_instance": "benchmark rounds draw d0_i ~ U(d0_range) and d_bar_i ~ U(d_bar_range); same seed -> same instances",
     "benchmark": "n_rounds random instances evaluated at each gamma_values entry; reference instances are checked first",
     "milo": "free pip Gurobi license is limited to 2000 vars/constraints -> MILO works up to about n_tasks=4 with 2 machines",
-    "logging": "trace_tree=true writes every node of both trees to the per-round log files"
+    "milo_exact_paper": "exact replica of the paper's model (P): prune_infeasible_branches=false, enforce_non_anticipativity=true, flatten_final_phase=true; 'time' = build + ONE solve, per-first-decision solves are reported separately (root_choice_time)",
+    "milo_options": "enforce_non_anticipativity=false is a relaxation (upper bound); tie_tol = first-decision tie tolerance (lexicographic among ties); int_feas_tol / numeric_focus = Big-M numerical safety",
+    "discrete_reference": "a reference instance may give \"scenarios\": [[d1..dn], ...] instead of d0/d_bar/gamma -> discrete uncertainty set (MILO only)",
+    "logging": "trace_tree=true writes every node of both trees to the per-round log files",
+    "minimax_max_candidates": "minimax.max_candidates caps how many revealed-duration candidates D_F a scheduler node tries (null = all); fewer = faster, still a valid lower bound"
   },
   "problem": {
     "n_tasks": 4,
@@ -24,11 +28,17 @@
     "tolerance": 0.0001
   },
   "minimax": {
-    "prune_infeasible_branches": true
+    "prune_infeasible_branches": true,
+    "max_candidates": null
   },
   "milo": {
     "prune_infeasible_branches": true,
+    "enforce_non_anticipativity": true,
+    "flatten_final_phase": true,
     "solve_each_root_choice": true,
+    "tie_tol": 1e-6,
+    "int_feas_tol": 1e-9,
+    "numeric_focus": 1,
     "time_limit_sec": 300,
     "mip_gap": 0.0,
     "threads": 0,

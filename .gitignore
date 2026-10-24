@@ -4,3 +4,4 @@ __pycache__/
 /logs/run_*/
 gurobi.lic
 /logs/scaling_*/
+/logs/batch*/

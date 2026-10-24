@@ -13,6 +13,9 @@ Conventions (same as scheduling.py):
     * A sequence-validity constraint (row of the E matrix) is a coefficient list
       `row` meaning  sum_i row[i] * d_i <= 0.
     * Durations: d_i = d0_i + d_bar_i * u_i,  u_i in [0, 1],  sum_i u_i <= Gamma.
+    * Discrete uncertainty (paper Sec. 4.2.2 / 7.2, MILO only): `Instance.scenarios` is a list
+      of duration vectors and d must equal one of them. d0 / d_bar then hold the per-task
+      min / (max - min) so that bounds and printing still work.
 """
 
 import json
@@ -40,10 +43,15 @@ class Instance:
     gamma: float
     n_machines: int
     expected_makespan: Optional[float] = None
+    scenarios: Optional[List[List[float]]] = None   # discrete U (None = budgeted U)
 
     @property
     def n_tasks(self):
         return len(self.d0)
+
+    @property
+    def is_discrete(self):
+        return self.scenarios is not None
 
     @property
     def max_total_duration(self):
@@ -57,9 +65,25 @@ class Instance:
         ]
         for i in range(self.n_tasks):
             lines.append(f"  {task_name(i):>4} | {self.d0[i]:8.4f} | {self.d_bar[i]:8.4f} | {self.d0[i] + self.d_bar[i]:8.4f}")
+        if self.is_discrete:
+            lines.append(f"  DISCRETE uncertainty set, {len(self.scenarios)} scenarios (Gamma unused):")
+            for s, scen in enumerate(self.scenarios):
+                lines.append(f"    scenario {s + 1}: {fmt_d(scen)}")
         if self.expected_makespan is not None:
             lines.append(f"  expected optimal AR makespan (reference) = {self.expected_makespan:.4f}")
         return "\n".join(lines)
+
+
+def discrete_instance(name, scenarios, n_machines, expected_makespan=None) -> Instance:
+    """Instance whose uncertainty set is the finite list `scenarios` (one duration vector each)."""
+    scenarios = [list(map(float, s)) for s in scenarios]
+    n = len(scenarios[0])
+    if any(len(s) != n for s in scenarios):
+        raise ValueError("all scenarios must have the same number of tasks")
+    lo = [min(s[i] for s in scenarios) for i in range(n)]
+    hi = [max(s[i] for s in scenarios) for i in range(n)]
+    return Instance(name=name, d0=lo, d_bar=[h - l for l, h in zip(lo, hi)], gamma=float(n),
+                    n_machines=n_machines, expected_makespan=expected_makespan, scenarios=scenarios)
 
 
 def load_config(path="config/config.json"):
@@ -83,6 +107,10 @@ def random_instance(cfg, rng: random.Random, name: str) -> Instance:
 def reference_instances(cfg) -> List[Instance]:
     out = []
     for ref in cfg.get("reference_instances", []):
+        if "scenarios" in ref:
+            out.append(discrete_instance(ref["name"], ref["scenarios"], ref["n_machines"],
+                                         ref.get("expected_makespan")))
+            continue
         out.append(Instance(
             name=ref["name"], d0=list(ref["d0"]), d_bar=list(ref["d_bar"]),
             gamma=ref["gamma"], n_machines=ref["n_machines"],
@@ -196,6 +224,10 @@ def path_str(path):
 # ----------------------------------------------------------------------------
 
 def make_env():
+    if not os.environ.get("GRB_LICENSE_FILE"):
+        license_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config", "gurobi.lic")
+        if os.path.isfile(license_path):
+            os.environ["GRB_LICENSE_FILE"] = license_path
     env = gp.Env(empty=True)
     env.setParam("OutputFlag", 0)
     env.start()
@@ -203,8 +235,11 @@ def make_env():
 
 
 def lp_feasible(env, inst: Instance, E_matrix):
-    """Is there a duration vector in the budgeted uncertainty set satisfying E d <= 0 ?"""
+    """Is there a duration vector in the uncertainty set satisfying E d <= 0 ?"""
     n = inst.n_tasks
+    if inst.is_discrete:
+        return any(all(sum(row[i] * scen[i] for i in range(n)) <= TOL for row in E_matrix)
+                   for scen in inst.scenarios)
     model = gp.Model("Feasibility_LP", env=env)
     u = model.addVars(n, lb=0.0, ub=1.0, name="u")
     model.addConstr(gp.quicksum(u[i] for i in range(n)) <= inst.gamma)
