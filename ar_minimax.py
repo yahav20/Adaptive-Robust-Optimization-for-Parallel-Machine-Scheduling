@@ -84,6 +84,12 @@ class MinimaxSolver:
             leaf_lps=0,
             infeasible_leaves=0,
             pruned_branches=0,
+            prune_alpha=0,
+            prune_beta=0,
+            prune_candidate_cutoff=0,
+            prune_candidate_bound=0,
+            prune_tail_bound=0,
+            prune_infeasible=0,
             feasibility_lps=0,
             fast_feas_hits=0,
             greedy_hits=0,
@@ -506,6 +512,7 @@ class MinimaxSolver:
                 beta = min(beta, best_val)
                 if best_val <= alpha:
                     self.stats["pruned_branches"] += 1
+                    self.stats["prune_alpha"] += 1
                     if do_t1:
                         self._t(depth + 1, f"   Alpha pruning! best_val {best_val:.4f} <= alpha {alpha:.4f}")
                     break
@@ -620,6 +627,7 @@ class MinimaxSolver:
                 local_beta = min(local_beta, sched_best_val)
                 if sched_best_val <= max(alpha, best_adv_val):
                     self.stats["pruned_branches"] += 1
+                    self.stats["prune_candidate_cutoff"] += 1
                     break
 
             if sched_best_val > best_adv_val:
@@ -630,6 +638,7 @@ class MinimaxSolver:
 
             if best_adv_val >= min(beta, probe_ub - TOL):
                 self.stats["pruned_branches"] += 1
+                self.stats["prune_candidate_bound"] += 1
                 break
 
         if best_adv_leaf is None:
@@ -668,6 +677,7 @@ class MinimaxSolver:
         for ub, r in bounds:
             if ub <= best_val + TOL:
                 self.stats["pruned_branches"] += 1
+                self.stats["prune_tail_bound"] += 1
                 if do_t:
                     self._t(depth + 1, f"skip {task_name(r)} last: bound {ub:.4f} <= current max {best_val:.4f}")
                 continue
@@ -737,6 +747,7 @@ class MinimaxSolver:
 
             if self.prune and new_rows and not self._feasible(E2, fixed_d):
                 self.stats["pruned_branches"] += 1
+                self.stats["prune_infeasible"] += 1
                 if do_t1:
                     self._t(depth + 1, "   impossible sequence under the budget Gamma -> fallback to lowest in U")
                 low_val, low_d, low_u = self._lowest_in_U(running[f], fixed_d)
@@ -764,6 +775,7 @@ class MinimaxSolver:
                 alpha = max(alpha, best_val)
                 if best_val >= beta:
                     self.stats["pruned_branches"] += 1
+                    self.stats["prune_beta"] += 1
                     if do_t1:
                         self._t(depth + 1, f"   Beta pruning! best_val {best_val:.4f} >= beta {beta:.4f} (pruned remaining permutations)")
                     break

@@ -328,6 +328,7 @@ class MiloSolver:
         status = {GRB.OPTIMAL: "OPTIMAL", GRB.TIME_LIMIT: "TIME_LIMIT"}.get(m.Status, f"STATUS_{m.Status}")
         val = m.ObjVal if m.SolCount > 0 else None
         bound = m.ObjBound if m.SolCount > 0 else None
+        self._last_bound = bound
         self.log.info(f"  [{tag}] status={status} value={fmt_val(val)} bound={fmt_val(bound)} "
                       f"nodes={int(m.NodeCount)} time={elapsed:.3f}s")
         return val, status, elapsed
@@ -382,6 +383,7 @@ class MiloSolver:
         worst_path = None
         try:
             value, status, solve_time = self._optimize(root.val, "full MILO, max t_root")
+            full_bound = self._last_bound   # Gurobi's proven upper bound on max t_root (== value when OPTIMAL)
             t_diag = time.perf_counter()
             root_choices, root_status, root_paths = {}, {}, {}
             per_choice = self.cfg.get("solve_each_root_choice", True) or state is not None
@@ -426,7 +428,7 @@ class MiloSolver:
                       f"per-first-decision solves {root_choice_time:.3f}s; total {total_time:.3f}s")
         return dict(model="milo" if self.enforce_na else "milo_no_na", value=value, status=status,
                     optimal=optimal, root_choice=root_choice, root_choices=root_choices,
-                    root_status=root_status, worst_path=worst_path, stats=dict(self.stats), size=size,
+                    root_status=root_status, bound=full_bound, worst_path=worst_path, stats=dict(self.stats), size=size,
                     time=build_time + solve_time, build_time=build_time, solve_time=solve_time,
                     root_choice_time=root_choice_time, total_time=total_time)
 

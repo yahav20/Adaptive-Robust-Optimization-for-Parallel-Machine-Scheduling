@@ -39,7 +39,7 @@
     "tie_tol": 1e-6,
     "int_feas_tol": 1e-9,
     "numeric_focus": 1,
-    "time_limit_sec": 300,
+    "time_limit_sec": 3600,
     "mip_gap": 0.0,
     "threads": 0,
     "write_gurobi_log": true
