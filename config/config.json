@@ -8,7 +8,8 @@
     "milo_options": "enforce_non_anticipativity=false is a relaxation (upper bound); tie_tol = first-decision tie tolerance (lexicographic among ties); int_feas_tol / numeric_focus = Big-M numerical safety",
     "discrete_reference": "a reference instance may give \"scenarios\": [[d1..dn], ...] instead of d0/d_bar/gamma -> discrete uncertainty set (MILO only)",
     "logging": "trace_tree=true writes every node of both trees to the per-round log files",
-    "minimax_max_candidates": "minimax.max_candidates caps how many revealed-duration candidates D_F a scheduler node tries (null = all); fewer = faster, still a valid lower bound"
+    "minimax_max_candidates": "minimax.max_candidates caps how many revealed-duration candidates D_F a scheduler node tries (null = all); fewer = faster, still a valid lower bound",
+    "minimax_ub": "ar_minimax_ub.py (upper bound, independent leaf LPs): alpha_beta=false solves every leaf LP (same value); exact_root_values=true gives the exact UB of every first decision; tie_tol = first-decision tie tolerance"
   },
   "problem": {
     "n_tasks": 4,
@@ -30,6 +31,12 @@
   "minimax": {
     "prune_infeasible_branches": true,
     "max_candidates": null
+  },
+  "minimax_ub": {
+    "prune_infeasible_branches": true,
+    "alpha_beta": true,
+    "exact_root_values": true,
+    "tie_tol": 1e-6
   },
   "milo": {
     "prune_infeasible_branches": true,

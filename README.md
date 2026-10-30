@@ -9,6 +9,7 @@ d_i = d_i^0 + \bar d_i u_i, \qquad 0 \le u_i \le 1, \qquad \sum_i u_i \le \Gamma
 ## Approaches
 
 - **Hybrid Minimax** ([`ar_minimax.py`](ar_minimax.py)) searches the scheduler/adversary decision tree recursively and evaluates completed paths with linear programs. At scheduler decisions after tasks finish, it restricts shared completed-task durations to a finite set of feasible candidate realizations from the search. This discretized adversary is weaker than the continuous adversary in the exact MILO, so Minimax is a lower bound on the exact adaptive-robust makespan.
+- **Hybrid Minimax upper bound** ([`ar_minimax_ub.py`](ar_minimax_ub.py)) searches the same tree, but solves every leaf LP independently, so the adversary may pick different durations for already-finished tasks in sibling branches. Relaxing non-anticipativity this way makes it an upper bound on the exact makespan; it equals the MILO with `enforce_non_anticipativity=false`. It is standalone and does not import `ar_minimax.py`.
 - **Exact MILO** ([`ar_milo.py`](ar_milo.py)) represents the game as a monolithic mixed-integer linear optimization model and enforces non-anticipativity across shared histories.
 - **Benchmark** ([`benchmark.py`](benchmark.py)) runs both methods on reference and seeded random instances, writes per-instance logs and `results.csv`, and checks their values and decisions.
 
@@ -62,6 +63,7 @@ Run an individual solver on a configured reference instance with:
 
 ```sh
 python3 ar_minimax.py --reference 0
+python3 ar_minimax_ub.py --reference 0
 python3 ar_milo.py --reference 0
 ```
 
