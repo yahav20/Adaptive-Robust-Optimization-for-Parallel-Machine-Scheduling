@@ -1,6 +1,9 @@
 """Aggregate benchmark results.csv files into a Markdown report.
 
-Usage: python3 aggregate_results.py [--logs-dir logs] [--output logs/aggregate_summary.md]
+Usage: python3 aggregate_results.py [--logs-dir logs/benchmark] [--output logs/benchmark/aggregate_summary.md]
+
+Finds every run_*/results.csv below --logs-dir (e.g. logs/benchmark/n4_m2/run_<ts>/results.csv),
+or reads --logs-dir/results.csv directly when it points at one run folder.
 """
 
 import argparse
@@ -31,11 +34,11 @@ def read_results(logs_dir):
         return {logs_path.name: rows} if rows else {}
 
     runs = {}
-    for csv_path in sorted(logs_path.glob("run_*/results.csv")):
+    for csv_path in sorted(logs_path.rglob("run_*/results.csv")):
         with csv_path.open(newline="", encoding="utf-8") as source:
             rows = list(csv.DictReader(source))
         if rows:
-            runs[csv_path.parent.name] = rows
+            runs[csv_path.parent.relative_to(logs_path).as_posix()] = rows
     return runs
 
 
@@ -170,14 +173,14 @@ def render_report(runs, tolerance):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--logs-dir", default="logs", help="directory containing run_* folders")
-    parser.add_argument("--output", default="logs/aggregate_summary.md", help="Markdown output path")
+    parser.add_argument("--logs-dir", default="logs/benchmark", help="directory searched for run_* folders")
+    parser.add_argument("--output", default="logs/benchmark/aggregate_summary.md", help="Markdown output path")
     parser.add_argument("--tolerance", type=float, default=1e-4, help="gap threshold for comparisons")
     args = parser.parse_args()
 
     runs = read_results(args.logs_dir)
     if not runs:
-        parser.error(f"No run_*/results.csv files found under {args.logs_dir}")
+        parser.error(f"No run_*/results.csv files found below {args.logs_dir}")
 
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)

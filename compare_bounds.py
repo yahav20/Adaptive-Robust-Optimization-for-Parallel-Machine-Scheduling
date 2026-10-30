@@ -20,7 +20,7 @@ random.Random(random_instance.seed + n), one random_instance per round (checked 
     merged, later files override earlier ones by round). Without a saved file for n the model runs in full.
   * --recover-decisions re-runs a saved model only where its first decision was not saved, to fill in the
     decision columns; the saved values and times are kept.
-Outputs logs/bounds/gamma_<g>/run_<ts>/: n<n>/{results.csv, ub_results.json, summary.log, round_XX_ub.log}
+Outputs logs/bounds/gamma_<g>/run_<ts>/: n<n>/{results.csv, ub_results.json, summary.log, instances/round_XX_ub.log}
 and the cross-n results_all.csv and summary_all.log.
 """
 
@@ -150,7 +150,7 @@ def run_n(n, args, cfg0, lb_paths, milo_paths, run_dir, tol):
                     f"n={n} round {r}: regenerated instance differs from {saved['source']}"
 
         # UB (new solver, always run)
-        lg = setup_logger(f"ub_n{n}_r{r}", os.path.join(n_dir, f"round_{r:02d}_ub.log"))
+        lg = setup_logger(f"ub_n{n}_r{r}", os.path.join(n_dir, "instances", f"round_{r:02d}_ub.log"))
         ub = solve_minimax_ub(inst, cfg, lg)
         close_logger(lg)
 
@@ -389,7 +389,7 @@ def main():
     ap.add_argument("--recover-decisions", action="store_true",
                     help="re-run saved models whose first decision was not saved (values and times stay saved)")
     ap.add_argument("--out-dir", default=None, help="default: <log_dir>/bounds/gamma_<g>")
-    ap.add_argument("--trace", action="store_true", help="write the full UB tree trace to round_XX_ub.log")
+    ap.add_argument("--trace", action="store_true", help="write the full UB tree trace to instances/round_XX_ub.log")
     args = ap.parse_args()
 
     cfg = load_config(args.config)

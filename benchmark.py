@@ -6,11 +6,19 @@ Benchmark: our Minimax idea (ar_minimax.py) vs the paper's exact MILO (ar_milo.p
 1. Reference checks: runs both models on config.reference_instances (the scheduling.py
    example must give 1.8296) and reports PASS/FAIL.
 2. n_rounds random task-duration instances, each evaluated at every configured Gamma.
-   Each comparison writes full minimax and MILO logs, plus summary.log and results.csv.
+
+Output: logs/benchmark/n<n_tasks>_m<n_machines>/run_<ts>/
+    summary.log    final summary tables only
+    details.log    per-instance comparison (first decisions, event order, gap, runtime)
+    results.csv    one row per instance
+    config.json    copy of the config used for the run
+    instances/ref_<k>/{minimax,milo,milo_gurobi}.log
+    instances/round_<r>/gamma_<G>_{minimax,milo,milo_gurobi}.log
 """
 
 import argparse
 import csv
+import json
 import os
 import random
 import time
@@ -49,17 +57,26 @@ def compare_event_orders(minimax_path, milo_path):
     return same, difference, " -> ".join(minimax_events), " -> ".join(milo_events)
 
 
+def instance_log_prefix(run_dir, tag):
+    """instances/ref_0/ for references, instances/round_01/gamma_0p5_ for random rounds."""
+    group, _, gamma_part = tag.partition("_gamma_")
+    folder = os.path.join(run_dir, "instances", group)
+    os.makedirs(folder, exist_ok=True)
+    return os.path.join(folder, f"gamma_{gamma_part}_" if gamma_part else "")
+
+
 def run_instance(inst, cfg, run_dir, tag, out):
     """Run both models on one instance and log the comparison to `out`. Returns a result row."""
     bcfg = cfg["benchmark"]
     tol = bcfg.get("tolerance", 1e-4)
-    gurobi_log = os.path.join(run_dir, f"{tag}_milo_gurobi.log") if cfg["milo"].get("write_gurobi_log") else None
+    prefix = instance_log_prefix(run_dir, tag)
+    gurobi_log = f"{prefix}milo_gurobi.log" if cfg["milo"].get("write_gurobi_log") else None
 
-    lg = setup_logger(f"{tag}_minimax", os.path.join(run_dir, f"{tag}_minimax.log"))
+    lg = setup_logger(f"{tag}_minimax", f"{prefix}minimax.log")
     mm = solve_minimax(inst, cfg, lg)
     close_logger(lg)
 
-    lg = setup_logger(f"{tag}_milo", os.path.join(run_dir, f"{tag}_milo.log"))
+    lg = setup_logger(f"{tag}_milo", f"{prefix}milo.log")
     milo = solve_milo(inst, cfg, lg, gurobi_log=gurobi_log)
     close_logger(lg)
 
@@ -183,10 +200,14 @@ def main():
     cfg = load_config(args.config)
     bcfg = cfg["benchmark"]
     log_cfg = cfg.get("logging", {})
-    run_dir = os.path.join(log_cfg.get("log_dir", "logs"), f"run_{time.strftime('%Y%m%d_%H%M%S')}")
+    prob = cfg["problem"]
+    run_dir = os.path.join(log_cfg.get("log_dir", "logs"), "benchmark",
+                           f"n{prob['n_tasks']}_m{prob['n_machines']}", f"run_{time.strftime('%Y%m%d_%H%M%S')}")
     os.makedirs(run_dir, exist_ok=True)
-    out = setup_logger("benchmark", os.path.join(run_dir, "summary.log"), console=True,
-                       console_level=log_cfg.get("console_level", "INFO"))
+    with open(os.path.join(run_dir, "config.json"), "w") as f:
+        json.dump(cfg, f, indent=2)
+    console_level = log_cfg.get("console_level", "INFO")
+    out = setup_logger("benchmark", os.path.join(run_dir, "details.log"), console=True, console_level=console_level)
     rows = []
 
     if bcfg.get("run_reference_checks", True):
@@ -201,7 +222,6 @@ def main():
             rows.append(run_instance(inst, cfg, run_dir, f"ref_{k}", out))
             out.info("")
 
-    prob = cfg["problem"]
     rng = random.Random(cfg["random_instance"]["seed"])
     n_rounds = bcfg["n_rounds"]
     gamma_values = bcfg.get("gamma_values", [prob["gamma"]])
@@ -226,16 +246,20 @@ def main():
             out.info("")
 
     # ------------------------------------------------------------- summary
+    close_logger(out)
+    out = setup_logger("benchmark_summary", os.path.join(run_dir, "summary.log"), console=True,
+                       console_level=console_level)
     rnd_rows = [x for x in rows if x["tag"].startswith("round")]
     rnd = [x for x in rnd_rows if x["minimax"] is not None and x["milo"] is not None]
+    tw = max([len("instance")] + [len(x["tag"]) for x in rows])
     out.info("=" * 78)
     out.info("BENCHMARK SUMMARY")
     out.info("=" * 78)
-    out.info(f"  {'instance':<10} | {'minimax':>8} | {'MILO':>8} | {'gap':>7} | {'gap%':>6} | {'same 1st':>8} | "
+    out.info(f"  {'instance':<{tw}} | {'minimax':>8} | {'MILO':>8} | {'gap':>7} | {'gap%':>6} | {'same 1st':>8} | "
              f"{'t_mm':>6} | {'t_milo':>6}")
     for x in rows:
         gap_pct = fmt_pct(x["gap_pct"])
-        out.info(f"  {x['tag']:<10} | {fmt_val(x['minimax']):>8} | {fmt_val(x['milo']):>8} | "
+        out.info(f"  {x['tag']:<{tw}} | {fmt_val(x['minimax']):>8} | {fmt_val(x['milo']):>8} | "
                  f"{fmt_val(x['gap']):>7} | {gap_pct:>6} | "
                  f"{str(x['same_decision']):>8} | {x['minimax_time']:6.2f} | {x['milo_time']:6.2f}")
     if rnd:
@@ -286,12 +310,12 @@ def main():
                      f"{fmt_val(delta_mm)}/{fmt_val(delta_milo)}")
     out.info("")
     out.info("PER-INSTANCE RUNTIME AND EVENT-ORDER COMPARISON")
-    out.info(f"  {'instance':<10} | {'Minimax (s)':>11} | {'MILO (s)':>8} | {'faster':>8} | "
+    out.info(f"  {'instance':<{tw}} | {'Minimax (s)':>11} | {'MILO (s)':>8} | {'faster':>8} | "
              f"{'speedup':>7} | {'same order':>10} | {'same-order gap':>14} | first event difference")
     for x in rows:
         speedup_text = f"{x['speedup']:.2f}x" if x["speedup"] is not None else "n/a"
         difference = x["first_event_difference"] or ("same" if x["event_order_same"] else "unavailable")
-        out.info(f"  {x['tag']:<10} | {x['minimax_time']:11.3f} | {x['milo_time']:8.3f} | "
+        out.info(f"  {x['tag']:<{tw}} | {x['minimax_time']:11.3f} | {x['milo_time']:8.3f} | "
                  f"{x['faster']:>8} | {speedup_text:>7} | {str(x['event_order_same']):>10} | "
                  f"{str(x['same_order_makespan_diff']):>14} | {difference}")
     if rows:
@@ -318,7 +342,7 @@ def main():
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         w.writeheader()
         w.writerows(rows)
-    out.info(f"  Logs and results.csv in {run_dir}")
+    out.info(f"  summary.log, details.log, results.csv and instances/ in {run_dir}")
     close_logger(out)
 
 

@@ -585,9 +585,9 @@ def main():
     inst = instance_from_args(cfg, args.reference, args.seed)
     log_dir = cfg.get("logging", {}).get("log_dir", "logs")
     stamp = time.strftime('%Y%m%d_%H%M%S')
-    log_path = os.path.join(log_dir, f"milo_{stamp}.log")
+    log_path = os.path.join(log_dir, "single", f"milo_{stamp}.log")
     logger = setup_logger("milo", log_path, console=True)
-    glog = os.path.join(log_dir, f"milo_{stamp}_gurobi.log") if cfg.get("milo", {}).get("write_gurobi_log") else None
+    glog = os.path.join(log_dir, "single", f"milo_{stamp}_gurobi.log") if cfg.get("milo", {}).get("write_gurobi_log") else None
     if args.started is not None:
         if len(args.durations) != len(args.finished):
             ap.error("--durations needs one value per --finished task")

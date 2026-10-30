@@ -651,7 +651,7 @@ def main():
     cfg = load_config(args.config)
     inst = instance_from_args(cfg, args.reference, args.seed)
     log_dir = cfg.get("logging", {}).get("log_dir", "logs")
-    log_path = os.path.join(log_dir, f"minimax_ub_{time.strftime('%Y%m%d_%H%M%S')}.log")
+    log_path = os.path.join(log_dir, "single", f"minimax_ub_{time.strftime('%Y%m%d_%H%M%S')}.log")
     logger = setup_logger("minimax_ub", log_path, console=True)
     res = solve_minimax_ub(inst, cfg, logger)
     if inst.expected_makespan is not None:

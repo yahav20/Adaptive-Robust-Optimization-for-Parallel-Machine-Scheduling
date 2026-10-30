@@ -43,7 +43,7 @@ Run the configured benchmark from the project directory:
 python3 benchmark.py --config config/config.json
 ```
 
-Each execution creates a timestamped directory under `logs/`, including `results.csv`, a readable `summary.log`, and solver trace logs. The summary compares per-instance runtimes and reports which solver was faster, then compares the complete event order (grouped task starts and task finishes) and identifies the first event where the paths differ. It also records both full event sequences in `results.csv`; identical event sequences can still have different makespans if the solvers select different feasible duration realizations. The random instances are reproducible using the seed in `config/config.json`; each generated task-duration instance is evaluated at every value in `benchmark.gamma_values`. The default configuration runs 50 random instances across Gamma values from 0 to 4 in 0.5 increments, in addition to the reference checks. Each random instance uses the same task durations across its Gamma sweep.
+Each execution creates `logs/benchmark/n<tasks>_m<machines>/run_<timestamp>/` with `summary.log` (final tables), `details.log` (per-instance comparison), `results.csv`, a `config.json` copy of the configuration used, and the solver trace logs grouped per instance under `instances/`. The summary compares per-instance runtimes and reports which solver was faster, then compares the complete event order (grouped task starts and task finishes) and identifies the first event where the paths differ. It also records both full event sequences in `results.csv`; identical event sequences can still have different makespans if the solvers select different feasible duration realizations. The random instances are reproducible using the seed in `config/config.json`; each generated task-duration instance is evaluated at every value in `benchmark.gamma_values`. The default configuration runs 50 random instances across Gamma values from 0 to 4 in 0.5 increments, in addition to the reference checks. Each random instance uses the same task durations across its Gamma sweep.
 
 Aggregate all available run CSVs into a Markdown report:
 
@@ -51,15 +51,15 @@ Aggregate all available run CSVs into a Markdown report:
 python3 aggregate_results.py
 ```
 
-By default, the aggregator reads `logs/run_*/results.csv` and writes `logs/aggregate_summary.md`. To summarize one specific benchmark run without mixing in earlier runs, point `--logs-dir` directly at that run folder. Paths and the comparison tolerance can be overridden:
+By default, the aggregator reads every `run_*/results.csv` below `logs/benchmark/` and writes `logs/benchmark/aggregate_summary.md`. To summarize one specific benchmark run without mixing in other runs, point `--logs-dir` at that run folder (or at one `n<tasks>_m<machines>/` folder). Paths and the comparison tolerance can be overridden:
 
 ```sh
-python3 aggregate_results.py --logs-dir logs --output logs/aggregate_summary.md --tolerance 0.0001
+python3 aggregate_results.py --logs-dir logs/benchmark/n4_m2 --output logs/benchmark/n4_m2/aggregate_summary.md --tolerance 0.0001
 ```
 
-The current aggregate report is [`logs/aggregate_summary.md`](logs/aggregate_summary.md).
+[`logs/README.md`](logs/README.md) shows the full log layout, lists the current results, and says which runs were archived and why.
 
-Run an individual solver on a configured reference instance with:
+Run an individual solver on a configured reference instance (logs go to `logs/single/`) with:
 
 ```sh
 python3 ar_minimax.py --reference 0
@@ -77,7 +77,7 @@ python3 compare_bounds.py --n 4 5 --gamma 2.5 --rounds 50 \
 python3 compare_bounds.py --n 4 --gamma 1.5 --rounds 20     # runs LB, MILO and UB
 ```
 
-It writes `logs/bounds/gamma_<g>/run_<ts>/summary_all.log` (all n side by side), `results_all.csv`, and one folder per n with `results.csv`, `summary.log`, `ub_results.json`, and UB logs.
+It writes `logs/bounds/gamma_<g>/run_<ts>/summary_all.log` (all n side by side), `results_all.csv`, and one folder per n with `results.csv`, `summary.log`, `ub_results.json`, and the per-round UB logs in `instances/`.
 
 ## Interpreting the comparison
 
