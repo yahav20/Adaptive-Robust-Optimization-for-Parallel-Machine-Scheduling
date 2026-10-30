@@ -67,6 +67,18 @@ python3 ar_minimax_ub.py --reference 0
 python3 ar_milo.py --reference 0
 ```
 
+Compare all three models (LB <= MILO <= UB) by gap, first decision, and runtime with [`compare_bounds.py`](compare_bounds.py). It can reuse saved LB/MILO results and run only the UB, or run all three models when no saved data is given:
+
+```sh
+python3 compare_bounds.py --n 4 5 --gamma 2.5 --rounds 50 \
+    --lb-json 4=logs/pruning_experiment/res_n4.json 5=logs/pruning_experiment/res_n5.json \
+    --milo-json 4=logs/pruning_experiment/res_n4.json 5=logs/pruning_experiment/milo_n5.json,logs/pruning_experiment/milo_n5_rerun.json \
+    --recover-decisions
+python3 compare_bounds.py --n 4 --gamma 1.5 --rounds 20     # runs LB, MILO and UB
+```
+
+It writes `logs/bounds/gamma_<g>/run_<ts>/summary_all.log` (all n side by side), `results_all.csv`, and one folder per n with `results.csv`, `summary.log`, `ub_results.json`, and UB logs.
+
 ## Interpreting the comparison
 
 The reported gap is `Minimax - MILO`. It should be non-positive, up to numerical tolerance: Minimax is a lower bound on the exact MILO. The benchmark also reports whether the two methods choose the same first decision and checks reference instances when an expected value is provided.
